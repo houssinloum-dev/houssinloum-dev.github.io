@@ -2,34 +2,46 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>AI AgriTech Pro | منصة التعليم التكنولوجي المتطورة</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="أول منصة عربية متكاملة تجمع الذكاء الاصطناعي والبرمجيات والتكنولوجيا الزراعية. نظام تعلم ذكي متكامل">
-    <meta name="keywords" content="ذكاء اصطناعي, برمجة, تكنولوجيا زراعية, تعلم الآلة, زراعة ذكية">
+    <meta name="description" content="أول منصة عربية متكاملة تجمع الذكاء الاصطناعي والبرمجيات والتكنولوجيا الزراعية. نظام تعلم ذكي متكامل مع أكثر من 200 دورة متخصصة.">
+    <meta name="keywords" content="ذكاء اصطناعي, برمجة, تكنولوجيا زراعية, تعلم الآلة, زراعة ذكية, AI, Machine Learning, AgriTech">
     <meta name="author" content="AI AgriTech Academy">
     <meta name="theme-color" content="#6366f1">
+    <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="AI AgriTech Pro">
     <meta property="og:description" content="منصة التعليم التكنولوجي المتطورة">
     <meta property="og:image" content="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1200">
+    <meta property="og:url" content="https://ai-agritech.pro">
+    
+    <!-- Google Sign-In -->
+    <meta name="google-signin-client_id" content="288702920051-lak2tiatp7irvr1aa3dcggm0jfee51uv.apps.googleusercontent.com">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     
     <!-- Fonts and Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Chart.js للرسوم البيانية -->
+    <!-- Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    
-    <!-- AOS للأنيميشن -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <style>
         /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            /* Core Colors */
+            /* Light Mode Colors - Professional Palette */
             --primary-50: #eef2ff;
             --primary-100: #e0e7ff;
             --primary-200: #c7d2fe;
@@ -76,7 +88,6 @@
             --gradient-secondary: linear-gradient(135deg, #f59e0b, #ef4444);
             --gradient-dark: linear-gradient(135deg, #1f2937, #111827);
             --gradient-google: linear-gradient(135deg, #4285f4, #34a853);
-            --gradient-shine: linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 50%, transparent 75%);
             
             /* Shadows */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -84,7 +95,7 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
             --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-            --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+            --shadow-3xl: 0 35px 60px -15px rgb(0 0 0 / 0.3);
             
             /* Border Radius */
             --radius-sm: 0.5rem;
@@ -115,18 +126,16 @@
             --transition-fast: 150ms;
             --transition-base: 300ms;
             --transition-slow: 500ms;
-            --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
             
-            /* Z-index layers */
+            /* Z-index */
             --z-dropdown: 1000;
             --z-sticky: 1020;
             --z-fixed: 1030;
             --z-modal: 1040;
-            --z-popover: 1050;
-            --z-tooltip: 1060;
+            --z-tooltip: 1050;
         }
 
-        /* Dark Mode Variables */
         [data-theme="dark"] {
             --primary-50: #1e1b4b;
             --primary-100: #2e1b4b;
@@ -139,25 +148,19 @@
             --primary-800: #a78bfa;
             --primary-900: #c4b5fd;
             
-            --dark-50: #0f0f0f;
-            --dark-100: #1a1a1a;
-            --dark-200: #262626;
-            --dark-300: #333333;
-            --dark-400: #404040;
-            --dark-500: #595959;
-            --dark-600: #737373;
-            --dark-700: #999999;
-            --dark-800: #bfbfbf;
-            --dark-900: #e6e6e6;
+            --dark-50: #0a0a0a;
+            --dark-100: #141414;
+            --dark-200: #1f1f1f;
+            --dark-300: #2a2a2a;
+            --dark-400: #333333;
+            --dark-500: #4d4d4d;
+            --dark-600: #666666;
+            --dark-700: #808080;
+            --dark-800: #999999;
+            --dark-900: #b3b3b3;
             
             background: var(--dark-100);
             color: var(--dark-900);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         html {
@@ -175,20 +178,16 @@
             transition: background-color var(--transition-base), color var(--transition-base);
         }
 
-        [data-theme="dark"] body {
-            background: var(--dark-100);
-            color: var(--dark-800);
-        }
-
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 12px;
         }
         ::-webkit-scrollbar-track {
             background: var(--dark-100);
+            border-radius: var(--radius-full);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-500);
+            background: var(--gradient-primary);
             border-radius: var(--radius-full);
             border: 3px solid var(--dark-100);
         }
@@ -225,6 +224,7 @@
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: var(--shadow-sm);
         }
         .section-header h2 {
             font-size: var(--fs-5xl);
@@ -256,12 +256,12 @@
         }
         .section-header p {
             font-size: var(--fs-lg);
-            color: var(--dark-500);
+            color: var(--dark-600);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Buttons */
+        /* Buttons - Professional Design */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -278,29 +278,34 @@
             box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
         .btn-primary::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+            z-index: -1;
         }
         .btn-primary:hover::before {
-            width: 300px;
-            height: 300px;
+            transform: translateX(0);
         }
         .btn-primary:hover {
-            transform: translateY(-2px) scale(1.05);
+            transform: translateY(-3px) scale(1.05);
             box-shadow: var(--shadow-2xl);
         }
         .btn-primary:active {
             transform: translateY(0) scale(0.95);
+        }
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .btn-secondary {
@@ -314,14 +319,34 @@
             border-radius: var(--radius-full);
             font-weight: 700;
             cursor: pointer;
-            transition: all var(--transition-base);
+            transition: all var(--transition-bounce);
             text-decoration: none;
             backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+            z-index: -1;
+        }
+        .btn-secondary:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
         }
         .btn-secondary:hover {
             border-color: white;
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
         }
 
         .btn-google {
@@ -337,33 +362,39 @@
             cursor: pointer;
             transition: all var(--transition-bounce);
             text-decoration: none;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             position: relative;
             overflow: hidden;
+        }
+        [data-theme="dark"] .btn-google {
+            background: var(--dark-200);
+            color: var(--dark-800);
+            border-color: var(--dark-300);
         }
         .btn-google::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-shine);
-            transition: left 0.5s;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(66, 133, 244, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
         .btn-google:hover::before {
-            left: 100%;
+            width: 300px;
+            height: 300px;
         }
         .btn-google:hover {
-            border-color: var(--google-blue);
+            border-color: #4285f4;
             box-shadow: var(--shadow-xl);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         .btn-google i {
-            background: var(--gradient-google);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.2rem;
+            color: #4285f4;
+            font-size: 1.3rem;
         }
 
         /* ===== PRELOADER ===== */
@@ -387,22 +418,24 @@
         .loader i {
             font-size: 5rem;
             animation: pulse 2s infinite, spin 10s linear infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
         }
         .loader-text {
-            font-size: 2rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 900;
             margin: 1rem 0;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .loader-progress {
             width: 300px;
-            height: 6px;
+            height: 8px;
             background: rgba(255,255,255,0.2);
             border-radius: var(--radius-full);
             overflow: hidden;
             margin-top: 2rem;
         }
         .progress-bar {
+            width: 0%;
             height: 100%;
             background: white;
             border-radius: var(--radius-full);
@@ -431,15 +464,15 @@
             border-bottom: 1px solid transparent;
         }
         [data-theme="dark"] .smart-nav {
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(20,20,20,0.95);
         }
         .smart-nav.scrolled {
             background: rgba(255,255,255,0.98);
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-2xl);
             border-bottom-color: var(--dark-200);
         }
         [data-theme="dark"] .smart-nav.scrolled {
-            background: rgba(26, 26, 26, 0.98);
+            background: rgba(20,20,20,0.98);
         }
         .nav-wrapper {
             display: flex;
@@ -463,10 +496,9 @@
             -webkit-text-fill-color: transparent;
             animation: float 3s ease-in-out infinite;
         }
-        .logo span {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .nav-links {
@@ -489,8 +521,9 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background: var(--gradient-primary);
+            border-radius: var(--radius-full);
             transform: scaleX(0);
             transform-origin: right;
             transition: transform var(--transition-base);
@@ -511,7 +544,6 @@
             gap: 1rem;
         }
 
-        /* Search Box */
         .search-box {
             position: relative;
         }
@@ -544,12 +576,11 @@
             color: var(--primary-500);
         }
 
-        /* Theme Toggle */
         .theme-toggle {
             width: 45px;
             height: 45px;
             background: var(--dark-100);
-            border-radius: var(--radius-full);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -570,6 +601,44 @@
             color: var(--primary-500);
         }
 
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary-50);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            border: 2px solid transparent;
+            transition: all var(--transition-base);
+        }
+        .user-info:hover {
+            border-color: var(--primary-500);
+            transform: translateY(-2px);
+        }
+        .user-info i {
+            color: var(--primary-500);
+            font-size: 1.3rem;
+        }
+        .user-name {
+            font-weight: 700;
+            color: var(--primary-700);
+        }
+        .logout-btn {
+            background: none;
+            border: none;
+            color: var(--dark-500);
+            cursor: pointer;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            transition: all var(--transition-fast);
+            font-size: 1rem;
+        }
+        .logout-btn:hover {
+            color: var(--error);
+            background: var(--dark-200);
+            transform: scale(1.1);
+        }
+
         /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
@@ -584,13 +653,12 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1920') center/cover;
-            opacity: 0.1;
-            animation: zoom 20s infinite alternate;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
         }
         .hero::after {
             content: '';
@@ -599,7 +667,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+            background: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1920') center/cover;
+            opacity: 0.1;
+            animation: zoom 20s infinite alternate;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
         .hero .container {
             display: grid;
@@ -615,12 +693,12 @@
             gap: 0.5rem;
             background: rgba(255,255,255,0.15);
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.75rem 2rem;
             border-radius: var(--radius-full);
             font-weight: 600;
             margin-bottom: 2rem;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
             animation: slideRight 1s ease-out;
         }
         @keyframes slideRight {
@@ -732,6 +810,7 @@
         .floating-card:hover {
             transform: translateY(-10px) scale(1.05);
             background: rgba(255,255,255,0.25);
+            box-shadow: var(--shadow-3xl);
         }
         .floating-card i {
             font-size: 2.5rem;
@@ -754,11 +833,6 @@
             bottom: 10%;
             right: 20%;
             animation: float 7s infinite;
-        }
-        .floating-card:nth-child(4) {
-            top: 60%;
-            right: 30%;
-            animation: float 9s infinite;
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -808,7 +882,7 @@
         }
         .feature-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
+            box-shadow: var(--shadow-3xl);
         }
         .feature-card:hover::before {
             transform: scaleX(1);
@@ -832,7 +906,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: var(--gradient-shine);
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
             animation: shine 3s infinite;
         }
         @keyframes shine {
@@ -876,10 +950,6 @@
             height: 200%;
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
         .lab-interface {
             display: grid;
@@ -972,7 +1042,7 @@
         }
         .course-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
+            box-shadow: var(--shadow-3xl);
         }
         .course-image {
             height: 250px;
@@ -1023,20 +1093,309 @@
         }
         .course-progress {
             width: 100%;
-            height: 6px;
+            height: 8px;
             background: var(--dark-200);
             border-radius: var(--radius-full);
             overflow: hidden;
             margin: 1rem 0;
         }
-        .progress-bar-fill {
+        .progress-fill {
             height: 100%;
             background: var(--gradient-primary);
             border-radius: var(--radius-full);
             transition: width var(--transition-base);
         }
 
-        /* ===== AUTH MODAL ===== */
+        /* ===== AGRITECH SECTION ===== */
+        .agritech-section {
+            padding: var(--section-padding);
+            background: white;
+        }
+        [data-theme="dark"] .agritech-section {
+            background: var(--dark-100);
+        }
+        .agritech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        .agritech-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: all var(--transition-bounce);
+        }
+        [data-theme="dark"] .agritech-card {
+            background: var(--dark-200);
+        }
+        .agritech-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-3xl);
+        }
+        .agritech-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            transition: transform var(--transition-base);
+        }
+        .agritech-card:hover .agritech-image {
+            transform: scale(1.1);
+        }
+        .agritech-content {
+            padding: 2rem;
+        }
+        .agritech-content h3 {
+            font-size: var(--fs-xl);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== DASHBOARD ===== */
+        .dashboard-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .dashboard-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: rotate 40s linear infinite;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        .dashboard-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-2xl);
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all var(--transition-base);
+        }
+        .dashboard-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: var(--shadow-2xl);
+        }
+        .progress-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(#10b981 0deg, #e5e7eb 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto;
+            transition: background var(--transition-base);
+        }
+        .progress-value {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-800);
+        }
+
+        /* ===== COMMUNITY SECTION ===== */
+        .community-section {
+            padding: var(--section-padding);
+            background: white;
+        }
+        [data-theme="dark"] .community-section {
+            background: var(--dark-100);
+        }
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .community-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--dark-50);
+            border-radius: var(--radius-2xl);
+            transition: all var(--transition-bounce);
+            cursor: pointer;
+        }
+        [data-theme="dark"] .community-card {
+            background: var(--dark-200);
+        }
+        .community-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-2xl);
+        }
+        .community-card i {
+            font-size: 3.5rem;
+            color: var(--primary-500);
+            margin-bottom: 1rem;
+            transition: all var(--transition-base);
+        }
+        .community-card:hover i {
+            color: white;
+            transform: scale(1.2);
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter-section {
+            padding: 5rem 0;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+        .newsletter-wrapper {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-2xl);
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            box-shadow: var(--shadow-3xl);
+            position: relative;
+            z-index: 1;
+        }
+        [data-theme="dark"] .newsletter-wrapper {
+            background: rgba(20,20,20,0.95);
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+        }
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--dark-200);
+            border-radius: var(--radius-full);
+            font-family: var(--font-family);
+            font-size: var(--fs-base);
+        }
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 4px var(--primary-100);
+        }
+
+        /* ===== FOOTER ===== */
+        .main-footer {
+            background: var(--dark-900);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+        [data-theme="dark"] .main-footer {
+            background: var(--dark-200);
+            color: var(--dark-800);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .footer-logo i {
+            color: var(--primary-500);
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all var(--transition-bounce);
+        }
+        .social-links a:hover {
+            background: var(--primary-500);
+            transform: translateY(-5px) rotate(360deg);
+        }
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: var(--fs-lg);
+            position: relative;
+            display: inline-block;
+        }
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--gradient-primary);
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+        .footer-col ul a {
+            color: var(--dark-400);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            display: inline-block;
+        }
+        .footer-col ul a:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+        .footer-bottom {
+            border-top: 1px solid var(--dark-700);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-400);
+        }
+
+        /* ===== MODAL ===== */
         .modal {
             position: fixed;
             top: 0;
@@ -1067,7 +1426,7 @@
             overflow-y: auto;
             transform: translateY(-50px) scale(0.9);
             transition: all var(--transition-bounce);
-            box-shadow: var(--shadow-2xl);
+            box-shadow: var(--shadow-3xl);
             position: relative;
         }
         [data-theme="dark"] .modal-content {
@@ -1090,23 +1449,77 @@
             -webkit-text-fill-color: transparent;
         }
         .close-modal {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: var(--dark-100);
             border: none;
-            border-radius: var(--radius-full);
-            font-size: 1.2rem;
+            border-radius: 50%;
+            font-size: 1.3rem;
             cursor: pointer;
             color: var(--dark-500);
-            transition: all var(--transition-base);
+            transition: all var(--transition-bounce);
         }
         .close-modal:hover {
             background: var(--error);
             color: white;
-            transform: rotate(90deg);
+            transform: rotate(90deg) scale(1.1);
+        }
+        .auth-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--dark-200);
+            border-radius: var(--radius-xl);
+            font-family: var(--font-family);
+            font-size: var(--fs-base);
+            transition: all var(--transition-base);
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 4px var(--primary-100);
         }
 
-        /* ===== DEVICE DETECTION BANNER ===== */
+        /* ===== NOTIFICATION ===== */
+        .notification {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: var(--dark-800);
+            padding: 1.5rem 3rem;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-3xl);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: var(--z-tooltip);
+            animation: slideDown 0.3s ease;
+            border-right: 5px solid var(--success);
+        }
+        [data-theme="dark"] .notification {
+            background: var(--dark-200);
+        }
+        @keyframes slideDown {
+            from {
+                transform: translate(-50%, -100%);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+        }
+
+        /* ===== DEVICE BANNER ===== */
         .device-banner {
             position: fixed;
             bottom: 2rem;
@@ -1115,28 +1528,24 @@
             color: white;
             padding: 1rem 2rem;
             border-radius: var(--radius-full);
-            box-shadow: var(--shadow-2xl);
+            box-shadow: var(--shadow-3xl);
             display: flex;
             align-items: center;
             gap: 1rem;
             z-index: var(--z-tooltip);
-            animation: slideLeft 0.5s ease-out;
+            animation: slideLeft 0.5s ease;
             border: 1px solid rgba(255,255,255,0.3);
             backdrop-filter: blur(10px);
         }
         @keyframes slideLeft {
             from {
+                transform: translateX(100%);
                 opacity: 0;
-                transform: translateX(50px);
             }
             to {
-                opacity: 1;
                 transform: translateX(0);
+                opacity: 1;
             }
-        }
-        .device-banner i {
-            font-size: 1.5rem;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
         }
 
         /* ===== LIVE CHAT ===== */
@@ -1144,35 +1553,62 @@
             position: fixed;
             bottom: 2rem;
             left: 2rem;
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: var(--gradient-primary);
-            border-radius: var(--radius-full);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: var(--shadow-2xl);
+            box-shadow: var(--shadow-3xl);
             z-index: var(--z-tooltip);
             transition: all var(--transition-bounce);
-            border: 2px solid white;
+            border: 3px solid white;
         }
         .live-chat:hover {
-            transform: scale(1.1) rotate(10deg);
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: var(--shadow-2xl);
         }
         .live-chat i {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: white;
         }
         .chat-badge {
             position: absolute;
             top: -5px;
             right: -5px;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             background: var(--error);
             border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-3xl);
+            z-index: var(--z-tooltip);
+            transition: all var(--transition-bounce);
             border: 2px solid white;
+        }
+        .back-to-top:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: var(--shadow-2xl);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -1188,6 +1624,7 @@
             .hero-buttons { justify-content: center; }
             .floating-cards { height: 400px; }
             .lab-interface { grid-template-columns: 1fr; }
+            .newsletter-wrapper { grid-template-columns: 1fr; text-align: center; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -1195,6 +1632,8 @@
             .hero-stats { flex-direction: column; gap: 1rem; }
             .stat-item::after { display: none; }
             .footer-grid { grid-template-columns: 1fr; }
+            .search-box input { width: 150px; }
+            .search-box input:focus { width: 200px; }
         }
     </style>
 </head>
@@ -1205,7 +1644,7 @@
             <i class="fas fa-robot"></i>
             <div class="loader-text">AI AgriTech Pro</div>
             <div class="loader-progress">
-                <div class="progress-bar"></div>
+                <div class="progress-bar" id="progressBar"></div>
             </div>
         </div>
     </div>
@@ -1215,7 +1654,7 @@
         <i class="fas fa-desktop" id="deviceIcon"></i>
         <div>
             <strong id="deviceType">جهاز مكتبي</strong>
-            <p style="font-size: var(--fs-xs); opacity: 0.8;" id="deviceDetails"></p>
+            <small id="deviceDetails"></small>
         </div>
     </div>
 
@@ -1232,7 +1671,7 @@
                 <div class="logo">
                     <a href="#">
                         <i class="fas fa-robot"></i>
-                        <span>AI<span>Agri</span>Tech Pro</span>
+                        <span>AI<span style="color: var(--primary-500);">Agri</span>Tech</span>
                     </a>
                 </div>
                 
@@ -1247,8 +1686,9 @@
                 
                 <div class="nav-actions">
                     <div class="search-box">
-                        <input type="text" placeholder="ابحث في 200+ دورة..." id="searchInput">
+                        <input type="text" placeholder="ابحث عن 200+ دورة..." id="searchInput">
                         <i class="fas fa-search" id="searchBtn"></i>
+                        <div id="searchResults" class="search-results"></div>
                     </div>
                     
                     <div class="theme-toggle" id="themeToggle">
@@ -1272,51 +1712,48 @@
         </div>
     </nav>
 
+    <!-- Google Sign-In Button (Hidden) -->
+    <div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleGoogleSignIn"
+         data-auto_prompt="false">
+    </div>
+
     <!-- Auth Modal -->
     <div class="modal" id="authModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>مرحباً بك في AI AgriTech Pro</h3>
+                <h3>مرحباً بك في AI AgriTech</h3>
                 <button class="close-modal" id="closeModal">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             
             <div class="auth-options">
-                <button class="btn-google-large" id="googleLoginBtn" style="width: 100%; padding: 1rem; display: flex; align-items: center; justify-content: center; gap: 1rem; background: white; border: 2px solid var(--dark-200); border-radius: var(--radius-full); font-weight: 600; cursor: pointer; transition: all var(--transition-base);">
-                    <i class="fab fa-google" style="font-size: 1.5rem;"></i>
-                    <span>متابعة بواسطة قوقل</span>
-                </button>
+                <div id="googleSignInDiv" style="display: flex; justify-content: center; margin-bottom: 1rem;"></div>
                 
-                <div style="text-align: center; margin: 1.5rem 0; position: relative;">
-                    <span style="background: var(--dark-100); padding: 0 1rem; color: var(--dark-500); font-size: var(--fs-sm);">أو</span>
+                <div style="text-align: center; position: relative; margin: 1rem 0;">
+                    <span style="background: var(--dark-100); padding: 0 1rem; color: var(--dark-500);">أو</span>
                 </div>
                 
-                <form class="auth-form" id="loginForm">
+                <form id="loginForm">
                     <div class="form-group">
-                        <input type="email" placeholder="البريد الإلكتروني" id="emailInput" style="width: 100%; padding: 1rem; border: 2px solid var(--dark-200); border-radius: var(--radius-md); font-family: var(--font-family);">
+                        <input type="email" placeholder="البريد الإلكتروني" id="emailInput" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="كلمة المرور" id="passwordInput" style="width: 100%; padding: 1rem; border: 2px solid var(--dark-200); border-radius: var(--radius-md); font-family: var(--font-family);">
+                        <input type="password" placeholder="كلمة المرور" id="passwordInput" required>
                     </div>
                     
-                    <div style="background: var(--primary-50); padding: 1rem; border-radius: var(--radius-md); margin: 1rem 0;">
-                        <p style="font-size: var(--fs-sm); color: var(--primary-700);">
-                            <i class="fas fa-key"></i>
-                            <strong>إعدادات API:</strong><br>
-                            Client ID: <code id="googleClientId">اضف Client ID هنا</code><br>
-                            API Key: <code id="googleApiKey">اضف API Key هنا</code>
-                        </p>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
                         <i class="fas fa-sign-in-alt"></i>
                         دخول
                     </button>
                 </form>
                 
-                <p style="text-align: center; margin-top: 1.5rem; color: var(--dark-500);">
-                    ليس لديك حساب؟ <a href="#" id="showRegister" style="color: var(--primary-500); font-weight: 600;">سجل الآن</a>
+                <p style="text-align: center; margin-top: 1rem; color: var(--dark-500);">
+                    ليس لديك حساب؟ <a href="#" id="showRegister" style="color: var(--primary-500);">سجل الآن</a>
                 </p>
             </div>
         </div>
@@ -1325,7 +1762,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div>
+            <div data-aos="fade-left">
                 <div class="hero-badge">
                     <i class="fas fa-microchip"></i>
                     <span>مدعوم بالذكاء الاصطناعي المتطور</span>
@@ -1343,118 +1780,112 @@
                 <div class="hero-stats">
                     <div class="stat-item">
                         <span class="stat-number" id="coursesCount">0</span>
-                        <span class="stat-label">دورة متخصصة</span>
+                        <span class="stat-label">دورة</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" id="studentsCount">0</span>
-                        <span class="stat-label">طالب مسجل</span>
+                        <span class="stat-label">طالب</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" id="featuresCount">0</span>
-                        <span class="stat-label">ميزة تفاعلية</span>
+                        <span class="stat-label">ميزة</span>
                     </div>
                 </div>
                 
                 <div class="hero-buttons">
-                    <a href="#courses" class="btn-primary">
+                    <a href="#courses" class="btn-primary" onclick="scrollToSection('courses')">
                         <i class="fas fa-graduation-cap"></i>
                         ابدأ التعلم مجاناً
                     </a>
-                    <a href="#ai-lab" class="btn-secondary">
+                    <a href="#ai-lab" class="btn-secondary" onclick="scrollToSection('ai-lab')">
                         <i class="fas fa-flask"></i>
                         جرب معمل AI
                     </a>
                 </div>
             </div>
             
-            <div class="floating-cards">
-                <div class="floating-card">
+            <div class="floating-cards" data-aos="fade-right">
+                <div class="floating-card" onclick="showFeature('AI')">
                     <i class="fas fa-robot"></i>
                     <h4>ذكاء اصطناعي</h4>
                     <p>50+ نموذج تدريبي</p>
                 </div>
-                <div class="floating-card">
+                <div class="floating-card" onclick="showFeature('AgriTech')">
                     <i class="fas fa-leaf"></i>
                     <h4>زراعة ذكية</h4>
                     <p>تقنيات حديثة</p>
                 </div>
-                <div class="floating-card">
+                <div class="floating-card" onclick="showFeature('Programming')">
                     <i class="fas fa-code"></i>
                     <h4>برمجة</h4>
                     <p>مشاريع تطبيقية</p>
-                </div>
-                <div class="floating-card">
-                    <i class="fas fa-cloud-sun"></i>
-                    <h4>إنترنت الأشياء</h4>
-                    <p>مستشعرات ذكية</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section" id="features" data-aos="fade-up">
+    <section class="features-section" id="features">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-down">
                 <span class="section-subtitle">اكتشف الإمكانيات</span>
                 <h2>أكثر من <span class="highlight">150 ميزة</span> متطورة</h2>
-                <p>منصة متكاملة مع أحدث تقنيات الذكاء الاصطناعي والتعلم الآلي</p>
+                <p>كل ما تحتاجه في منصة واحدة لتطوير مهاراتك</p>
             </div>
             
             <div class="features-grid" id="featuresGrid"></div>
             
             <div style="text-align: center; margin-top: 4rem;">
-                <button class="btn-primary" id="loadMoreFeatures">
+                <button class="btn-primary" id="loadMoreFeatures" onclick="loadMoreFeatures()">
                     <i class="fas fa-plus"></i>
-                    عرض المزيد من الميزات
+                    عرض المزيد
                 </button>
             </div>
         </div>
     </section>
 
     <!-- AI Lab Section -->
-    <section class="ai-lab" id="ai-lab" data-aos="fade-up">
+    <section class="ai-lab" id="ai-lab">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-down">
                 <span class="section-subtitle" style="background: rgba(255,255,255,0.2); color: white;">معمل المستقبل</span>
-                <h2>معمل <span class="highlight">الذكاء الاصطناعي</span> المتطور</h2>
-                <p style="color: rgba(255,255,255,0.9);">جرب أحدث نماذج الذكاء الاصطناعي مباشرة</p>
+                <h2>معمل <span class="highlight">الذكاء الاصطناعي</span> التفاعلي</h2>
+                <p style="color: rgba(255,255,255,0.9);">جرب نماذج الذكاء الاصطناعي مباشرة في المتصفح</p>
             </div>
             
-            <div class="lab-interface">
+            <div class="lab-interface" data-aos="zoom-in">
                 <div>
                     <div class="model-selector">
-                        <label style="font-size: var(--fs-lg); font-weight: 600;">اختر نموذج الذكاء الاصطناعي:</label>
+                        <label>اختر النموذج:</label>
                         <select id="aiModel">
-                            <option value="disease">🌱 كشف أمراض النباتات (دقة 99.5%)</option>
+                            <option value="disease">🌱 كشف أمراض النباتات</option>
                             <option value="crop">📊 توقع إنتاجية المحاصيل</option>
                             <option value="soil">🧪 تحليل جودة التربة</option>
-                            <option value="irrigation">💧 تحسين جداول الري</option>
-                            <option value="weather">☁️ تحليل الطقس للزراعة</option>
-                            <option value="pest">🐛 كشف الآفات والحشرات</option>
-                            <option value="harvest">🌾 تحديد وقت الحصاد الأمثل</option>
+                            <option value="irrigation">💧 تحسين الري</option>
+                            <option value="weather">☁️ تحليل الطقس</option>
+                            <option value="pest">🐛 كشف الآفات</option>
+                            <option value="harvest">🌾 تحديد وقت الحصاد</option>
                         </select>
                     </div>
                     
-                    <div class="upload-area" id="uploadArea">
+                    <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
                         <i class="fas fa-cloud-upload-alt"></i>
-                        <h3>اسحب وأفلت الصورة هنا</h3>
+                        <h4>اسحب وأفلت الصورة هنا</h4>
                         <p>أو اضغط لاختيار ملف</p>
-                        <p style="font-size: var(--fs-xs); margin-top: 1rem;">يدعم: JPG, PNG, GIF (حد أقصى 20MB)</p>
                         <input type="file" id="fileInput" accept="image/*" hidden>
                     </div>
                     
-                    <button class="btn-primary" style="width: 100%; justify-content: center;" id="analyzeBtn">
+                    <button class="btn-primary" style="width: 100%;" id="analyzeBtn" onclick="analyzeImage()">
                         <i class="fas fa-microchip"></i>
-                        تحليل بالذكاء الاصطناعي المتقدم
+                        تحليل بالذكاء الاصطناعي
                     </button>
                 </div>
                 
                 <div class="output-area" id="aiOutput">
                     <div style="text-align: center; padding: 2rem;">
                         <i class="fas fa-robot" style="font-size: 5rem; color: var(--primary-500); margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--dark-800);">نتائج التحليل ستظهر هنا</h3>
-                        <p style="color: var(--dark-500);">قم برفع صورة أو اختيار نموذج للبدء</p>
+                        <h3>نتائج التحليل ستظهر هنا</h3>
+                        <p>قم برفع صورة أو اختيار نموذج للبدء</p>
                     </div>
                 </div>
             </div>
@@ -1462,9 +1893,9 @@
     </section>
 
     <!-- AgriTech Section -->
-    <section class="agritech-section" id="agritech" data-aos="fade-up">
+    <section class="agritech-section" id="agritech">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-down">
                 <span class="section-subtitle">ثورة في الزراعة</span>
                 <h2>التكنولوجيا <span class="highlight">الزراعية</span> المتطورة</h2>
                 <p>اكتشف كيف تغير التكنولوجيا وجه الزراعة التقليدية</p>
@@ -1475,18 +1906,18 @@
     </section>
 
     <!-- Courses Section -->
-    <section class="courses-section" id="courses" data-aos="fade-up">
+    <section class="courses-section" id="courses">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-down">
                 <span class="section-subtitle">تعلم من الخبراء</span>
-                <h2>الدورات <span class="highlight">المتكاملة</span></h2>
-                <p>أكثر من 200 دورة متخصصة معتمدة</p>
+                <h2>الدورات <span class="highlight">الأكثر طلباً</span></h2>
+                <p>اختر من بين 200+ دورة متخصصة</p>
             </div>
             
             <div class="courses-grid" id="coursesGrid"></div>
             
             <div style="text-align: center; margin-top: 4rem;">
-                <button class="btn-primary" id="loadMoreCourses">
+                <button class="btn-primary" id="loadMoreCourses" onclick="loadMoreCourses()">
                     <i class="fas fa-plus"></i>
                     عرض جميع الدورات
                 </button>
@@ -1495,37 +1926,31 @@
     </section>
 
     <!-- Dashboard Section -->
-    <section class="dashboard-section" id="dashboard" data-aos="fade-up">
+    <section class="dashboard-section" id="dashboard">
         <div class="container">
-            <div class="section-header" style="color: white;">
+            <div class="section-header" style="color: white;" data-aos="fade-down">
                 <span class="section-subtitle" style="background: rgba(255,255,255,0.2); color: white;">لوحة التحكم الذكية</span>
                 <h2>تابع <span class="highlight">تقدمك</span> بذكاء</h2>
                 <p style="color: rgba(255,255,255,0.9);">تحليلات متقدمة وتوصيات مخصصة</p>
             </div>
             
             <div class="dashboard-grid">
-                <div class="dashboard-card">
+                <div class="dashboard-card" data-aos="fade-up">
                     <h3>تقدمك التعليمي</h3>
                     <div class="progress-circle" id="progressCircle">
                         <div class="progress-value" id="progressValue">78%</div>
                     </div>
                     <p style="text-align: center; margin: 1rem 0;">12 من 16 دورة مكتملة</p>
-                    <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: var(--radius-lg);">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span>التقدم الأسبوعي</span>
-                            <span>+15%</span>
-                        </div>
-                        <div style="height: 6px; background: rgba(255,255,255,0.2); border-radius: var(--radius-full);">
-                            <div style="width: 65%; height: 100%; background: var(--success); border-radius: var(--radius-full);"></div>
-                        </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 0.75rem; border-radius: var(--radius-lg);">
+                        <span>آخر نشاط: دورة الذكاء الاصطناعي</span>
                     </div>
                 </div>
                 
-                <div class="dashboard-card">
+                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>الشهادات المكتسبة</h3>
-                    <div style="margin: 1rem 0;" id="certificatesList">
-                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: var(--radius-lg); margin-bottom: 0.5rem;">
-                            <i class="fas fa-certificate" style="font-size: 2rem; color: #f59e0b;"></i>
+                    <div id="certificatesList">
+                        <div class="cert-item" style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0; padding: 0.5rem; background: rgba(255,255,255,0.1); border-radius: var(--radius-lg);">
+                            <i class="fas fa-certificate" style="font-size: 2.5rem; color: #f59e0b;"></i>
                             <div>
                                 <h4>أساسيات الذكاء الاصطناعي</h4>
                                 <small>تم الإصدار: 15 مارس 2026</small>
@@ -1534,15 +1959,17 @@
                     </div>
                 </div>
                 
-                <div class="dashboard-card">
+                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>التوصيات الذكية</h3>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: var(--radius-lg);">
-                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> بناءً على تقدمك، نوصي بـ:</p>
-                        <ul style="list-style: none;">
-                            <li style="padding: 0.5rem 0;">• الشبكات العصبية المتقدمة</li>
-                            <li style="padding: 0.5rem 0;">• تعلم الآلة في الزراعة</li>
-                            <li style="padding: 0.5rem 0;">• مشروع التخرج العملي</li>
-                        </ul>
+                    <div style="margin-top: 1rem;">
+                        <div class="recommendation-item" style="background: rgba(255,255,255,0.1); padding: 0.75rem; border-radius: var(--radius-lg); margin-bottom: 0.5rem; cursor: pointer;" onclick="enrollCourse('الشبكات العصبية المتقدمة')">
+                            <i class="fas fa-lightbulb" style="color: #f59e0b;"></i>
+                            الشبكات العصبية المتقدمة
+                        </div>
+                        <div class="recommendation-item" style="background: rgba(255,255,255,0.1); padding: 0.75rem; border-radius: var(--radius-lg); cursor: pointer;" onclick="enrollCourse('تعلم الآلة في الزراعة')">
+                            <i class="fas fa-lightbulb" style="color: #f59e0b;"></i>
+                            تعلم الآلة في الزراعة
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1550,54 +1977,50 @@
     </section>
 
     <!-- Community Section -->
-    <section class="community-section" id="community" data-aos="fade-up">
+    <section class="community-section" id="community">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-down">
                 <span class="section-subtitle">انضم إلى العائلة</span>
                 <h2>مجتمع <span class="highlight">المبدعين</span></h2>
                 <p>تواصل مع 50,000+ متعلم وخبير</p>
             </div>
             
             <div class="community-grid">
-                <div class="community-card" onclick="joinCommunity('forum')">
+                <div class="community-card" onclick="joinCommunity('forum')" data-aos="zoom-in">
                     <i class="fas fa-comments"></i>
                     <h3>منتدى النقاشات</h3>
                     <p>15,000+ موضوع</p>
-                    <span style="color: var(--primary-500);">انضم الآن →</span>
                 </div>
-                <div class="community-card" onclick="joinCommunity('projects')">
+                <div class="community-card" onclick="joinCommunity('projects')" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fas fa-code-branch"></i>
                     <h3>مشاريع مفتوحة المصدر</h3>
                     <p>200+ مشروع</p>
-                    <span style="color: var(--primary-500);">شارك في التطوير →</span>
                 </div>
-                <div class="community-card" onclick="joinCommunity('hackathon')">
+                <div class="community-card" onclick="joinCommunity('hackathon')" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>هاكاثونات وفعاليات</h3>
                     <p>5 فعاليات قادمة</p>
-                    <span style="color: var(--primary-500);">سجل الآن →</span>
                 </div>
-                <div class="community-card" onclick="joinCommunity('mentorship')">
+                <div class="community-card" onclick="joinCommunity('mentorship')" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <h3>جلسات إرشادية</h3>
                     <p>مع 50+ خبير</p>
-                    <span style="color: var(--primary-500);">احجز جلستك →</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter-section" data-aos="fade-up">
+    <section class="newsletter-section">
         <div class="container">
-            <div class="newsletter-wrapper">
+            <div class="newsletter-wrapper" data-aos="zoom-in">
                 <div>
                     <h2 style="font-size: var(--fs-3xl); margin-bottom: 1rem;">انضم للنشرة البريدية</h2>
-                    <p style="color: var(--dark-500);">أحدث الأخبار والدورات المجانية والعروض الحصرية</p>
+                    <p style="color: var(--dark-600);">أحدث الأخبار والدورات المجانية والعروض الحصرية</p>
                 </div>
                 
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="بريدك الإلكتروني" required id="newsletterEmail" style="flex: 1; padding: 1rem 1.5rem; border: 2px solid var(--dark-200); border-radius: var(--radius-full); font-family: var(--font-family);">
+                <form class="newsletter-form" id="newsletterForm" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="بريدك الإلكتروني" required id="newsletterEmail">
                     <button type="submit" class="btn-primary">
                         <i class="fas fa-paper-plane"></i>
                         اشتراك
@@ -1616,34 +2039,33 @@
                         <i class="fas fa-robot"></i>
                         <span>AI AgriTech Pro</span>
                     </div>
-                    <p>أول منصة عربية متكاملة للتعليم التكنولوجي والزراعي</p>
+                    <p>أول منصة عربية للتعليم التكنولوجي والزراعي بالذكاء الاصطناعي</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#" onclick="socialClick('facebook')"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" onclick="socialClick('twitter')"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" onclick="socialClick('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" onclick="socialClick('youtube')"><i class="fab fa-youtube"></i></a>
+                        <a href="#" onclick="socialClick('github')"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
                     <h4>روابط سريعة</h4>
                     <ul>
-                        <li><a href="#courses">الدورات التعليمية</a></li>
-                        <li><a href="#ai-lab">معمل الذكاء الاصطناعي</a></li>
-                        <li><a href="#agritech">المشاريع العملية</a></li>
-                        <li><a href="#community">المجتمع</a></li>
+                        <li><a href="#courses" onclick="scrollToSection('courses')">الدورات التعليمية</a></li>
+                        <li><a href="#ai-lab" onclick="scrollToSection('ai-lab')">معمل الذكاء الاصطناعي</a></li>
+                        <li><a href="#agritech" onclick="scrollToSection('agritech')">المشاريع العملية</a></li>
+                        <li><a href="#community" onclick="scrollToSection('community')">المجتمع</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h4>الدعم والمساعدة</h4>
                     <ul>
-                        <li><a href="#">الأسئلة الشائعة</a></li>
-                        <li><a href="#">تواصل معنا</a></li>
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#" onclick="showNotification('الأسئلة الشائعة')">الأسئلة الشائعة</a></li>
+                        <li><a href="#" onclick="showNotification('تواصل معنا')">تواصل معنا</a></li>
+                        <li><a href="#" onclick="showNotification('سياسة الخصوصية')">سياسة الخصوصية</a></li>
+                        <li><a href="#" onclick="showNotification('شروط الاستخدام')">شروط الاستخدام</a></li>
                     </ul>
                 </div>
                 
@@ -1651,8 +2073,8 @@
                     <h4>تطبيق الجوال</h4>
                     <p>حمّل تطبيقنا وعلّم في أي وقت</p>
                     <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <i class="fab fa-apple" style="font-size: 2rem; cursor: pointer;" onclick="showNotification('تطبيق iOS قريباً!', 'info')"></i>
-                        <i class="fab fa-google-play" style="font-size: 2rem; cursor: pointer;" onclick="showNotification('تطبيق Android قريباً!', 'info')"></i>
+                        <i class="fab fa-apple" style="font-size: 2.5rem; cursor: pointer;" onclick="showNotification('تطبيق iOS قريباً!')"></i>
+                        <i class="fab fa-google-play" style="font-size: 2.5rem; cursor: pointer;" onclick="showNotification('تطبيق Android قريباً!')"></i>
                     </div>
                 </div>
             </div>
@@ -1660,41 +2082,84 @@
             <div class="footer-bottom">
                 <p>© 2026 AI AgriTech Pro - جميع الحقوق محفوظة</p>
                 <div>
-                    <i class="fab fa-html5" style="margin-left: 0.5rem;" title="HTML5"></i>
-                    <i class="fab fa-css3-alt" style="margin-left: 0.5rem;" title="CSS3"></i>
-                    <i class="fab fa-js" style="margin-left: 0.5rem;" title="JavaScript"></i>
-                    <i class="fab fa-python" style="margin-left: 0.5rem;" title="Python"></i>
-                    <i class="fas fa-brain" style="margin-left: 0.5rem;" title="TensorFlow.js"></i>
+                    <i class="fab fa-html5"></i>
+                    <i class="fab fa-css3-alt"></i>
+                    <i class="fab fa-js"></i>
+                    <i class="fab fa-python"></i>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- Notification Area -->
     <div id="notification"></div>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script>
         // Initialize AOS
         AOS.init({
             duration: 1000,
             once: true,
-            offset: 100
+            offset: 100,
+            easing: 'ease-in-out'
         });
 
-        // ========== GOOGLE API CONFIGURATION ==========
-        const GOOGLE_CLIENT_ID = 'اضف_client_id_هنا'; // Client ID من Google Cloud Console
-        const GOOGLE_API_KEY = 'اضف_api_key_هنا'; // API Key من Google Cloud Console
-        const GOOGLE_REDIRECT_URI = window.location.origin + '/auth/callback';
+        // ========== GOOGLE SIGN-IN REAL IMPLEMENTATION ==========
+        function handleGoogleSignIn(response) {
+            // Decode the JWT token to get user info
+            const userData = parseJwt(response.credential);
+            
+            // Hide sign-in button and show user info
+            document.getElementById('googleSignInBtn').style.display = 'none';
+            const userInfo = document.getElementById('userInfo');
+            userInfo.style.display = 'flex';
+            document.getElementById('userName').textContent = userData.name;
+            
+            // Close modal if open
+            document.getElementById('authModal').classList.remove('show');
+            
+            // Show success notification
+            showNotification(`مرحباً ${userData.name}! تم تسجيل الدخول بنجاح`, 'success');
+            
+            // Save user data
+            localStorage.setItem('user', JSON.stringify(userData));
+        }
 
-        // تحديث عرض API Keys
-        document.getElementById('googleClientId').textContent = GOOGLE_CLIENT_ID;
-        document.getElementById('googleApiKey').textContent = GOOGLE_API_KEY;
+        function parseJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+        // Initialize Google Sign-In button
+        window.onload = function() {
+            google.accounts.id.initialize({
+                client_id: '288702920051-lak2tiatp7irvr1aa3dcggm0jfee51uv.apps.googleusercontent.com',
+                callback: handleGoogleSignIn
+            });
+            
+            google.accounts.id.renderButton(
+                document.getElementById('googleSignInDiv'),
+                { 
+                    theme: 'outline', 
+                    size: 'large',
+                    text: 'continue_with',
+                    shape: 'pill',
+                    width: '100%'
+                }
+            );
+        };
 
         // ========== DEVICE DETECTION ==========
         function detectDevice() {
@@ -1705,80 +2170,52 @@
             
             const ua = navigator.userAgent;
             const platform = navigator.platform;
-            const screenWidth = window.screen.width;
-            const screenHeight = window.screen.height;
             
             let device = 'جهاز مكتبي';
             let icon = 'fa-desktop';
             
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) {
+                device = 'جهاز محمول';
+                icon = 'fa-mobile-alt';
                 if (/iPad/i.test(ua)) {
-                    device = 'iPad / جهاز لوحي';
+                    device = 'جهاز لوحي';
                     icon = 'fa-tablet';
-                } else if (/iPhone|iPod/i.test(ua)) {
-                    device = 'iPhone / جهاز محمول';
-                    icon = 'fa-mobile-alt';
-                } else if (/Android/i.test(ua)) {
-                    if (screenWidth >= 768) {
-                        device = 'جهاز Android لوحي';
-                        icon = 'fa-tablet';
-                    } else {
-                        device = 'جهاز Android محمول';
-                        icon = 'fa-mobile-alt';
-                    }
                 }
-            } else if (/Macintosh|Windows|Linux/i.test(platform)) {
-                device = 'جهاز مكتبي';
-                icon = 'fa-desktop';
             }
             
             deviceIcon.className = 'fas ' + icon;
             deviceType.textContent = device;
             
-            const browserInfo = getBrowserInfo();
-            const osInfo = getOSInfo();
+            const browser = getBrowserInfo();
+            const os = getOSInfo();
+            const screen = `${window.screen.width}x${window.screen.height}`;
             
-            deviceDetails.textContent = `${osInfo} | ${browserInfo} | ${screenWidth}x${screenHeight}`;
+            deviceDetails.textContent = `${os} | ${browser} | ${screen}`;
             
-            // Hide banner after 10 seconds
             setTimeout(() => {
                 banner.style.opacity = '0';
-                setTimeout(() => {
-                    banner.style.display = 'none';
-                }, 500);
+                setTimeout(() => banner.style.display = 'none', 500);
             }, 10000);
         }
 
         function getBrowserInfo() {
             const ua = navigator.userAgent;
-            let browser = "متصفح غير معروف";
-            
-            if (ua.indexOf("Firefox") > -1) browser = "Firefox";
-            else if (ua.indexOf("Samsung") > -1) browser = "Samsung Internet";
-            else if (ua.indexOf("Opera") > -1 || ua.indexOf("OPR") > -1) browser = "Opera";
-            else if (ua.indexOf("Trident") > -1) browser = "Internet Explorer";
-            else if (ua.indexOf("Edge") > -1) browser = "Edge";
-            else if (ua.indexOf("Chrome") > -1) browser = "Chrome";
-            else if (ua.indexOf("Safari") > -1) browser = "Safari";
-            
-            return browser;
+            if (ua.indexOf("Firefox") > -1) return "Firefox";
+            if (ua.indexOf("Edge") > -1) return "Edge";
+            if (ua.indexOf("Chrome") > -1) return "Chrome";
+            if (ua.indexOf("Safari") > -1) return "Safari";
+            if (ua.indexOf("Opera") > -1) return "Opera";
+            return "متصفح حديث";
         }
 
         function getOSInfo() {
             const ua = navigator.userAgent;
-            let os = "نظام تشغيل غير معروف";
-            
-            if (ua.indexOf("Windows NT 10.0") > -1) os = "Windows 10/11";
-            else if (ua.indexOf("Windows NT 6.3") > -1) os = "Windows 8.1";
-            else if (ua.indexOf("Windows NT 6.2") > -1) os = "Windows 8";
-            else if (ua.indexOf("Windows NT 6.1") > -1) os = "Windows 7";
-            else if (ua.indexOf("Mac OS X") > -1) os = "macOS";
-            else if (ua.indexOf("iPhone") > -1) os = "iOS";
-            else if (ua.indexOf("iPad") > -1) os = "iPadOS";
-            else if (ua.indexOf("Android") > -1) os = "Android";
-            else if (ua.indexOf("Linux") > -1) os = "Linux";
-            
-            return os;
+            if (ua.indexOf("Windows") > -1) return "Windows";
+            if (ua.indexOf("Mac") > -1) return "macOS";
+            if (ua.indexOf("Linux") > -1) return "Linux";
+            if (ua.indexOf("Android") > -1) return "Android";
+            if (ua.indexOf("iPhone") > -1) return "iOS";
+            return "نظام تشغيل حديث";
         }
 
         detectDevice();
@@ -1789,27 +2226,22 @@
         
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
+        themeIcon.className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
 
         themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            const current = document.documentElement.getAttribute('data-theme');
+            const newTheme = current === 'light' ? 'dark' : 'light';
             
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+            themeIcon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
             
-            showNotification(`تم التبديل إلى الوضع ${newTheme === 'light' ? 'النهاري' : 'الليلي'}`, 'success');
+            showNotification(`تم التبديل إلى الوضع ${newTheme === 'light' ? 'النهاري' : 'الليلي'}`);
         });
-
-        function updateThemeIcon(theme) {
-            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-        }
 
         // ========== AUTH FUNCTIONS ==========
         const modal = document.getElementById('authModal');
         const googleSignInBtn = document.getElementById('googleSignInBtn');
-        const googleLoginBtn = document.getElementById('googleLoginBtn');
         const closeModal = document.getElementById('closeModal');
         const userInfo = document.getElementById('userInfo');
         const userName = document.getElementById('userName');
@@ -1817,10 +2249,6 @@
 
         googleSignInBtn.addEventListener('click', () => {
             modal.classList.add('show');
-        });
-
-        googleLoginBtn.addEventListener('click', () => {
-            simulateGoogleLogin();
         });
 
         closeModal.addEventListener('click', () => {
@@ -1833,8 +2261,9 @@
             }
         });
 
-        function simulateGoogleLogin() {
-            const email = document.getElementById('emailInput').value || 'user@gmail.com';
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
             const name = email.split('@')[0];
             
             googleSignInBtn.style.display = 'none';
@@ -1844,73 +2273,54 @@
             modal.classList.remove('show');
             
             showNotification(`مرحباً ${name}! تم تسجيل الدخول بنجاح`, 'success');
-        }
-
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            simulateGoogleLogin();
         });
 
         logoutBtn.addEventListener('click', () => {
             googleSignInBtn.style.display = 'flex';
             userInfo.style.display = 'none';
-            showNotification('تم تسجيل الخروج بنجاح', 'info');
+            localStorage.removeItem('user');
+            showNotification('تم تسجيل الخروج بنجاح');
         });
 
         document.getElementById('showRegister').addEventListener('click', (e) => {
             e.preventDefault();
-            showNotification('نموذج التسجيل قريباً!', 'info');
+            showNotification('نموذج التسجيل قريباً!');
         });
 
         // ========== DATA ==========
         const featuresData = [
-            // الذكاء الاصطناعي (30)
-            { icon: 'fa-robot', title: 'معلم ذكاء اصطناعي متقدم', desc: 'نموذج GPT-4 مخصص للإجابة على أسئلتك', tag: 'AI' },
-            { icon: 'fa-brain', title: 'الشبكات العصبية العميقة', desc: 'بناء وتدريب شبكات عصبية معقدة', tag: 'متقدم' },
-            { icon: 'fa-eye', title: 'الرؤية الحاسوبية', desc: 'التعرف على الصور والفيديو بدقة 99%', tag: 'شائع' },
-            { icon: 'fa-language', title: 'معالجة اللغة الطبيعية', desc: 'تحليل النصوص العربية والفصحى', tag: 'NLP' },
-            { icon: 'fa-chart-line', title: 'تحليل البيانات الضخمة', desc: 'معالجة وتحليل البيانات بسرعة فائقة', tag: 'بيانات' },
-            { icon: 'fa-cogs', title: 'تعلم التعزيز', desc: 'تدريب الوكلاء الأذكياء في بيئات محاكاة', tag: 'متقدم' },
-            { icon: 'fa-microchip', title: 'TensorFlow المتقدم', desc: 'بناء نماذج التعلم العميق', tag: 'شائع' },
-            { icon: 'fa-chart-bar', title: 'تحليل البيانات الإحصائي', desc: 'إحصائيات متقدمة مع تصورات تفاعلية', tag: 'تحليل' },
-            { icon: 'fa-project-diagram', title: 'الشبكات التوليدية GANs', desc: 'توليد صور وفيديوهات واقعية', tag: 'مبتكر' },
-            { icon: 'fa-search', title: 'البحث الذكي', desc: 'خوارزميات بحث متطورة مع توصيات ذكية', tag: 'خوارزميات' },
-            
-            // التكنولوجيا الزراعية (30)
-            { icon: 'fa-leaf', title: 'الزراعة المائية المتقدمة', desc: 'تقنيات الزراعة بدون تربة', tag: 'مائي' },
+            { icon: 'fa-robot', title: 'معلم ذكاء اصطناعي', desc: 'نموذج GPT-4 مخصص للإجابة', tag: 'AI' },
+            { icon: 'fa-brain', title: 'الشبكات العصبية', desc: 'بناء وتدريب الشبكات', tag: 'متقدم' },
+            { icon: 'fa-eye', title: 'الرؤية الحاسوبية', desc: 'التعرف على الصور بدقة 99%', tag: 'شائع' },
+            { icon: 'fa-language', title: 'معالجة اللغة', desc: 'تحليل النصوص العربية', tag: 'NLP' },
+            { icon: 'fa-chart-line', title: 'تحليل البيانات', desc: 'معالجة البيانات الضخمة', tag: 'بيانات' },
+            { icon: 'fa-cogs', title: 'تعلم التعزيز', desc: 'تدريب الوكلاء الأذكياء', tag: 'متقدم' },
+            { icon: 'fa-leaf', title: 'الزراعة المائية', desc: 'تقنيات الزراعة بدون تربة', tag: 'مائي' },
             { icon: 'fa-drone', title: 'الطائرات الزراعية', desc: 'مراقبة المحاصيل بالدرون', tag: 'درون' },
             { icon: 'fa-water', title: 'الري الذكي', desc: 'تحسين استهلاك المياه', tag: 'ري' },
-            { icon: 'fa-seedling', title: 'كشف أمراض النباتات', desc: 'التعرف على الأمراض بالصورة', tag: 'تشخيص' },
+            { icon: 'fa-seedling', title: 'كشف الأمراض', desc: 'التعرف على أمراض النباتات', tag: 'تشخيص' },
             { icon: 'fa-cloud-sun', title: 'تحليل الطقس', desc: 'توقعات دقيقة للطقس', tag: 'مناخ' },
-            { icon: 'fa-dna', title: 'تحسين البذور', desc: 'تعديل وتحسين البذور', tag: 'وراثة' },
-            { icon: 'fa-tractor', title: 'الجرارات الذكية', desc: 'توجيه آلي للجرارات', tag: 'آلي' },
-            
-            // البرمجة (20)
-            { icon: 'fa-code', title: 'بيئة برمجة تفاعلية', desc: 'اكتب ونفذ الكود فورياً', tag: 'كود' },
-            { icon: 'fa-mobile-alt', title: 'تطوير تطبيقات الموبايل', desc: 'Flutter و React Native', tag: 'موبايل' },
-            { icon: 'fa-cloud', title: 'الحوسبة السحابية', desc: 'AWS و Azure و Google Cloud', tag: 'سحابة' },
-            { icon: 'fa-database', title: 'قواعد البيانات', desc: 'SQL و NoSQL المتقدمة', tag: 'بيانات' },
-            { icon: 'fa-lock', title: 'الأمن السيبراني', desc: 'حماية التطبيقات والبيانات', tag: 'أمن' }
+            { icon: 'fa-code', title: 'بيئة برمجة', desc: 'اكتب ونفذ الكود فورياً', tag: 'كود' }
         ];
 
         const agritechData = [
             { 
                 title: 'الزراعة الذكية بالذكاء الاصطناعي',
-                desc: 'استخدام الذكاء الاصطناعي لمراقبة المحاصيل وتحسين الإنتاجية',
+                desc: 'استخدام الذكاء الاصطناعي لمراقبة المحاصيل',
                 image: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600',
                 lessons: 12,
                 students: 3500
             },
             { 
                 title: 'الطائرات بدون طيار في الزراعة',
-                desc: 'استخدام الدرون في مراقبة المحاصيل وتوزيع المبيدات بدقة',
+                desc: 'استخدام الدرون في مراقبة المحاصيل',
                 image: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600',
                 lessons: 8,
                 students: 2100
             },
             { 
                 title: 'إنترنت الأشياء الزراعي',
-                desc: 'ربط المستشعرات الذكية لمراقبة التربة والمناخ',
+                desc: 'ربط المستشعرات الذكية لمراقبة التربة',
                 image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600',
                 lessons: 15,
                 students: 4200
@@ -1920,30 +2330,33 @@
         const coursesData = [
             {
                 title: 'مقدمة في الذكاء الاصطناعي للزراعة',
-                desc: 'تعلم أساسيات الذكاء الاصطناعي وتطبيقاته في المجال الزراعي',
+                desc: 'تعلم أساسيات الذكاء الاصطناعي في المجال الزراعي',
                 image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600',
                 rating: 4.9,
                 students: 15400,
                 hours: 20,
-                badge: 'الأكثر مبيعاً'
+                badge: 'الأكثر مبيعاً',
+                progress: 75
             },
             {
                 title: 'برمجة تطبيقات الذكاء الاصطناعي',
-                desc: 'تعلم برمجة وتطوير تطبيقات الذكاء الاصطناعي باستخدام Python',
+                desc: 'تعلم برمجة تطبيقات الذكاء الاصطناعي باستخدام Python',
                 image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600',
                 rating: 4.8,
                 students: 8200,
                 hours: 30,
-                badge: 'جديد'
+                badge: 'جديد',
+                progress: 45
             },
             {
                 title: 'أنظمة الري الذكية',
-                desc: 'تصميم وتنفيذ أنظمة ري ذكية تعمل بالذكاء الاصطناعي',
+                desc: 'تصميم وتنفيذ أنظمة ري ذكية',
                 image: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600',
                 rating: 4.7,
                 students: 3400,
                 hours: 15,
-                badge: 'مجاني'
+                badge: 'مجاني',
+                progress: 90
             },
             {
                 title: 'تحليل البيانات الزراعية',
@@ -1952,86 +2365,34 @@
                 rating: 4.8,
                 students: 2100,
                 hours: 18,
-                badge: 'متقدم'
-            },
-            {
-                title: 'الزراعة المائية المتقدمة',
-                desc: 'تقنيات الزراعة المائية في البيئات الصحراوية',
-                image: 'https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=600',
-                rating: 4.6,
-                students: 1900,
-                hours: 12,
-                badge: 'شائع'
-            },
-            {
-                title: 'تعلم الآلة للمبتدئين',
-                desc: 'مدخل سهل ومبسط لتعلم الآلة وتطبيقاته',
-                image: 'https://images.unsplash.com/photo-1526379095098-400a3a00185c?w=600',
-                rating: 4.9,
-                students: 12500,
-                hours: 25,
-                badge: 'للمبتدئين'
+                badge: 'متقدم',
+                progress: 60
             }
         ];
 
-        // ========== INITIALIZATION ==========
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                document.getElementById('preloader').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('preloader').style.display = 'none';
-                }, 500);
-            }, 1500);
-
-            loadFeatures(12);
-            loadAgritechCards();
-            loadCourses();
-            animateCounters();
-            setupEventListeners();
-        });
-
-        // ========== FEATURES FUNCTIONS ==========
-        let currentFeatures = 12;
-        
+        // ========== LOAD FUNCTIONS ==========
         function loadFeatures(count) {
             const grid = document.getElementById('featuresGrid');
             grid.innerHTML = '';
             
             for(let i = 0; i < Math.min(count, featuresData.length); i++) {
-                const feature = featuresData[i];
+                const f = featuresData[i];
                 grid.innerHTML += `
-                    <div class="feature-card" onclick="showFeatureDetails('${feature.title}')" data-aos="fade-up" data-aos-delay="${i * 50}">
-                        <span class="feature-tag">${feature.tag}</span>
-                        <div class="feature-icon">
-                            <i class="fas ${feature.icon}"></i>
-                        </div>
-                        <h3>${feature.title}</h3>
-                        <p>${feature.desc}</p>
+                    <div class="feature-card" onclick="showFeatureDetails('${f.title}')">
+                        <span class="feature-tag">${f.tag}</span>
+                        <div class="feature-icon"><i class="fas ${f.icon}"></i></div>
+                        <h3>${f.title}</h3>
+                        <p>${f.desc}</p>
                     </div>
                 `;
             }
         }
 
-        document.getElementById('loadMoreFeatures').addEventListener('click', function() {
-            currentFeatures += 8;
-            if(currentFeatures > featuresData.length) {
-                currentFeatures = featuresData.length;
-                this.style.display = 'none';
-            }
-            loadFeatures(currentFeatures);
-            showNotification(`تم تحميل ${currentFeatures} ميزة`, 'success');
-        });
-
-        function showFeatureDetails(title) {
-            showNotification(`تم اختيار: ${title}`, 'info');
-        }
-
-        // ========== AGRITECH FUNCTIONS ==========
         function loadAgritechCards() {
             const grid = document.getElementById('agritechGrid');
-            agritechData.forEach((item, index) => {
+            agritechData.forEach((item, i) => {
                 grid.innerHTML += `
-                    <div class="agritech-card" data-aos="fade-up" data-aos-delay="${index * 100}">
+                    <div class="agritech-card" onclick="enrollCourse('${item.title}')">
                         <div class="agritech-image" style="background-image: url('${item.image}')"></div>
                         <div class="agritech-content">
                             <h3>${item.title}</h3>
@@ -2040,9 +2401,8 @@
                                 <span><i class="fas fa-video"></i> ${item.lessons} درس</span>
                                 <span><i class="fas fa-users"></i> ${item.students.toLocaleString()} طالب</span>
                             </div>
-                            <button class="btn-secondary" onclick="enrollCourse('${item.title}')">
-                                <i class="fas fa-graduation-cap"></i>
-                                ابدأ التعلم
+                            <button class="btn-secondary" onclick="event.stopPropagation(); enrollCourse('${item.title}')">
+                                <i class="fas fa-graduation-cap"></i> ابدأ التعلم
                             </button>
                         </div>
                     </div>
@@ -2050,13 +2410,11 @@
             });
         }
 
-        // ========== COURSES FUNCTIONS ==========
         function loadCourses() {
             const grid = document.getElementById('coursesGrid');
-            coursesData.forEach((course, index) => {
-                const progress = Math.floor(Math.random() * 100);
+            coursesData.forEach((course, i) => {
                 grid.innerHTML += `
-                    <div class="course-card" data-aos="fade-up" data-aos-delay="${index * 100}">
+                    <div class="course-card" onclick="enrollCourse('${course.title}')">
                         <div class="course-image" style="background-image: url('${course.image}')">
                             <span class="course-badge">${course.badge}</span>
                         </div>
@@ -2069,11 +2427,10 @@
                                 <span><i class="fas fa-clock"></i> ${course.hours} ساعة</span>
                             </div>
                             <div class="course-progress">
-                                <div class="progress-bar-fill" style="width: ${progress}%"></div>
+                                <div class="progress-fill" style="width: ${course.progress}%"></div>
                             </div>
-                            <button class="btn-primary" style="width: 100%; margin-top: 1rem;" onclick="enrollCourse('${course.title}')">
-                                <i class="fas fa-graduation-cap"></i>
-                                سجل الآن
+                            <button class="btn-primary" style="width: 100%; margin-top: 1rem;" onclick="event.stopPropagation(); enrollCourse('${course.title}')">
+                                <i class="fas fa-graduation-cap"></i> سجل الآن
                             </button>
                         </div>
                     </div>
@@ -2081,22 +2438,16 @@
             });
         }
 
-        document.getElementById('loadMoreCourses').addEventListener('click', function() {
-            showNotification('جاري تحميل المزيد من الدورات...', 'info');
-        });
-
-        // ========== AI LAB FUNCTIONS ==========
+        // ========== AI LAB ==========
         const uploadArea = document.getElementById('uploadArea');
         const fileInput = document.getElementById('fileInput');
         const analyzeBtn = document.getElementById('analyzeBtn');
         const aiOutput = document.getElementById('aiOutput');
 
-        uploadArea.addEventListener('click', () => fileInput.click());
-        
         uploadArea.addEventListener('dragover', (e) => {
             e.preventDefault();
             uploadArea.style.borderColor = 'white';
-            uploadArea.style.background = 'rgba(255,255,255,0.2)';
+            uploadArea.style.background = 'rgba(255,255,255,0.15)';
         });
 
         uploadArea.addEventListener('dragleave', () => {
@@ -2116,9 +2467,7 @@
         });
 
         fileInput.addEventListener('change', (e) => {
-            if(e.target.files[0]) {
-                handleImageUpload(e.target.files[0]);
-            }
+            if(e.target.files[0]) handleImageUpload(e.target.files[0]);
         });
 
         function handleImageUpload(file) {
@@ -2127,132 +2476,238 @@
                 aiOutput.innerHTML = `
                     <div style="text-align: center;">
                         <img src="${e.target.result}" style="max-width: 100%; max-height: 200px; border-radius: 1rem; margin-bottom: 1rem;">
-                        <p style="color: var(--success);"><i class="fas fa-check-circle"></i> تم رفع الصورة بنجاح!</p>
+                        <p style="color: var(--success);"><i class="fas fa-check-circle"></i> تم رفع الصورة بنجاح</p>
                     </div>
                 `;
             };
             reader.readAsDataURL(file);
         }
 
-        analyzeBtn.addEventListener('click', function() {
+        function analyzeImage() {
             const model = document.getElementById('aiModel').value;
             const modelNames = {
                 disease: 'كشف أمراض النباتات',
                 crop: 'توقع إنتاجية المحاصيل',
-                soil: 'تحليل جودة التربة',
+                soil: 'تحليل التربة',
                 irrigation: 'تحسين الري',
                 weather: 'تحليل الطقس',
                 pest: 'كشف الآفات',
                 harvest: 'تحديد وقت الحصاد'
             };
             
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحليل باستخدام الذكاء الاصطناعي...';
-            this.disabled = true;
+            analyzeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحليل...';
+            analyzeBtn.disabled = true;
             
             setTimeout(() => {
                 const results = {
                     disease: {
                         'نوع النبات': 'طماطم',
-                        'الحالة الصحية': 'سليم',
-                        'نسبة الثقة': '99.5%',
-                        'التوصية': 'زيادة الري قليلاً',
-                        'المرحلة': 'إثمار',
-                        'المحتمل': 'إضافة سماد بوتاسيوم'
+                        'الحالة': 'سليم',
+                        'الثقة': '99.5%',
+                        'توصية': 'زيادة الري قليلاً'
                     },
                     crop: {
-                        'الإنتاج المتوقع': '2.5 طن/هكتار',
-                        'نسبة الثقة': '98%',
-                        'التوصية': 'إضافة سماد عضوي',
-                        'وقت الحصاد': '3 أسابيع',
-                        'جودة التربة': 'جيدة'
+                        'الإنتاج': '2.5 طن/هكتار',
+                        'الثقة': '98%',
+                        'توصية': 'إضافة سماد عضوي'
                     },
                     soil: {
-                        'نوع التربة': 'طميية',
-                        'درجة الحموضة': '6.8',
-                        'نسبة الثقة': '99%',
-                        'التوصية': 'مناسبة للزراعة',
-                        'العناصر': 'نيتروجين: مرتفع، فسفور: متوسط'
+                        'النوع': 'طميية',
+                        'الحموضة': '6.8',
+                        'الثقة': '99%',
+                        'توصية': 'مناسبة للزراعة'
                     },
                     irrigation: {
                         'جدول الري': '3 مرات أسبوعياً',
                         'توفير المياه': '35%',
-                        'نسبة الثقة': '95%',
-                        'ملاحظات': 'الري بالتنقيط أفضل',
-                        'الرطوبة المثلى': '65%'
+                        'الثقة': '95%',
+                        'ملاحظات': 'الري بالتنقيط أفضل'
                     },
                     weather: {
                         'درجة الحرارة': '25°C',
                         'الرطوبة': '60%',
                         'احتمال الأمطار': '20%',
-                        'نسبة الثقة': '92%',
-                        'سرعة الرياح': '12 كم/س'
+                        'الثقة': '92%'
                     },
                     pest: {
                         'نوع الآفة': 'المن الأخضر',
                         'شدة الإصابة': 'منخفضة',
-                        'نسبة الثقة': '97%',
-                        'التوصية': 'رش مبيد عضوي',
-                        'العلاج': 'زيادة التهوية'
+                        'الثقة': '97%',
+                        'توصية': 'رش مبيد عضوي'
                     },
                     harvest: {
                         'وقت الحصاد': '15 يوم',
                         'نسبة النضج': '75%',
-                        'نسبة الثقة': '96%',
-                        'التوصية': 'استمرار الرعاية',
-                        'الجودة المتوقعة': 'ممتازة'
+                        'الثقة': '96%',
+                        'توصية': 'استمرار الرعاية'
                     }
                 };
                 
                 const result = results[model] || results.disease;
                 
-                let resultHTML = `
-                    <div>
-                        <h3 style="color: var(--success); margin-bottom: 1.5rem;">
-                            <i class="fas fa-check-circle"></i> نتائج التحليل (${modelNames[model]})
-                        </h3>
-                `;
+                let html = `<h3 style="color: var(--success); margin-bottom: 1rem;">
+                    <i class="fas fa-check-circle"></i> نتائج التحليل (${modelNames[model]})
+                </h3>`;
                 
-                Object.entries(result).forEach(([key, value]) => {
-                    resultHTML += `
-                        <div style="background: var(--dark-50); padding: 0.75rem; border-radius: var(--radius-md); margin: 0.5rem 0;">
-                            <strong>${key}:</strong> ${value}
-                        </div>
-                    `;
+                Object.entries(result).forEach(([k, v]) => {
+                    html += `<p style="margin: 0.5rem 0;"><strong>${k}:</strong> ${v}</p>`;
                 });
                 
-                resultHTML += `</div>`;
+                aiOutput.innerHTML = html;
                 
-                aiOutput.innerHTML = resultHTML;
-                
-                this.innerHTML = '<i class="fas fa-microchip"></i> تحليل بالذكاء الاصطناعي المتقدم';
-                this.disabled = false;
+                analyzeBtn.innerHTML = '<i class="fas fa-microchip"></i> تحليل بالذكاء الاصطناعي';
+                analyzeBtn.disabled = false;
                 
                 showNotification('تم التحليل بنجاح!', 'success');
-            }, 3000);
-        });
+            }, 2000);
+        }
 
         // ========== COUNTERS ==========
         function animateCounters() {
             const counters = [
-                { element: document.getElementById('coursesCount'), target: 250, current: 0 },
-                { element: document.getElementById('studentsCount'), target: 50000, current: 0 },
-                { element: document.getElementById('featuresCount'), target: 150, current: 0 }
+                { el: document.getElementById('coursesCount'), target: 250 },
+                { el: document.getElementById('studentsCount'), target: 50000 },
+                { el: document.getElementById('featuresCount'), target: 150 }
             ];
             
             counters.forEach(counter => {
+                let current = 0;
                 const interval = setInterval(() => {
-                    counter.current += Math.ceil(counter.target / 100);
-                    if(counter.current > counter.target) {
-                        counter.current = counter.target;
+                    current += Math.ceil(counter.target / 100);
+                    if(current > counter.target) {
+                        current = counter.target;
                         clearInterval(interval);
                     }
-                    counter.element.textContent = counter.current.toLocaleString();
+                    counter.el.textContent = current.toLocaleString();
                 }, 20);
             });
         }
 
+        // ========== NOTIFICATION ==========
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-info-circle';
+            const color = type === 'success' ? 'var(--success)' : 'var(--info)';
+            
+            notification.innerHTML = `
+                <div class="notification" style="border-right-color: ${color}">
+                    <i class="fas ${icon}" style="color: ${color}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            setTimeout(() => notification.innerHTML = '', 3000);
+        }
+
+        // ========== SEARCH ==========
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+
+        searchResults.style.cssText = `
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-2xl);
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            z-index: 100;
+            margin-top: 0.5rem;
+        `;
+
+        function performSearch() {
+            const query = searchInput.value.toLowerCase();
+            if(query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            
+            const results = coursesData.filter(c => 
+                c.title.toLowerCase().includes(query) || 
+                c.desc.toLowerCase().includes(query)
+            );
+            
+            if(results.length > 0) {
+                searchResults.innerHTML = results.map(r => 
+                    `<div style="padding: 1rem; border-bottom: 1px solid var(--dark-200); cursor: pointer; transition: background var(--transition-fast);" 
+                          onmouseover="this.style.background='var(--primary-50)'" 
+                          onmouseout="this.style.background='white'"
+                          onclick="enrollCourse('${r.title}')">
+                        <strong>${r.title}</strong><br>
+                        <small style="color: var(--dark-500);">${r.desc.substring(0, 50)}...</small>
+                    </div>`
+                ).join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.innerHTML = '<div style="padding: 1rem; text-align: center;">لا توجد نتائج</div>';
+                searchResults.style.display = 'block';
+            }
+        }
+
+        searchInput.addEventListener('input', performSearch);
+        searchBtn.addEventListener('click', performSearch);
+        
+        document.addEventListener('click', (e) => {
+            if(!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // ========== NEWSLETTER ==========
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            if(email) {
+                showNotification(`شكراً لاشتراكك ${email}! تم إرسال تأكيد إلى بريدك`, 'success');
+                document.getElementById('newsletterForm').reset();
+            }
+        }
+
+        // ========== COMMUNITY ==========
+        function joinCommunity(type) {
+            const messages = {
+                forum: 'تم تحويلك إلى منتدى النقاشات',
+                projects: 'تم تحويلك إلى صفحة المشاريع',
+                hackathon: 'تم تحويلك إلى صفحة الفعاليات',
+                mentorship: 'تم تحويلك إلى صفحة الجلسات'
+            };
+            showNotification(messages[type] || 'جاري التحويل...');
+        }
+
+        function enrollCourse(course) {
+            showNotification(`تم تسجيلك في دورة: ${course}`, 'success');
+        }
+
+        function openLiveChat() {
+            showNotification('خدمة المحادثة المباشرة قريباً!');
+        }
+
+        function showFeature(feature) {
+            showNotification(`ميزة: ${feature}`, 'info');
+        }
+
+        function showFeatureDetails(title) {
+            showNotification(`تم اختيار: ${title}`, 'info');
+        }
+
+        // ========== SCROLL FUNCTIONS ==========
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if(section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         // ========== NAVIGATION ==========
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             const backToTop = document.getElementById('backToTop');
             
@@ -2264,126 +2719,35 @@
                 backToTop.style.display = 'none';
             }
             
+            // Active links
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
             
             let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if(window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
+            sections.forEach(s => {
+                const sectionTop = s.offsetTop - 100;
+                if(window.scrollY >= sectionTop) current = s.getAttribute('id');
             });
             
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
+            navLinks.forEach(l => {
+                l.classList.remove('active');
+                if(l.getAttribute('href') === `#${current}`) l.classList.add('active');
             });
         });
 
-        document.getElementById('backToTop').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ========== SEARCH ==========
-        document.getElementById('searchBtn').addEventListener('click', function() {
-            const query = document.getElementById('searchInput').value;
-            if(query) {
-                showNotification(`جاري البحث عن: ${query}`, 'info');
-            }
-        });
-
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if(e.key === 'Enter' && this.value) {
-                showNotification(`جاري البحث عن: ${this.value}`, 'info');
-            }
-        });
-
-        // ========== NEWSLETTER ==========
-        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('newsletterEmail').value;
-            if(email) {
-                showNotification(`شكراً لاشتراكك ${email}! تم إرسال تأكيد إلى بريدك`, 'success');
-                this.reset();
-            }
-        });
-
-        // ========== COMMUNITY ==========
-        window.joinCommunity = function(type) {
-            const messages = {
-                forum: 'تم تحويلك إلى منتدى النقاشات',
-                projects: 'تم تحويلك إلى صفحة المشاريع',
-                hackathon: 'تم تحويلك إلى صفحة الفعاليات',
-                mentorship: 'تم تحويلك إلى صفحة الجلسات الإرشادية'
-            };
-            showNotification(messages[type], 'success');
-        };
-
-        window.enrollCourse = function(courseName) {
-            showNotification(`تم تسجيلك في دورة: ${courseName}`, 'success');
-        };
-
-        window.openLiveChat = function() {
-            showNotification('قريباً: خدمة المحادثة المباشرة', 'info');
-        };
-
-        // ========== NOTIFICATION SYSTEM ==========
-        function showNotification(message, type = 'info') {
-            const notification = document.getElementById('notification');
-            const icon = type === 'success' ? 'fa-check-circle' : 
-                        type === 'warning' ? 'fa-exclamation-triangle' : 'fa-info-circle';
-            const color = type === 'success' ? 'var(--success)' : 
-                         type === 'warning' ? 'var(--warning)' : 'var(--info)';
-            
-            notification.innerHTML = `
-                <div class="notification">
-                    <i class="fas ${icon}" style="color: ${color}"></i>
-                    <span>${message}</span>
-                </div>
-            `;
-            
-            setTimeout(() => {
-                notification.innerHTML = '';
-            }, 3000);
-        }
-
-        // ========== EVENT LISTENERS ==========
-        function setupEventListeners() {
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const target = document.querySelector(targetId);
-                    if(target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
             });
-
-            document.querySelectorAll('.social-links a').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    showNotification('قريباً: صفحة التواصل الاجتماعي', 'info');
-                });
-            });
-
-            document.querySelectorAll('.footer-col ul a').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const text = e.target.textContent;
-                    showNotification(`جاري تحويلك إلى: ${text}`, 'info');
-                });
-            });
-        }
+        });
 
         // ========== PROGRESS UPDATE ==========
         function updateProgress(percent) {
-            const progressCircle = document.getElementById('progressCircle');
+            const circle = document.getElementById('progressCircle');
             const degrees = (percent / 100) * 360;
-            progressCircle.style.background = `conic-gradient(#10b981 ${degrees}deg, #e5e7eb ${degrees}deg 360deg)`;
+            circle.style.background = `conic-gradient(#10b981 ${degrees}deg, #e5e7eb ${degrees}deg 360deg)`;
             document.getElementById('progressValue').textContent = percent + '%';
         }
 
@@ -2392,18 +2756,67 @@
             updateProgress(random);
         }, 5000);
 
-        // Keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                document.getElementById('searchInput').focus();
+        // ========== LOAD MORE FUNCTIONS ==========
+        let currentFeatures = 8;
+        
+        function loadMoreFeatures() {
+            currentFeatures += 4;
+            if(currentFeatures > featuresData.length) {
+                currentFeatures = featuresData.length;
+                document.getElementById('loadMoreFeatures').style.display = 'none';
             }
-            if(e.key === 'Escape') {
-                document.getElementById('searchInput').blur();
+            loadFeatures(currentFeatures);
+            showNotification('تم تحميل المزيد من الميزات!');
+        }
+
+        function loadMoreCourses() {
+            showNotification('جاري تحميل المزيد من الدورات...');
+        }
+
+        // ========== SOCIAL MEDIA ==========
+        function socialClick(platform) {
+            showNotification(`قريباً: صفحتنا على ${platform}`);
+        }
+
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preloader
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 1500);
+
+            // Load data
+            loadFeatures(8);
+            loadAgritechCards();
+            loadCourses();
+            animateCounters();
+
+            // Check if user was previously logged in
+            const savedUser = localStorage.getItem('user');
+            if(savedUser) {
+                const user = JSON.parse(savedUser);
+                document.getElementById('googleSignInBtn').style.display = 'none';
+                document.getElementById('userInfo').style.display = 'flex';
+                document.getElementById('userName').textContent = user.name;
             }
         });
 
-        console.log('✨ AI AgriTech Pro جاهزة للعمل! جميع الميزات الـ 150+ مفعلة');
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                searchInput.focus();
+            }
+            if(e.key === 'Escape') {
+                searchInput.blur();
+                searchResults.style.display = 'none';
+            }
+        });
+
+        console.log('✨ AI AgriTech Pro جاهزة للعمل بكامل طاقتها!');
     </script>
 </body>
 </html>
