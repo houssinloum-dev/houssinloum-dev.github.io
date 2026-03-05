@@ -472,6 +472,68 @@
     </style>
 </head>
 <body>
+      <!-- خلفية متحركة -->
+    <div id="particles"></div>
+
+    <!-- شريط التعرف على الجهاز (يظهر ديناميكياً) -->
+    <div id="deviceBar" class="device-bar"></div>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">Lingua<span style="color:white;">Verse</span></div>
+        <div class="nav-links">
+            <a href="#">الرئيسية</a>
+            <a href="#languages">اللغات</a>
+            <a href="#videos">الفيديوهات</a>
+            <a href="#books">الكتب</a>
+            <a href="#certificate">الشهادات</a>
+        </div>
+        <div>
+            <a href="#" class="btn">ابدأ مجاناً</a>
+        </div>
+    </nav>
+
+    <!-- قسم البطل -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                <span class="highlight">تعلم</span> أي لغة<br>
+                باحترافية <span class="highlight">فائقة</span>
+            </h1>
+            <p>أكثر من 60 فيديو تعليمي، 12 كتاب تفاعلي، وتقنيات المستقبل في منصة واحدة.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">+60</div>
+                    <div>فيديو</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div>لغة</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div>كتاب</div>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="#languages" class="btn" style="margin-left: 1rem;">اختر لغتك</a>
+                <a href="#books" class="btn" style="background:transparent; border:2px solid var(--primary);">تصفح الكتب</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <svg width="400" height="400" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="80" fill="url(#grad)" />
+                <defs>
+                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ff6b6b" />
+                        <stop offset="100%" stop-color="#f0f" />
+                    </linearGradient>
+                </defs>
+                <text x="100" y="120" font-size="40" text-anchor="middle" fill="white" font-family="Cairo">لغات</text>
+            </svg>
+        </div>
+    </section>
+
 
 
 
