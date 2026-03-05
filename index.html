@@ -280,6 +280,127 @@
             margin-bottom: 0.3rem;
         }
         
+  /* ===== شبكة الفيديو (4 لكل لغة) ===== */
+        .video-section {
+            padding: 3rem 5%;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            background: rgba(20, 20, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.2rem;
+            transition: 0.4s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(255,105,180,0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 0.8rem;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        /* ===== قسم الكتب المحسّن ===== */
+        .books-section {
+            padding: 5rem 5%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            margin: 3rem 5%;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .book-card {
+            background: rgba(30, 30, 60, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            padding: 2rem;
+            transition: 0.4s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .book-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary);
+            box-shadow: 0 25px 45px rgba(255,105,180,0.4);
+        }
+
+        .book-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .book-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-author {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .book-meta {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            color: #ccc;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            width: 100%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
 
 
 
