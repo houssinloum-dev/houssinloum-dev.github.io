@@ -199,8 +199,88 @@
             from { transform: translateY(0); }
             to { transform: translateY(-20px); }
         }
+ /* ===== شريط التعرف على الجهاز ===== */
+        .device-bar {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 0.7rem 5%;
+            text-align: center;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: none; /* يظهر حسب الجهاز */
+        }
 
+        .device-bar i {
+            margin-left: 0.5rem;
+            color: var(--primary);
+        }
+         /* ===== قسم اللغات (شبكة) ===== */
+        .languages {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            bottom: -10px;
+            left: 15%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .lang-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .lang-card {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, var(--primary), var(--secondary));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .lang-card:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 0 50px var(--secondary);
+            border-color: white;
+        }
+
+        .lang-card.active {
+            border: 4px solid white;
+            box-shadow: 0 0 60px var(--primary);
+        }
+
+        .lang-card i {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+        }
         
+
 
 
 
