@@ -533,6 +533,247 @@
             </svg>
         </div>
     </section>
+<!-- قسم اللغات -->
+    <section id="languages" class="languages">
+        <h2 class="section-title">اختر لغتك</h2>
+        <div class="lang-grid" id="langGrid">
+            <!-- تضاف عبر JS -->
+        </div>
+    </section>
+
+    <!-- قسم الفيديوهات (4 لكل لغة) -->
+    <section id="videos" class="video-section">
+        <h2 class="section-title">فيديوهات تعليمية</h2>
+        <div id="videoGridContainer" class="video-grid">
+            <!-- تضاف عبر JS -->
+        </div>
+    </section>
+
+    <!-- قسم الكتب (12 كتاب) -->
+    <section id="books" class="books-section">
+        <h2 class="section-title">الكتب التفاعلية</h2>
+        <div class="books-grid" id="booksGrid">
+            <!-- تضاف عبر JS -->
+        </div>
+    </section>
+
+    <!-- قسم الشهادات -->
+    <section id="certificate" class="certificate">
+        <div class="certificate-content">
+            <h2 style="font-size:2.2rem;">شهاداتك على البلوكشين</h2>
+            <p>شهادات غير قابلة للتزوير وموثقة عالمياً.</p>
+            <div class="certificate-badge" style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
+                <div class="badge-item"><i class="fas fa-shield-alt fa-2x"></i><h4>غير قابلة للتزوير</h4></div>
+                <div class="badge-item"><i class="fas fa-link fa-2x"></i><h4>رابط دائم</h4></div>
+                <div class="badge-item"><i class="fas fa-globe fa-2x"></i><h4>معترف بها</h4></div>
+            </div>
+        </div>
+        <div style="flex:1; text-align:center;">
+            <i class="fas fa-certificate" style="font-size:8rem; color: var(--secondary);"></i>
+        </div>
+    </section>
+
+    <!-- دعوة للانضمام -->
+    <div style="text-align:center; padding: 3rem;">
+        <h2 style="font-size: 2.5rem;">ابدأ رحلة التعلم الآن</h2>
+        <p style="margin: 1.5rem 0;">انضم إلى آلاف المتعلمين حول العالم.</p>
+        <a href="#" class="btn" style="font-size:1.3rem; padding:0.8rem 2.5rem;">سجل مجاناً</a>
+    </div>
+
+    <!-- تذييل -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LinguaVerse</h4>
+                <p>منصة تعلم اللغات الأكثر تطوراً.</p>
+            </div>
+            <div class="footer-section">
+                <h4>روابط</h4>
+                <a href="#">عن المنصة</a>
+                <a href="#">الخصوصية</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 LinguaVerse - جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===============================================
+        // 1. التعرف على الجهاز (Device Detection)
+        // ===============================================
+        function detectDevice() {
+            const ua = navigator.userAgent;
+            const deviceBar = document.getElementById('deviceBar');
+            let deviceType = 'حاسوب';
+            let icon = 'fa-desktop';
+
+            if (/mobile|android|iphone|ipad|ipod/i.test(ua)) {
+                deviceType = 'هاتف ذكي';
+                icon = 'fa-mobile-alt';
+                // نصائح خاصة بالهاتف
+                deviceBar.innerHTML = `<i class="fas ${icon}"></i> أنت تستخدم هاتفاً - جرب الوضع الأفقي لمشاهدة أفضل للفيديوهات.`;
+                deviceBar.style.display = 'block';
+                deviceBar.style.background = 'rgba(255,105,180,0.2)';
+            } else if (/tablet|ipad/i.test(ua)) {
+                deviceType = 'جهاز لوحي';
+                icon = 'fa-tablet-alt';
+                deviceBar.innerHTML = `<i class="fas ${icon}"></i> أنت تستخدم جهازاً لوحياً - استمتع بالشاشة الكبيرة.`;
+                deviceBar.style.display = 'block';
+                deviceBar.style.background = 'rgba(106,90,205,0.2)';
+            } else {
+                deviceBar.style.display = 'none'; // لا نظهر الشريط للحاسوب
+            }
+        }
+        detectDevice();
+
+        // ===============================================
+        // 2. بيانات اللغات والفيديوهات (4 لكل لغة)
+        // ===============================================
+        const languages = [
+            { code: 'ar', name: 'العربية', icon: 'fa-heart' },
+            { code: 'en', name: 'English', icon: 'fa-language' },
+            { code: 'es', name: 'Español', icon: 'fa-flag' },
+            { code: 'fr', name: 'Français', icon: 'fa-flag' },
+            { code: 'de', name: 'Deutsch', icon: 'fa-flag' },
+            { code: 'it', name: 'Italiano', icon: 'fa-pizza' },
+            { code: 'pt', name: 'Português', icon: 'fa-flag' },
+            { code: 'ru', name: 'Русский', icon: 'fa-snowflake' },
+            { code: 'ja', name: '日本語', icon: 'fa-leaf' },
+            { code: 'ko', name: '한국어', icon: 'fa-smile' },
+            { code: 'zh', name: '中文', icon: 'fa-dragon' },
+            { code: 'hi', name: 'हिन्दी', icon: 'fa-om' },
+            { code: 'tr', name: 'Türkçe', icon: 'fa-star' },
+            { code: 'nl', name: 'Nederlands', icon: 'fa-wind' },
+            { code: 'sv', name: 'Svenska', icon: 'fa-tree' }
+        ];
+
+        // روابط فيديوهات لكل لغة (4 مقاطع - يمكن استبدالها بروابط حقيقية)
+        function generateVideoLinks(langCode) {
+            const baseVideos = [
+                { title: 'مقدمة في اللغة', id: 'dQw4w9WgXcQ' },
+                { title: 'المفردات الأساسية', id: 'dQw4w9WgXcQ' },
+                { title: 'قواعد اللغة', id: 'dQw4w9WgXcQ' },
+                { title: 'محادثة يومية', id: 'dQw4w9WgXcQ' }
+            ];
+            // نستخدم نفس الرابط التجريبي، ولكن يمكن تغييره حسب اللغة
+            return baseVideos.map((v, index) => ({
+                title: `${v.title} - ${languages.find(l => l.code === langCode)?.name || ''}`,
+                url: `https://www.youtube.com/embed/${v.id}?start=${index * 10}`,
+                lang: langCode
+            }));
+        }
+
+        // تخزين كل الفيديوهات
+        let allVideos = [];
+        languages.forEach(lang => {
+            allVideos = allVideos.concat(generateVideoLinks(lang.code));
+        });
+
+        // ===============================================
+        // 3. عرض اللغات في القائمة
+        // ===============================================
+        const langGrid = document.getElementById('langGrid');
+        languages.forEach(lang => {
+            const card = document.createElement('div');
+            card.className = 'lang-card';
+            card.dataset.lang = lang.code;
+            card.innerHTML = `<i class="fas ${lang.icon}"></i><span>${lang.name}</span>`;
+            card.addEventListener('click', () => filterVideosByLang(lang.code));
+            langGrid.appendChild(card);
+        });
+
+        // ===============================================
+        // 4. عرض جميع الفيديوهات (أو حسب اللغة)
+        // ===============================================
+        const videoContainer = document.getElementById('videoGridContainer');
+
+        function filterVideosByLang(langCode) {
+            // تحديث الحالة النشطة على بطاقات اللغات
+            document.querySelectorAll('.lang-card').forEach(c => c.classList.remove('active'));
+            document.querySelector(`.lang-card[data-lang="${langCode}"]`).classList.add('active');
+
+            const filtered = allVideos.filter(v => v.lang === langCode);
+            displayVideos(filtered);
+        }
+
+        function displayVideos(videosArray) {
+            let html = '';
+            videosArray.forEach(video => {
+                html += `
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="${video.url}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        <div class="video-title">${video.title}</div>
+                    </div>
+                `;
+            });
+            videoContainer.innerHTML = html;
+        }
+
+        // عرض فيديوهات اللغة العربية افتراضياً
+        filterVideosByLang('ar');
+
+        // ===============================================
+        // 5. عرض الكتب (12 كتاب)
+        // ===============================================
+        const booksData = [
+            { title: 'العربية للمبتدئين', author: 'د. أحمد علي', lang: 'العربية', icon: 'fa-book-open', file: 'arabic_beginner.pdf' },
+            { title: 'English Grammar', author: 'Oxford', lang: 'الإنجليزية', icon: 'fa-headphones', file: 'english_grammar.pdf' },
+            { title: 'Español en vivo', author: 'Cervantes', lang: 'الإسبانية', icon: 'fa-comment', file: 'espanol_vivo.pdf' },
+            { title: 'Français authentique', author: 'Pierre', lang: 'الفرنسية', icon: 'fa-flag', file: 'francais.pdf' },
+            { title: 'Deutsch perfekt', author: 'Goethe', lang: 'الألمانية', icon: 'fa-newspaper', file: 'deutsch.pdf' },
+            { title: 'Italiano facile', author: 'Rossi', lang: 'الإيطالية', icon: 'fa-pizza', file: 'italiano.pdf' },
+            { title: 'Português do Brasil', author: 'Silva', lang: 'البرتغالية', icon: 'fa-tree', file: 'portugues.pdf' },
+            { title: 'Русский язык', author: 'Ivanova', lang: 'الروسية', icon: 'fa-snowflake', file: 'russian.pdf' },
+            { title: '日本語の教科書', author: 'Tanaka', lang: 'اليابانية', icon: 'fa-leaf', file: 'japanese.pdf' },
+            { title: '한국어 배우기', author: 'Kim', lang: 'الكورية', icon: 'fa-smile', file: 'korean.pdf' },
+            { title: '汉语入门', author: 'Wang', lang: 'الصينية', icon: 'fa-dragon', file: 'chinese.pdf' },
+            { title: 'हिन्दी सीखें', author: 'Sharma', lang: 'الهندية', icon: 'fa-om', file: 'hindi.pdf' }
+        ];
+
+        const booksGrid = document.getElementById('booksGrid');
+        booksData.forEach(book => {
+            const card = document.createElement('div');
+            card.className = 'book-card';
+            card.innerHTML = `
+                <i class="fas ${book.icon} book-icon"></i>
+                <h3 class="book-title">${book.title}</h3>
+                <div class="book-author">${book.author}</div>
+                <div class="book-meta">
+                    <span><i class="fas fa-language"></i> ${book.lang}</span>
+                    <span><i class="fas fa-file-pdf"></i> PDF</span>
+                </div>
+                <a href="#" class="download-btn" onclick="downloadBook('${book.file}')"><i class="fas fa-download"></i> تحميل</a>
+            `;
+            booksGrid.appendChild(card);
+        });
+
+        window.downloadBook = function(filename) {
+            // محاكاة تحميل (يمكن استبدال برابط حقيقي)
+            alert(`سيتم تحميل الكتاب: ${filename}\n(في النسخة الحقيقية سيتم توجيهك إلى الملف).`);
+        };
+
+        // ===============================================
+        // 6. تحسين شريط التنقل عند التمرير
+        // ===============================================
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===============================================
+        // 7. إضافة خاصية Lazy Loading للصور (اختياري)
+        // ===============================================
+        // يمكن إضافة مراقب تقاطع للفيديوهات لتحسين الأداء
+    </script>
+</body>
+</html>
 
 
 
