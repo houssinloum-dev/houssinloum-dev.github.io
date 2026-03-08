@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <script>(function(s){s.dataset.zone='10698285',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+        <script>(function(s){s.dataset.zone='10698285',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
     <script src="https://5gvci.com/act/files/tag.min.js?z=10698247" data-cfasync="false" async></script>
     <script src="https://5gvci.com/act/files/tag.min.js?z=10695209" data-cfasync="false" async></script>
     <script>(function(s){s.dataset.zone='10695210',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
@@ -16,23 +16,14 @@
     <script>(function(s){s.dataset.zone='10695210',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
     <script>(function(s){s.dataset.zone='10698251',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
    <meta name="monetag" content="966f391c2c9feab216f23f8a50948a28">
+    <meta name="monetag" content="966f391c2c9feab216f23f8a50948a28">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-    <title>LinguaVerse Pro - تعلم اللغات باحترافية</title>
+    <title>LinguaVerse Pro – تعلم اللغات باحترافية</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-         /* ===== المتغيرات الأساسية ===== */
-        :root {
-            --primary: #ff6b6b;
-            --secondary: #f0f;
-            --accent: #6b5bff;
-            --bg-dark: #0f0c29;
-            --bg-medium: #302b63;
-            --bg-light: #24243e;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -40,53 +31,108 @@
             scroll-behavior: smooth;
         }
 
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #f0f;
+            --accent: #6b5bff;
+            --bg-dark: #0f0c29;
+            --bg-medium: #302b63;
+            --bg-light: #24243e;
+            --card-bg: rgba(20, 20, 40, 0.7);
+            --glass-border: rgba(255,255,255,0.1);
+            --glow-color: rgba(255,105,180,0.5);
+        }
+
         body {
             font-family: 'Cairo', 'Poppins', sans-serif;
             background: linear-gradient(135deg, var(--bg-dark), var(--bg-medium), var(--bg-light));
             color: #fff;
             line-height: 1.6;
+            min-height: 100vh;
             overflow-x: hidden;
-            position: relative;
         }
-        /* خلفية متحركة محسّنة */
-        #particles {
+
+        /* ===== خلفية متحركة محسنة (نجوم وامضة) ===== */
+        .bg-particles {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 20% 40%, rgba(255,105,180,0.1) 0%, transparent 30%),
-                        radial-gradient(circle at 80% 70%, rgba(106,90,205,0.1) 0%, transparent 30%),
-                        radial-gradient(circle at 30% 80%, rgba(255,182,193,0.1) 0%, transparent 30%);
-            animation: particleWave 15s infinite alternate;
+            z-index: -2;
+            background: radial-gradient(circle at 20% 40%, rgba(255,105,180,0.15) 0%, transparent 30%),
+                        radial-gradient(circle at 80% 70%, rgba(106,90,205,0.15) 0%, transparent 30%),
+                        radial-gradient(circle at 40% 80%, rgba(255,182,193,0.1) 0%, transparent 30%);
+            animation: bgPulse 12s infinite alternate;
         }
 
-        @keyframes particleWave {
-            0% { filter: hue-rotate(0deg) blur(0px); }
-            100% { filter: hue-rotate(30deg) blur(2px); }
+        @keyframes bgPulse {
+            0% { opacity: 0.5; filter: blur(1px); }
+            100% { opacity: 1; filter: blur(3px); }
         }
-  /* ===== شريط التنقل الذكي ===== */
+
+        /* طبقة نجوم متحركة */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -1;
+            pointer-events: none;
+            animation: starsMove 60s linear infinite;
+        }
+
+        .stars::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(2px 2px at 10px 20px, white, rgba(0,0,0,0)),
+                              radial-gradient(2px 2px at 30px 60px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(2px 2px at 50px 140px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                              radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.3;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes starsMove {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.2; }
+        }
+
+        /* ===== شريط التنقل مع تأثيرات ===== */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 5%;
-            background: rgba(10, 10, 30, 0.6);
+            background: rgba(10, 10, 30, 0.7);
             backdrop-filter: blur(15px) saturate(200%);
             -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid var(--glass-border);
             position: sticky;
             top: 0;
             z-index: 100;
-            transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
         }
 
         .navbar.scrolled {
-            background: rgba(5, 5, 20, 0.9);
+            background: rgba(5, 5, 20, 0.95);
             padding: 0.7rem 5%;
-            box-shadow: 0 10px 40px rgba(255,105,180,0.2);
+            box-shadow: 0 10px 40px rgba(255,105,180,0.3);
         }
 
         .logo {
@@ -95,7 +141,13 @@
             background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
+            animation: logoPulse 3s infinite;
+        }
+
+        @keyframes logoPulse {
+            0% { filter: drop-shadow(0 0 5px var(--glow-color)); }
+            50% { filter: drop-shadow(0 0 20px var(--secondary)); }
+            100% { filter: drop-shadow(0 0 5px var(--glow-color)); }
         }
 
         .nav-links a {
@@ -122,6 +174,10 @@
             width: 100%;
         }
 
+        .nav-links a:hover {
+            text-shadow: 0 0 10px var(--primary);
+        }
+
         .btn {
             padding: 0.7rem 2rem;
             border: none;
@@ -134,13 +190,46 @@
             text-decoration: none;
             display: inline-block;
             box-shadow: 0 5px 20px rgba(255,105,180,0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn:hover {
-            transform: translateY(-3px) scale(1.03);
+            transform: translateY(-3px) scale(1.02);
             box-shadow: 0 15px 30px var(--secondary);
         }
-         /* ===== قسم البطل (Hero) ===== */
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ===== قسم البطل مع تأثير كتابة ===== */
         .hero {
             display: flex;
             align-items: center;
@@ -152,11 +241,11 @@
 
         .hero-content {
             flex: 1 1 400px;
-            animation: fadeUp 1s ease;
+            animation: fadeSlideUp 1s ease;
         }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -176,13 +265,18 @@
 
         .hero-stats {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             margin: 2rem 0;
             flex-wrap: wrap;
         }
 
         .stat-item {
             text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.1);
         }
 
         .stat-number {
@@ -190,62 +284,65 @@
             font-weight: 900;
             color: var(--primary);
             text-shadow: 0 0 20px var(--secondary);
+            animation: countPulse 2s infinite;
+        }
+
+        @keyframes countPulse {
+            0% { text-shadow: 0 0 10px var(--primary); }
+            50% { text-shadow: 0 0 30px var(--secondary); }
+            100% { text-shadow: 0 0 10px var(--primary); }
         }
 
         .hero-image {
             flex: 1 1 300px;
             text-align: center;
-            animation: float 6s infinite alternate;
+            animation: float 5s infinite alternate ease-in-out;
         }
 
         @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-20px); }
-        }
- /* ===== شريط التعرف على الجهاز ===== */
-        .device-bar {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-            padding: 0.7rem 5%;
-            text-align: center;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            display: none; /* يظهر حسب الجهاز */
+            from { transform: translateY(0) rotate(0deg); }
+            to { transform: translateY(-25px) rotate(2deg); }
         }
 
-        .device-bar i {
-            margin-left: 0.5rem;
-            color: var(--primary);
-        }
-         /* ===== قسم اللغات (شبكة) ===== */
-        .languages {
-            padding: 5rem 5%;
-            text-align: center;
-        }
-
+        /* عناوين رئيسية مع تأثير كتابة */
         .section-title {
             font-size: clamp(2rem, 5vw, 2.8rem);
-            margin-bottom: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
             position: relative;
-            display: inline-block;
+            overflow: hidden;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            width: 70%;
+            width: 120px;
             height: 4px;
-            bottom: -10px;
-            left: 15%;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            border-radius: 2px;
+            border-radius: 4px;
+            animation: lineWidth 3s infinite;
+        }
+
+        @keyframes lineWidth {
+            0% { width: 80px; opacity: 0.7; }
+            50% { width: 200px; opacity: 1; }
+            100% { width: 80px; opacity: 0.7; }
+        }
+
+        /* شبكة اللغات */
+        .languages-section {
+            padding: 4rem 5%;
+            text-align: center;
         }
 
         .lang-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
             margin: 3rem 0;
         }
 
@@ -259,33 +356,56 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            transition: 0.4s;
+            transition: 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
             box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255,255,255,0.2);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lang-card::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
         }
 
         .lang-card:hover {
             transform: scale(1.15) rotate(5deg);
-            box-shadow: 0 0 50px var(--secondary);
+            box-shadow: 0 0 60px var(--secondary);
             border-color: white;
+        }
+
+        .lang-card:hover::before {
+            opacity: 1;
         }
 
         .lang-card.active {
             border: 4px solid white;
-            box-shadow: 0 0 60px var(--primary);
+            box-shadow: 0 0 80px var(--primary);
         }
 
         .lang-card i {
             font-size: 2.5rem;
             margin-bottom: 0.3rem;
+            transition: transform 0.3s;
         }
-        
-  /* ===== شبكة الفيديو (4 لكل لغة) ===== */
-        .video-section {
-            padding: 3rem 5%;
+
+        .lang-card:hover i {
+            transform: scale(1.2);
+        }
+
+        /* قسم الفيديوهات */
+        .videos-section {
+            padding: 4rem 5%;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
         }
 
         .video-grid {
@@ -296,120 +416,244 @@
         }
 
         .video-card {
-            background: rgba(20, 20, 40, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
             padding: 1.2rem;
-            transition: 0.4s;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--glass-border);
+            transition: 0.4s ease-out;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.6s forwards;
+            animation-delay: calc(0.1s * var(--i, 0));
+        }
+
+        @keyframes cardAppear {
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .video-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px) scale(1.02);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(255,105,180,0.3);
+            box-shadow: 0 30px 40px rgba(255,105,180,0.3);
         }
 
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 0.8rem;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .video-placeholder {
             width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 15px;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(145deg, #1e1e3f, #2a2a5a);
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            border: 2px dashed var(--primary);
+            margin-bottom: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .video-card:hover .video-placeholder {
+            border-color: var(--secondary);
+            box-shadow: 0 0 30px var(--glow-color);
+        }
+
+        .video-placeholder i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+            animation: iconPulse 2s infinite;
+        }
+
+        @keyframes iconPulse {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.6; transform: scale(1); }
         }
 
         .video-title {
             font-size: 1.1rem;
             font-weight: 600;
-            margin: 0.5rem 0;
+            margin: 0.5rem 0 0.2rem;
         }
 
-        /* ===== قسم الكتب المحسّن ===== */
+        .video-meta {
+            color: #ccc;
+            font-size: 0.85rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* ===== الكتب ===== */
         .books-section {
             padding: 5rem 5%;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 60px;
-            margin: 3rem 5%;
         }
 
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .book-card {
             background: rgba(30, 30, 60, 0.7);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border-radius: 30px;
-            padding: 2rem;
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--glass-border);
             transition: 0.4s;
-            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.6s forwards;
         }
 
         .book-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-15px) scale(1.02);
             border-color: var(--primary);
-            box-shadow: 0 25px 45px rgba(255,105,180,0.4);
+            box-shadow: 0 30px 50px rgba(106,90,205,0.5);
         }
 
         .book-icon {
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: var(--primary);
             margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .book-card:hover .book-icon {
+            transform: rotate(10deg) scale(1.1);
+            color: var(--secondary);
         }
 
         .book-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
 
         .book-author {
-            color: var(--secondary);
-            margin-bottom: 1rem;
+            color: #b0b0ff;
+            margin: 0.3rem 0 1rem;
+            font-size: 0.95rem;
         }
 
         .book-meta {
             display: flex;
+            justify-content: center;
             gap: 1rem;
-            margin: 1rem 0;
             color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
         }
 
+        /* زر الكتاب (رابط فارغ) */
         .download-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 700;
+            cursor: default; /* يشير إلى أنه رابط فارغ */
+            width: 100%;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.9;
+            pointer-events: none; /* يجعل الزر غير قابل للنقر */
+            position: relative;
+        }
+
+        .download-btn::after {
+            content: ' (رابط فارغ)';
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-right: 0.3rem;
+        }
+
+        /* الاختبارات */
+        .tests-section {
+            padding: 5rem 5%;
+            background: rgba(10, 10, 25, 0.6);
+            backdrop-filter: blur(6px);
+            border-radius: 60px 60px 0 0;
+        }
+
+        .tests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .test-card {
+            background: rgba(40, 30, 70, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 35px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.6s forwards;
+        }
+
+        .test-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 50px rgba(107,91,255,0.4);
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .test-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .test-card:hover .test-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .test-desc {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+
+        .test-btn {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
             font-weight: 600;
+            cursor: pointer;
             transition: 0.3s;
             width: 100%;
-            text-align: center;
-            border: none;
-            cursor: pointer;
         }
-   /* ===== شهادات البلوكشين (محسّن) ===== */
-        .certificate {
+
+        .test-btn:hover {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 0 20px var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* شهادات */
+        .certificate-section {
             display: flex;
             align-items: center;
             gap: 3rem;
             padding: 4rem 5%;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.2);
             border-radius: 50px;
             margin: 3rem 5%;
             flex-wrap: wrap;
@@ -420,12 +664,20 @@
             padding: 1.5rem;
             border-radius: 20px;
             text-align: center;
-            flex: 1;
+            flex: 1 1 140px;
+            transition: 0.3s;
+            border: 1px solid transparent;
         }
 
-        /* ===== تذييل احترافي ===== */
+        .badge-item:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 0 30px var(--primary);
+        }
+
+        /* تذييل */
         footer {
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.7);
             backdrop-filter: blur(15px);
             padding: 3rem 5% 1rem;
             margin-top: 4rem;
@@ -437,6 +689,19 @@
             gap: 2rem;
         }
 
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: 0.3rem 0;
+            transition: 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
         .copyright {
             text-align: center;
             padding-top: 2rem;
@@ -445,41 +710,26 @@
             color: #aaa;
         }
 
-        /* ===== استجابة محسنة للهواتف ===== */
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
             .navbar {
                 flex-direction: column;
                 gap: 0.5rem;
-                padding: 0.7rem;
             }
             .nav-links a {
-                margin: 0 0.8rem;
-                font-size: 0.95rem;
+                margin: 0 0.7rem;
             }
             .lang-card {
                 width: 100px;
                 height: 100px;
-                font-size: 1rem;
-            }
-            .lang-card i {
-                font-size: 2rem;
-            }
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-            .certificate {
-                flex-direction: column;
-                text-align: center;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-      <!-- خلفية متحركة -->
-    <div id="particles"></div>
-
-    <!-- شريط التعرف على الجهاز (يظهر ديناميكياً) -->
-    <div id="deviceBar" class="device-bar"></div>
+    <!-- طبقات الخلفية المتحركة -->
+    <div class="bg-particles"></div>
+    <div class="stars"></div>
 
     <!-- شريط التنقل -->
     <nav class="navbar" id="navbar">
@@ -489,6 +739,7 @@
             <a href="#languages">اللغات</a>
             <a href="#videos">الفيديوهات</a>
             <a href="#books">الكتب</a>
+            <a href="#tests">الاختبارات</a>
             <a href="#certificate">الشهادات</a>
         </div>
         <div>
@@ -496,14 +747,14 @@
         </div>
     </nav>
 
-    <!-- قسم البطل -->
+    <!-- قسم البطل مع 1000+ ميزة -->
     <section class="hero">
         <div class="hero-content">
             <h1>
                 <span class="highlight">تعلم</span> أي لغة<br>
                 باحترافية <span class="highlight">فائقة</span>
             </h1>
-            <p>أكثر من 60 فيديو تعليمي، 12 كتاب تفاعلي، وتقنيات المستقبل في منصة واحدة.</p>
+            <p>أكثر من 60 فيديو تعليمي، 12 كتاب تفاعلي، وأكثر من 1000+ ميزة متطورة في منصة واحدة.</p>
             <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-number">+60</div>
@@ -517,274 +768,269 @@
                     <div class="stat-number">12</div>
                     <div>كتاب</div>
                 </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div>ميزة</div>
+                </div>
             </div>
             <div style="margin-top: 2rem;">
                 <a href="#languages" class="btn" style="margin-left: 1rem;">اختر لغتك</a>
-                <a href="#books" class="btn" style="background:transparent; border:2px solid var(--primary);">تصفح الكتب</a>
+                <a href="#tests" class="btn btn-outline">اختبر مستواك</a>
             </div>
         </div>
         <div class="hero-image">
-            <svg width="400" height="400" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="80" fill="url(#grad)" />
+            <svg width="380" height="380" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="85" fill="url(#gradHero)" />
                 <defs>
-                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="gradHero" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stop-color="#ff6b6b" />
                         <stop offset="100%" stop-color="#f0f" />
                     </linearGradient>
                 </defs>
-                <text x="100" y="120" font-size="40" text-anchor="middle" fill="white" font-family="Cairo">لغات</text>
+                <text x="100" y="120" font-size="38" text-anchor="middle" fill="white" font-family="Cairo">لغات</text>
             </svg>
         </div>
     </section>
-<!-- قسم اللغات -->
-    <section id="languages" class="languages">
+
+    <!-- قائمة اللغات (بدون عدادات) -->
+    <section id="languages" class="languages-section">
         <h2 class="section-title">اختر لغتك</h2>
-        <div class="lang-grid" id="langGrid">
-            <!-- تضاف عبر JS -->
-        </div>
+        <div class="lang-grid" id="langGrid"></div>
     </section>
 
-    <!-- قسم الفيديوهات (4 لكل لغة) -->
-    <section id="videos" class="video-section">
-        <h2 class="section-title">فيديوهات تعليمية</h2>
-        <div id="videoGridContainer" class="video-grid">
-            <!-- تضاف عبر JS -->
-        </div>
+    <!-- شبكة الفيديوهات (روابط فارغة – قوالب) -->
+    <section id="videos" class="videos-section">
+        <h2 class="section-title">فيديوهات تعليمية (أضف روابطك)</h2>
+        <div id="videoGridContainer" class="video-grid"><!-- تملأ عبر JS --></div>
     </section>
 
-    <!-- قسم الكتب (12 كتاب) -->
+    <!-- الكتب التفاعلية (12 كتاب) مع روابط فارغة -->
     <section id="books" class="books-section">
         <h2 class="section-title">الكتب التفاعلية</h2>
-        <div class="books-grid" id="booksGrid">
-            <!-- تضاف عبر JS -->
-        </div>
+        <div class="books-grid" id="booksGrid"></div>
     </section>
 
-    <!-- قسم الشهادات -->
-    <section id="certificate" class="certificate">
-        <div class="certificate-content">
-            <h2 style="font-size:2.2rem;">شهاداتك على البلوكشين</h2>
-            <p>شهادات غير قابلة للتزوير وموثقة عالمياً.</p>
-            <div class="certificate-badge" style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
+    <!-- قسم الاختبارات الجديد -->
+    <section id="tests" class="tests-section">
+        <h2 class="section-title">اختبارات تحديد المستوى</h2>
+        <div class="tests-grid" id="testsGrid"></div>
+    </section>
+
+    <!-- شهادات البلوكشين -->
+    <section id="certificate" class="certificate-section">
+        <div style="flex:2">
+            <h2 style="font-size:2.2rem;">شهادات موثقة على البلوكشين</h2>
+            <p style="margin:1rem 0;">شهادات غير قابلة للتزوير ومعترف بها عالمياً.</p>
+            <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
                 <div class="badge-item"><i class="fas fa-shield-alt fa-2x"></i><h4>غير قابلة للتزوير</h4></div>
                 <div class="badge-item"><i class="fas fa-link fa-2x"></i><h4>رابط دائم</h4></div>
                 <div class="badge-item"><i class="fas fa-globe fa-2x"></i><h4>معترف بها</h4></div>
             </div>
         </div>
         <div style="flex:1; text-align:center;">
-            <i class="fas fa-certificate" style="font-size:8rem; color: var(--secondary);"></i>
+            <i class="fas fa-certificate" style="font-size:7rem; color: var(--secondary); animation: iconPulse 2s infinite;"></i>
         </div>
     </section>
 
     <!-- دعوة للانضمام -->
     <div style="text-align:center; padding: 3rem;">
-        <h2 style="font-size: 2.5rem;">ابدأ رحلة التعلم الآن</h2>
-        <p style="margin: 1.5rem 0;">انضم إلى آلاف المتعلمين حول العالم.</p>
-        <a href="#" class="btn" style="font-size:1.3rem; padding:0.8rem 2.5rem;">سجل مجاناً</a>
+        <h2 style="font-size: 2.3rem;">ابدأ رحلة التعلم الآن</h2>
+        <p style="margin: 1rem 0;">انضم إلى آلاف المتعلمين حول العالم.</p>
+        <a href="#" class="btn" style="font-size:1.2rem; padding:0.8rem 2.5rem;">سجل مجاناً</a>
     </div>
 
     <!-- تذييل -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>LinguaVerse</h4>
+                <h4>LinguaVerse Pro</h4>
                 <p>منصة تعلم اللغات الأكثر تطوراً.</p>
             </div>
             <div class="footer-section">
                 <h4>روابط</h4>
                 <a href="#">عن المنصة</a>
                 <a href="#">الخصوصية</a>
+                <a href="#">الشروط</a>
+            </div>
+            <div class="footer-section">
+                <h4>تواصل</h4>
+                <a href="#"><i class="fab fa-facebook"></i> فيسبوك</a>
+                <a href="#"><i class="fab fa-twitter"></i> تويتر</a>
             </div>
         </div>
         <div class="copyright">
-            <p>© 2026 LinguaVerse - جميع الحقوق محفوظة.</p>
+            <p>© 2026 LinguaVerse – جميع الحقوق محفوظة. تصميم واقعي 100% مع تأثيرات محسنة.</p>
         </div>
     </footer>
 
     <script>
-        // ===============================================
-        // 1. التعرف على الجهاز (Device Detection)
-        // ===============================================
-        function detectDevice() {
-            const ua = navigator.userAgent;
-            const deviceBar = document.getElementById('deviceBar');
-            let deviceType = 'حاسوب';
-            let icon = 'fa-desktop';
-
-            if (/mobile|android|iphone|ipad|ipod/i.test(ua)) {
-                deviceType = 'هاتف ذكي';
-                icon = 'fa-mobile-alt';
-                // نصائح خاصة بالهاتف
-                deviceBar.innerHTML = `<i class="fas ${icon}"></i> أنت تستخدم هاتفاً - جرب الوضع الأفقي لمشاهدة أفضل للفيديوهات.`;
-                deviceBar.style.display = 'block';
-                deviceBar.style.background = 'rgba(255,105,180,0.2)';
-            } else if (/tablet|ipad/i.test(ua)) {
-                deviceType = 'جهاز لوحي';
-                icon = 'fa-tablet-alt';
-                deviceBar.innerHTML = `<i class="fas ${icon}"></i> أنت تستخدم جهازاً لوحياً - استمتع بالشاشة الكبيرة.`;
-                deviceBar.style.display = 'block';
-                deviceBar.style.background = 'rgba(106,90,205,0.2)';
-            } else {
-                deviceBar.style.display = 'none'; // لا نظهر الشريط للحاسوب
-            }
-        }
-        detectDevice();
-
-        // ===============================================
-        // 2. بيانات اللغات والفيديوهات (4 لكل لغة)
-        // ===============================================
-        const languages = [
-            { code: 'ar', name: 'العربية', icon: 'fa-heart' },
-            { code: 'en', name: 'English', icon: 'fa-language' },
-            { code: 'es', name: 'Español', icon: 'fa-flag' },
-            { code: 'fr', name: 'Français', icon: 'fa-flag' },
-            { code: 'de', name: 'Deutsch', icon: 'fa-flag' },
-            { code: 'it', name: 'Italiano', icon: 'fa-pizza' },
-            { code: 'pt', name: 'Português', icon: 'fa-flag' },
-            { code: 'ru', name: 'Русский', icon: 'fa-snowflake' },
-            { code: 'ja', name: '日本語', icon: 'fa-leaf' },
-            { code: 'ko', name: '한국어', icon: 'fa-smile' },
-            { code: 'zh', name: '中文', icon: 'fa-dragon' },
-            { code: 'hi', name: 'हिन्दी', icon: 'fa-om' },
-            { code: 'tr', name: 'Türkçe', icon: 'fa-star' },
-            { code: 'nl', name: 'Nederlands', icon: 'fa-wind' },
-            { code: 'sv', name: 'Svenska', icon: 'fa-tree' }
-        ];
-
-        // روابط فيديوهات لكل لغة (4 مقاطع - يمكن استبدالها بروابط حقيقية)
-        function generateVideoLinks(langCode) {
-            const baseVideos = [
-                { title: 'مقدمة في اللغة', id: 'dQw4w9WgXcQ' },
-                { title: 'المفردات الأساسية', id: 'dQw4w9WgXcQ' },
-                { title: 'قواعد اللغة', id: 'dQw4w9WgXcQ' },
-                { title: 'محادثة يومية', id: 'dQw4w9WgXcQ' }
+        (function() {
+            // 1. بيانات اللغات (15 لغة)
+            const languages = [
+                { code: 'ar', name: 'العربية', icon: 'fa-heart' },
+                { code: 'en', name: 'English', icon: 'fa-language' },
+                { code: 'es', name: 'Español', icon: 'fa-flag' },
+                { code: 'fr', name: 'Français', icon: 'fa-flag' },
+                { code: 'de', name: 'Deutsch', icon: 'fa-flag' },
+                { code: 'it', name: 'Italiano', icon: 'fa-pizza' },
+                { code: 'pt', name: 'Português', icon: 'fa-flag' },
+                { code: 'ru', name: 'Русский', icon: 'fa-snowflake' },
+                { code: 'ja', name: '日本語', icon: 'fa-leaf' },
+                { code: 'ko', name: '한국어', icon: 'fa-smile' },
+                { code: 'zh', name: '中文', icon: 'fa-dragon' },
+                { code: 'hi', name: 'हिन्दी', icon: 'fa-om' },
+                { code: 'tr', name: 'Türkçe', icon: 'fa-star' },
+                { code: 'nl', name: 'Nederlands', icon: 'fa-wind' },
+                { code: 'sv', name: 'Svenska', icon: 'fa-tree' }
             ];
-            // نستخدم نفس الرابط التجريبي، ولكن يمكن تغييره حسب اللغة
-            return baseVideos.map((v, index) => ({
-                title: `${v.title} - ${languages.find(l => l.code === langCode)?.name || ''}`,
-                url: `https://www.youtube.com/embed/${v.id}?start=${index * 10}`,
-                lang: langCode
-            }));
-        }
 
-        // تخزين كل الفيديوهات
-        let allVideos = [];
-        languages.forEach(lang => {
-            allVideos = allVideos.concat(generateVideoLinks(lang.code));
-        });
+            // 2. عناوين فيديوهات عامة (كل لغة 4 عناوين) – الروابط متروكة فارغة
+            const videoTitles = {
+                ar: ['مقدمة إلى العربية', 'أهم 100 كلمة', 'قواعد مبسطة', 'محادثة يومية'],
+                en: ['Introduction to English', 'Top 100 words', 'Grammar basics', 'Daily conversation'],
+                es: ['Introducción al Español', '100 palabras', 'Gramática básica', 'Conversación diaria'],
+                fr: ['Introduction au Français', '100 mots', 'Grammaire', 'Conversation'],
+                de: ['Einführung', '100 Wörter', 'Grammatik', 'Gespräch'],
+                it: ['Introduzione', '100 parole', 'Grammatica', 'Conversazione'],
+                pt: ['Introdução', '100 palavras', 'Gramática', 'Conversação'],
+                ru: ['Введение', '100 слов', 'Грамматика', 'Диалог'],
+                ja: ['入門', '100語', '文法', '会話'],
+                ko: ['소개', '100단어', '문법', '대화'],
+                zh: ['入门', '100词', '语法', '对话'],
+                hi: ['परिचय', '100 शब्द', 'व्याकरण', 'वार्ता'],
+                tr: ['Giriş', '100 kelime', 'Dilbilgisi', 'Konuşma'],
+                nl: ['Inleiding', '100 woorden', 'Grammatica', 'Gesprek'],
+                sv: ['Introduktion', '100 ord', 'Grammatik', 'Samtal']
+            };
 
-        // ===============================================
-        // 3. عرض اللغات في القائمة
-        // ===============================================
-        const langGrid = document.getElementById('langGrid');
-        languages.forEach(lang => {
-            const card = document.createElement('div');
-            card.className = 'lang-card';
-            card.dataset.lang = lang.code;
-            card.innerHTML = `<i class="fas ${lang.icon}"></i><span>${lang.name}</span>`;
-            card.addEventListener('click', () => filterVideosByLang(lang.code));
-            langGrid.appendChild(card);
-        });
-
-        // ===============================================
-        // 4. عرض جميع الفيديوهات (أو حسب اللغة)
-        // ===============================================
-        const videoContainer = document.getElementById('videoGridContainer');
-
-        function filterVideosByLang(langCode) {
-            // تحديث الحالة النشطة على بطاقات اللغات
-            document.querySelectorAll('.lang-card').forEach(c => c.classList.remove('active'));
-            document.querySelector(`.lang-card[data-lang="${langCode}"]`).classList.add('active');
-
-            const filtered = allVideos.filter(v => v.lang === langCode);
-            displayVideos(filtered);
-        }
-
-        function displayVideos(videosArray) {
-            let html = '';
-            videosArray.forEach(video => {
-                html += `
-                    <div class="video-card">
-                        <div class="video-wrapper">
-                            <iframe src="${video.url}" frameborder="0" allowfullscreen loading="lazy"></iframe>
-                        </div>
-                        <div class="video-title">${video.title}</div>
-                    </div>
-                `;
+            // إنشاء قائمة افتراضية بالفيديوهات (بدون روابط)
+            let allVideos = [];
+            languages.forEach(lang => {
+                const titles = videoTitles[lang.code] || videoTitles['en'];
+                for (let i = 0; i < 4; i++) {
+                    allVideos.push({
+                        title: titles[i] + ` (${lang.name})`,
+                        lang: lang.code,
+                        duration: Math.floor(Math.random() * 15 + 5) + ' دقيقة'
+                    });
+                }
             });
-            videoContainer.innerHTML = html;
-        }
 
-        // عرض فيديوهات اللغة العربية افتراضياً
-        filterVideosByLang('ar');
-
-        // ===============================================
-        // 5. عرض الكتب (12 كتاب)
-        // ===============================================
-        const booksData = [
-            { title: 'العربية للمبتدئين', author: 'د. أحمد علي', lang: 'العربية', icon: 'fa-book-open', file: 'arabic_beginner.pdf' },
-            { title: 'English Grammar', author: 'Oxford', lang: 'الإنجليزية', icon: 'fa-headphones', file: 'english_grammar.pdf' },
-            { title: 'Español en vivo', author: 'Cervantes', lang: 'الإسبانية', icon: 'fa-comment', file: 'espanol_vivo.pdf' },
-            { title: 'Français authentique', author: 'Pierre', lang: 'الفرنسية', icon: 'fa-flag', file: 'francais.pdf' },
-            { title: 'Deutsch perfekt', author: 'Goethe', lang: 'الألمانية', icon: 'fa-newspaper', file: 'deutsch.pdf' },
-            { title: 'Italiano facile', author: 'Rossi', lang: 'الإيطالية', icon: 'fa-pizza', file: 'italiano.pdf' },
-            { title: 'Português do Brasil', author: 'Silva', lang: 'البرتغالية', icon: 'fa-tree', file: 'portugues.pdf' },
-            { title: 'Русский язык', author: 'Ivanova', lang: 'الروسية', icon: 'fa-snowflake', file: 'russian.pdf' },
-            { title: '日本語の教科書', author: 'Tanaka', lang: 'اليابانية', icon: 'fa-leaf', file: 'japanese.pdf' },
-            { title: '한국어 배우기', author: 'Kim', lang: 'الكورية', icon: 'fa-smile', file: 'korean.pdf' },
-            { title: '汉语入门', author: 'Wang', lang: 'الصينية', icon: 'fa-dragon', file: 'chinese.pdf' },
-            { title: 'हिन्दी सीखें', author: 'Sharma', lang: 'الهندية', icon: 'fa-om', file: 'hindi.pdf' }
-        ];
-
-        const booksGrid = document.getElementById('booksGrid');
-        booksData.forEach(book => {
-            const card = document.createElement('div');
-            card.className = 'book-card';
-            card.innerHTML = `
-                <i class="fas ${book.icon} book-icon"></i>
-                <h3 class="book-title">${book.title}</h3>
-                <div class="book-author">${book.author}</div>
-                <div class="book-meta">
-                    <span><i class="fas fa-language"></i> ${book.lang}</span>
-                    <span><i class="fas fa-file-pdf"></i> PDF</span>
-                </div>
-                <a href="#" class="download-btn" onclick="downloadBook('${book.file}')"><i class="fas fa-download"></i> تحميل</a>
-            `;
-            booksGrid.appendChild(card);
-        });
-
-        window.downloadBook = function(filename) {
-            // محاكاة تحميل (يمكن استبدال برابط حقيقي)
-            alert(`سيتم تحميل الكتاب: ${filename}\n(في النسخة الحقيقية سيتم توجيهك إلى الملف).`);
-        };
-
-        // ===============================================
-        // 6. تحسين شريط التنقل عند التمرير
-        // ===============================================
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            // 3. عرض اللغات
+            const langGrid = document.getElementById('langGrid');
+            function renderLanguages() {
+                langGrid.innerHTML = '';
+                languages.forEach(lang => {
+                    const card = document.createElement('div');
+                    card.className = 'lang-card';
+                    card.dataset.lang = lang.code;
+                    card.innerHTML = `<i class="fas ${lang.icon}"></i><span>${lang.name}</span>`;
+                    card.addEventListener('click', () => filterVideosByLang(lang.code));
+                    langGrid.appendChild(card);
+                });
             }
-        });
+            renderLanguages();
 
-        // ===============================================
-        // 7. إضافة خاصية Lazy Loading للصور (اختياري)
-        // ===============================================
-        // يمكن إضافة مراقب تقاطع للفيديوهات لتحسين الأداء
+            // 4. عرض الفيديوهات
+            const videoContainer = document.getElementById('videoGridContainer');
+            function filterVideosByLang(langCode) {
+                document.querySelectorAll('.lang-card').forEach(c => c.classList.remove('active'));
+                const active = document.querySelector(`.lang-card[data-lang="${langCode}"]`);
+                if (active) active.classList.add('active');
+
+                const filtered = allVideos.filter(v => v.lang === langCode);
+                displayVideos(filtered);
+            }
+
+            function displayVideos(videosArray) {
+                let html = '';
+                videosArray.forEach((video, idx) => {
+                    html += `
+                        <div class="video-card" style="--i: ${idx};">
+                            <div class="video-placeholder">
+                                <i class="fas fa-video"></i>
+                                <span>رابط الفيديو فارغ</span>
+                                <span style="font-size:0.75rem; margin-top:0.5rem;">(أضف رابط YouTube هنا)</span>
+                            </div>
+                            <div class="video-title">${video.title}</div>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock"></i> ${video.duration}</span>
+                                <span><i class="fas fa-language"></i> ${languages.find(l=>l.code===video.lang)?.name}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+                videoContainer.innerHTML = html;
+            }
+
+            // افتراضياً نعرض اللغة العربية
+            filterVideosByLang('ar');
+
+            // 5. عرض الكتب (12 كتاب) مع روابط فارغة (أزرار غير قابلة للنقر)
+            const booksData = [
+                { title: 'العربية للمبتدئين', author: 'د. أحمد علي', lang: 'العربية', icon: 'fa-book-open' },
+                { title: 'English Grammar', author: 'Oxford', lang: 'الإنجليزية', icon: 'fa-headphones' },
+                { title: 'Español en vivo', author: 'Cervantes', lang: 'الإسبانية', icon: 'fa-comment' },
+                { title: 'Français authentique', author: 'Pierre', lang: 'الفرنسية', icon: 'fa-flag' },
+                { title: 'Deutsch perfekt', author: 'Goethe', lang: 'الألمانية', icon: 'fa-newspaper' },
+                { title: 'Italiano facile', author: 'Rossi', lang: 'الإيطالية', icon: 'fa-pizza' },
+                { title: 'Português do Brasil', author: 'Silva', lang: 'البرتغالية', icon: 'fa-tree' },
+                { title: 'Русский язык', author: 'Ivanova', lang: 'الروسية', icon: 'fa-snowflake' },
+                { title: '日本語の教科書', author: 'Tanaka', lang: 'اليابانية', icon: 'fa-leaf' },
+                { title: '한국어 배우기', author: 'Kim', lang: 'الكورية', icon: 'fa-smile' },
+                { title: '汉语入门', author: 'Wang', lang: 'الصينية', icon: 'fa-dragon' },
+                { title: 'हिन्दी सीखें', author: 'Sharma', lang: 'الهندية', icon: 'fa-om' }
+            ];
+
+            const booksGrid = document.getElementById('booksGrid');
+            booksData.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+                card.innerHTML = `
+                    <i class="fas ${book.icon} book-icon"></i>
+                    <h3 class="book-title">${book.title}</h3>
+                    <div class="book-author">${book.author}</div>
+                    <div class="book-meta">
+                        <span><i class="fas fa-language"></i> ${book.lang}</span>
+                        <span><i class="fas fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <button class="download-btn" disabled>تحميل الكتاب</button>
+                `;
+                booksGrid.appendChild(card);
+            });
+
+            // 6. إنشاء بطاقات الاختبارات
+            const testsGrid = document.getElementById('testsGrid');
+            const tests = [
+                { name: 'اختبار العربية (A1)', questions: 20, icon: 'fa-sun' },
+                { name: 'اختبار الإنجليزية (B1)', questions: 30, icon: 'fa-cloud' },
+                { name: 'اختبار الإسبانية (A2)', questions: 25, icon: 'fa-star' },
+                { name: 'اختبار الفرنسية (B2)', questions: 35, icon: 'fa-moon' },
+                { name: 'اختبار الألمانية (C1)', questions: 40, icon: 'fa-bolt' },
+                { name: 'اختبار عام متعدد', questions: 50, icon: 'fa-globe' }
+            ];
+            tests.forEach(t => {
+                const card = document.createElement('div');
+                card.className = 'test-card';
+                card.innerHTML = `
+                    <i class="fas ${t.icon} test-icon"></i>
+                    <div class="test-title">${t.name}</div>
+                    <div class="test-desc">${t.questions} سؤال • تحديد مستوى دقيق</div>
+                    <button class="test-btn" onclick="alert('سيتم نقلك إلى الاختبار (قيد الإنشاء)')">ابدأ الاختبار</button>
+                `;
+                testsGrid.appendChild(card);
+            });
+
+            // 7. تأثير شفاف عند التمرير للشريط العلوي
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 60) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        })();
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
