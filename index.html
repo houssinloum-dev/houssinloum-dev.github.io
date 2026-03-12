@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="monetag" content="966f391c2c9feab216f23f8a50948a28">
+  <meta name="monetag" content="966f391c2c9feab216f23f8a50948a28">
   <script>(function(s){s.dataset.zone='10698259',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
  <script>(function(s){s.dataset.zone='10695197',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
  <script>(function(s){s.dataset.zone='10698285',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
@@ -243,13 +243,13 @@ nav {
 .reader-content { background:#1a1810; border:1px solid rgba(201,168,76,0.25); border-radius:18px; width:100%; max-width:720px; max-height:90vh; overflow:hidden; display:flex; flex-direction:column; animation:scaleIn 0.3s ease; }
 .reader-header { padding:1rem 1.5rem; border-bottom:1px solid rgba(201,168,76,0.15); display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
 .reader-header h3 { font-size:1.05rem; font-weight:800; }
-.reader-body { flex:1; overflow-y:auto; padding:2.2rem; font-size:1.05rem; line-height:2; color:#d8d0bc; }
-.reader-body h2 { color:var(--gold); margin-bottom:1.2rem; font-size:1.3rem; font-family:'Cormorant Garamond',serif; }
-.reader-body p { margin-bottom:1.2rem; text-align:justify; }
-.reader-body .word { cursor:pointer; border-bottom:1px dashed rgba(201,168,76,0.5); transition:color 0.2s; }
-.reader-body .word:hover { color:var(--gold); }
-.reader-body .narrator { color:var(--muted); font-style:italic; font-size:0.92rem; }
-.reader-body .dialogue { color:var(--gold-light); border-right:2px solid var(--gold); padding-right:1rem; margin-right:0.5rem; }
+.reader-body { flex:1; overflow-y:auto; padding:2.2rem; font-size:1.08rem; line-height:2.1; color:#d8d0bc; }
+.reader-body h2 { color:var(--gold); margin-bottom:1.5rem; font-size:1.4rem; font-family:'Cormorant Garamond',serif; border-bottom:1px solid rgba(201,168,76,0.2); padding-bottom:0.8rem; }
+.reader-body p { margin-bottom:1.4rem; text-align:justify; }
+.reader-body .word { cursor:pointer; border-bottom:1px dashed rgba(201,168,76,0.5); transition:color 0.2s, background 0.2s; padding:0 2px; border-radius:2px; }
+.reader-body .word:hover { color:var(--gold); background:rgba(201,168,76,0.1); }
+.reader-body .narrator { color:var(--muted); font-style:italic; font-size:0.93rem; background:rgba(255,255,255,0.03); border-radius:8px; padding:0.8rem 1rem; border-right:2px solid var(--muted); display:block; margin:1rem 0; }
+.reader-body .dialogue { color:var(--gold-light); border-right:3px solid var(--gold); padding-right:1rem; margin-right:0.5rem; display:block; margin:0.8rem 0; font-style:italic; }
 .reader-footer { padding:1rem 1.5rem; border-top:1px solid rgba(201,168,76,0.15); display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
 .reader-progress { flex:1; height:4px; background:rgba(255,255,255,0.08); border-radius:2px; margin:0 1rem; }
 .reader-progress-fill { height:100%; background:var(--gold); border-radius:2px; transition:width 0.4s; }
@@ -446,6 +446,66 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
 .lb-name { flex:1; font-size:0.9rem; font-weight:600; }
 .lb-lang { font-size:0.78rem; color:var(--muted); }
 .lb-xp { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.9rem; color:var(--gold); }
+
+/* QUIZ AREA CARD */
+#quiz-area { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:2rem; }
+.quiz-option { transition:all 0.2s; }
+.quiz-option:hover:not(.disabled) { border-color:var(--gold); background:var(--gold-dim); transform:translateX(-4px); }
+.quiz-option.correct { border-color:var(--green) !important; background:rgba(76,175,125,0.18) !important; color:var(--green) !important; }
+.quiz-option.wrong { border-color:var(--red) !important; background:rgba(224,92,92,0.18) !important; color:var(--red) !important; }
+.quiz-option.correct .opt-label { background:var(--green) !important; color:var(--ink) !important; }
+.quiz-option.wrong .opt-label { background:var(--red) !important; color:white !important; }
+.quiz-explanation { margin-top:1.2rem; padding:1rem 1.2rem; border-radius:12px; background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.25); font-size:0.9rem; color:var(--text); display:none; line-height:1.7; border-right:3px solid var(--gold); }
+
+/* HERO ACCENT LINE */
+.hero-line { width:80px; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),transparent); margin:0 auto 1.5rem; border-radius:2px; animation:fadeUp 0.5s 0.08s ease both; }
+
+/* ===== PRONUNCIATION PAGE ===== */
+.pronun-lang-tabs { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem; }
+.pronun-lang-btn { padding:0.55rem 1.2rem; border-radius:30px; border:1px solid var(--border2); background:var(--card); color:var(--text); font-family:'Tajawal',sans-serif; font-size:0.88rem; cursor:pointer; transition:all 0.2s; }
+.pronun-lang-btn.active, .pronun-lang-btn:hover { border-color:var(--gold); background:var(--gold-dim); color:var(--gold); }
+.pronun-words-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; margin-bottom:2.5rem; }
+.pronun-word-card { background:var(--card); border:1px solid var(--border2); border-radius:14px; padding:1.2rem; text-align:center; cursor:pointer; transition:all 0.22s; position:relative; overflow:hidden; }
+.pronun-word-card:hover { border-color:rgba(201,168,76,0.5); transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,0,0,0.3); }
+.pronun-word-card.playing { border-color:var(--gold); background:var(--gold-dim); animation:pulse 0.6s ease; }
+@keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.04)} 100%{transform:scale(1)} }
+.pw-word { font-size:1.4rem; font-weight:800; margin-bottom:0.3rem; color:var(--text); }
+.pw-phonetic { font-size:0.78rem; color:var(--gold); font-family:'Space Grotesk',sans-serif; margin-bottom:0.4rem; letter-spacing:0.03em; }
+.pw-meaning { font-size:0.8rem; color:var(--muted); margin-bottom:0.8rem; }
+.pw-speak-btn { width:44px; height:44px; border-radius:50%; border:1.5px solid var(--gold); background:var(--gold-dim); color:var(--gold); font-size:1.1rem; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; justify-content:center; margin:0 auto; }
+.pw-speak-btn:hover { background:var(--gold); color:var(--ink); transform:scale(1.1); }
+.pw-lang-flag { position:absolute; top:8px; right:10px; font-size:0.9rem; }
+
+.pronun-practice-box { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:2rem; margin-bottom:2rem; }
+.pronun-practice-box h3 { color:var(--gold); margin-bottom:1rem; font-size:1.1rem; }
+.pronun-sentence { font-size:1.15rem; line-height:2; margin-bottom:1.2rem; color:var(--text); padding:1rem 1.2rem; background:rgba(201,168,76,0.04); border-radius:10px; border-right:3px solid var(--gold); }
+.pronun-sentence .word-btn { cursor:pointer; border-bottom:1.5px dashed rgba(201,168,76,0.5); color:var(--gold-light); transition:color 0.15s; padding:0 2px; background:none; border-top:none; border-left:none; border-right:none; font-family:'Tajawal',sans-serif; font-size:inherit; }
+.pronun-sentence .word-btn:hover { color:var(--gold); }
+.pronun-controls { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+.pronun-speed-btn { padding:0.4rem 0.9rem; border-radius:20px; border:1px solid var(--border2); background:var(--card2); color:var(--muted); font-size:0.8rem; cursor:pointer; font-family:'Tajawal',sans-serif; transition:all 0.2s; }
+.pronun-speed-btn.active { border-color:var(--gold); color:var(--gold); background:var(--gold-dim); }
+.pronun-big-speak { padding:0.7rem 2rem; border-radius:30px; border:1.5px solid var(--gold); background:var(--gold-dim); color:var(--gold); font-size:0.95rem; font-family:'Tajawal',sans-serif; cursor:pointer; transition:all 0.2s; }
+.pronun-big-speak:hover { background:var(--gold); color:var(--ink); font-weight:700; }
+
+/* alphabet chart */
+.alphabet-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(80px,1fr)); gap:0.7rem; margin-top:1rem; }
+.alpha-cell { background:var(--card2); border:1px solid var(--border2); border-radius:10px; padding:0.7rem 0.4rem; text-align:center; cursor:pointer; transition:all 0.18s; }
+.alpha-cell:hover { border-color:var(--gold); background:var(--gold-dim); }
+.alpha-cell.playing { border-color:var(--green); background:rgba(76,175,125,0.12); }
+.alpha-cell .a-char { font-size:1.4rem; font-weight:700; display:block; }
+.alpha-cell .a-sound { font-size:0.7rem; color:var(--muted); font-family:'Space Grotesk',sans-serif; }
+
+/* MATCH question type */
+.match-container { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem; }
+.match-col { display:flex; flex-direction:column; gap:0.6rem; }
+.match-item { padding:0.8rem 1rem; border-radius:10px; border:1.5px solid var(--border2); background:var(--card2); cursor:pointer; font-size:0.95rem; text-align:center; transition:all 0.2s; }
+.match-item:hover:not(.matched):not(.wrong-match) { border-color:var(--gold); }
+.match-item.selected-left { border-color:var(--blue); background:rgba(92,157,224,0.12); color:var(--blue); }
+.match-item.selected-right { border-color:var(--blue); background:rgba(92,157,224,0.12); color:var(--blue); }
+.match-item.matched { border-color:var(--green) !important; background:rgba(76,175,125,0.15) !important; color:var(--green) !important; cursor:default; }
+.match-item.wrong-match { border-color:var(--red); background:rgba(224,92,92,0.12); animation:shake 0.3s ease; }
+@keyframes shake { 0%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} 100%{transform:translateX(0)} }
+.match-score { text-align:center; font-size:1rem; color:var(--gold); margin-top:1rem; font-weight:700; }
 </style>
 </head>
 <body>
@@ -459,6 +519,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
     <li><a onclick="showPage('books')" id="nav-books">📚 المكتبة</a></li>
     <li><a onclick="showPage('courses')" id="nav-courses">🎓 الدورات</a></li>
     <li><a onclick="showPage('quizzes')" id="nav-quizzes">🧠 الاختبارات</a></li>
+    <li><a onclick="showPage('pronunciation')" id="nav-pronunciation">🔊 النطق</a></li>
     <li><a onclick="showPage('comments')" id="nav-comments">💬 المجتمع</a></li>
     <li><a class="nav-cta" onclick="showPage('courses')">ابدأ مجاناً ✦</a></li>
   </ul>
@@ -471,6 +532,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
     <div class="hero-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
     <div class="grid-bg"></div>
     <div class="hero-badge"><div class="badge-dot"></div> المنصة الأولى عربياً لتعلم اللغات</div>
+    <div class="hero-line"></div>
     <h1>أتقن أي <span class="accent">لغة في العالم</span><br>بطريقة ذكية ومتعة حقيقية</h1>
     <p>فيديوهات تفاعلية، روايات وقصص بلغات متعددة، دورات متكاملة، واختبارات بأنواع مختلفة — كل ما تحتاجه لإتقان أي لغة في مكان واحد.</p>
     <div class="hero-btns">
@@ -626,7 +688,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
 <div class="page" id="page-quizzes">
   <div class="section">
     <div class="section-title">🧠 <span class="gold">اختبر</span> مستواك</div>
-    <div class="section-sub">5 أنواع مختلفة من الأسئلة — مع مؤقت وشرح للإجابات</div>
+    <div class="section-sub">5 أنواع مختلفة من الأسئلة — مع مؤقت وشرح تفصيلي للإجابات</div>
 
     <div id="quizSelectorArea">
       <div class="streak-bar">
@@ -635,55 +697,44 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
         <div class="streak-item"><span class="si-icon">✅</span><span class="si-val" id="totalCorrect">0</span><span class="si-label">إجابة صحيحة</span></div>
         <div class="streak-item"><span class="si-icon">🏆</span><span class="si-val" id="bestScore">-</span><span class="si-label">أفضل نتيجة</span></div>
       </div>
-
-      <div style="margin-bottom:1.2rem">
-        <div class="section-sub" style="margin-bottom:0.8rem">نوع السؤال:</div>
-        <div class="quiz-types">
-          <button class="qtype-btn active" onclick="setQType('mcq',this)">🔘 اختيار متعدد</button>
-          <button class="qtype-btn" onclick="setQType('image',this)">🖼️ تحديد الصورة</button>
-          <button class="qtype-btn" onclick="setQType('fill',this)">✍️ إكمال الجملة</button>
-          <button class="qtype-btn" onclick="setQType('tf',this)">✅ صح أم خطأ</button>
-          <button class="qtype-btn" onclick="setQType('match',this)">🔗 مطابقة</button>
-        </div>
-      </div>
-
       <div class="quiz-selector">
         <div class="quiz-level-card easy-card" onclick="startQuiz('easy')">
-          <div class="level-icon">🌱</div>
-          <h3>المستوى الأول</h3>
+          <div class="level-icon">🌱</div><h3>المستوى الأول</h3>
           <p>أساسيات اللغة والمفردات اليومية البسيطة</p>
           <span class="level-badge easy">سهل • 10 أسئلة • ⏱ 30 ثانية/سؤال</span>
         </div>
         <div class="quiz-level-card med-card" onclick="startQuiz('medium')">
-          <div class="level-icon">🔥</div>
-          <h3>المستوى الثاني</h3>
+          <div class="level-icon">🔥</div><h3>المستوى الثاني</h3>
           <p>قواعد اللغة والجمل المركبة والتعبيرات</p>
           <span class="level-badge medium">متوسط • 10 أسئلة • ⏱ 20 ثانية/سؤال</span>
         </div>
         <div class="quiz-level-card hard-card" onclick="startQuiz('hard')">
-          <div class="level-icon">⚡</div>
-          <h3>المستوى الثالث</h3>
+          <div class="level-icon">⚡</div><h3>المستوى الثالث</h3>
           <p>تعبيرات متقدمة وقواعد معقدة ومصطلحات</p>
           <span class="level-badge hard">صعب • 10 أسئلة • ⏱ 15 ثانية/سؤال</span>
         </div>
       </div>
     </div>
 
-    <div id="quiz-area">
+    <!-- QUIZ AREA - dynamically rendered per question type -->
+    <div id="quiz-area" style="display:none">
       <div class="quiz-top">
         <div style="font-size:0.9rem;color:var(--muted)" id="quizTypeLabel"></div>
         <div class="quiz-timer" id="quizTimer">30</div>
       </div>
       <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
       <div class="score-bar">
-        <span class="score-label">التقدم</span>
+        <span class="score-label">النتيجة</span>
         <span class="score-val" id="currentScoreDisp">0 / 0</span>
       </div>
       <div class="quiz-question-num" id="quizQuestionNum"></div>
-      <div class="quiz-question-img" id="quizQuestionImg" style="display:none"></div>
+      <div class="quiz-question-img" id="quizQuestionImg" style="display:none;font-size:3.5rem;text-align:center;padding:1.5rem;letter-spacing:0.5rem"></div>
       <div class="quiz-question-text" id="quizQuestionText"></div>
+      <!-- MCQ / TF / FILL / IMAGE options rendered here -->
       <div class="quiz-options" id="quizOptions"></div>
-      <div class="quiz-explanation" id="quizExplanation"></div>
+      <!-- MATCH type rendered here -->
+      <div id="quizMatchArea" style="display:none"></div>
+      <div class="quiz-explanation" id="quizExplanation" style="display:none"></div>
       <div style="text-align:center;margin-top:1.5rem">
         <button class="btn-secondary" id="quizNextBtn" onclick="nextQuestion()" style="display:none">التالي ←</button>
       </div>
@@ -702,6 +753,51 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
         <button class="btn-primary" onclick="resetQuiz()">🔄 حاول مرة أخرى</button>
         <button class="btn-secondary" onclick="showPage('courses')" style="margin-right:1rem">📚 الدورات</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PRONUNCIATION ===================== -->
+<div class="page" id="page-pronunciation">
+  <div class="section">
+    <div class="section-title">🔊 <span class="gold">تعلم النطق</span> الصحيح</div>
+    <div class="section-sub">انقر على أي كلمة أو حرف لسماع نطقه بصوت واضح — بجميع اللغات</div>
+
+    <!-- LANGUAGE SELECTOR -->
+    <div class="pronun-lang-tabs" id="pronunLangTabs">
+      <button class="pronun-lang-btn active" onclick="setPronunLang('en',this)">🇬🇧 الإنجليزية</button>
+      <button class="pronun-lang-btn" onclick="setPronunLang('fr',this)">🇫🇷 الفرنسية</button>
+      <button class="pronun-lang-btn" onclick="setPronunLang('de',this)">🇩🇪 الألمانية</button>
+      <button class="pronun-lang-btn" onclick="setPronunLang('es',this)">🇪🇸 الإسبانية</button>
+      <button class="pronun-lang-btn" onclick="setPronunLang('jp',this)">🇯🇵 اليابانية</button>
+      <button class="pronun-lang-btn" onclick="setPronunLang('zh',this)">🇨🇳 الصينية</button>
+      <button class="pronun-lang-btn" onclick="setPronunLang('it',this)">🇮🇹 الإيطالية</button>
+      <button class="pronun-lang-btn" onclick="setPronunLang('pt',this)">🇧🇷 البرتغالية</button>
+    </div>
+
+    <!-- PRACTICE SENTENCE -->
+    <div class="pronun-practice-box" id="pronunPracticeBox">
+      <h3 id="pronunLangTitle">🇬🇧 جمل إنجليزية — انقر على أي كلمة لسماع نطقها</h3>
+      <div class="pronun-sentence" id="pronunSentence"></div>
+      <div class="pronun-controls">
+        <button class="pronun-big-speak" onclick="speakFullSentence()">▶ استمع للجملة كاملة</button>
+        <span style="color:var(--muted);font-size:0.8rem">السرعة:</span>
+        <button class="pronun-speed-btn active" id="spd-slow" onclick="setSpeed(0.6,this)">🐢 بطيء</button>
+        <button class="pronun-speed-btn" id="spd-normal" onclick="setSpeed(1,this)">▶ عادي</button>
+        <button class="pronun-speed-btn" id="spd-fast" onclick="setSpeed(1.4,this)">⚡ سريع</button>
+      </div>
+    </div>
+
+    <!-- ALPHABET / LETTERS CHART -->
+    <div class="pronun-practice-box" id="pronunAlphabetBox">
+      <h3 id="pronunAlphaTitle">🔤 الأحرف الأبجدية — انقر لسماع كل حرف</h3>
+      <div class="alphabet-grid" id="pronunAlphaGrid"></div>
+    </div>
+
+    <!-- VOCABULARY CARDS -->
+    <div>
+      <h3 style="color:var(--gold);margin-bottom:1.2rem;font-size:1.1rem" id="pronunVocabTitle">📖 مفردات يومية — انقر لسماع النطق</h3>
+      <div class="pronun-words-grid" id="pronunWordsGrid"></div>
     </div>
   </div>
 </div>
@@ -752,7 +848,14 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
   <div class="reader-content">
     <div class="reader-header">
       <h3 id="bookModalTitle"></h3>
-      <button class="modal-close" onclick="closeBookModal()">✕</button>
+      <div style="display:flex;align-items:center;gap:0.8rem">
+        <span id="readingTime" style="font-size:0.78rem;color:var(--muted)">⏱ ~5 دقائق للقراءة</span>
+        <button class="modal-close" onclick="closeBookModal()">✕</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:2rem;padding:0.7rem 1.5rem;background:rgba(201,168,76,0.04);border-bottom:1px solid rgba(201,168,76,0.1);flex-shrink:0;flex-wrap:wrap">
+      <span style="font-size:0.78rem;color:var(--muted)">📖 <strong style="color:var(--gold)" id="wordCount">0</strong> كلمة في هذا الفصل</span>
+      <span style="font-size:0.78rem;color:var(--muted)">🎯 مرّر على الكلمات الملوّنة للترجمة</span>
     </div>
     <div class="reader-body" id="bookContent"></div>
     <div class="vocab-panel">
@@ -772,17 +875,26 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:3re
 <div class="lesson-modal" id="lessonModal">
   <div class="lesson-content">
     <div class="lesson-header">
-      <h3 id="lessonTitle">درس تفاعلي</h3>
+      <div>
+        <h3 id="lessonTitle">درس تفاعلي</h3>
+        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.2rem" id="lessonSubtitle"></div>
+      </div>
       <button class="modal-close" onclick="closeLessonModal()">✕</button>
     </div>
     <div class="lesson-body">
       <div class="score-bar">
-        <span class="score-label">النقاط المكتسبة</span>
+        <span class="score-label" id="lessonQNum">سؤال ١</span>
         <span class="score-val" id="lessonScore">0 XP</span>
       </div>
+      <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin-bottom:1.5rem">
+        <div id="lessonProgressBar" style="height:100%;background:var(--gold);border-radius:2px;transition:width 0.4s;width:0%"></div>
+      </div>
+      <div style="font-size:0.78rem;color:var(--gold);margin-bottom:0.8rem;font-weight:700" id="lessonTypeLabel"></div>
       <div class="lesson-question" id="lessonQuestion"></div>
+      <div id="lessonEmojiArea" style="display:none;font-size:3rem;text-align:center;padding:1rem;letter-spacing:0.4rem"></div>
       <div class="lesson-hint" id="lessonHint"></div>
       <div class="lesson-options" id="lessonOptions"></div>
+      <div id="lessonMatchArea" style="display:none"></div>
       <div class="lesson-feedback" id="lessonFeedback"></div>
       <div class="lesson-nav">
         <button class="btn-primary" id="lessonNextBtn" onclick="nextLesson()" style="display:none">التالي ←</button>
@@ -851,45 +963,95 @@ const videos = [
 ];
 
 const books = [
-  { title:'The Alchemist — EN', lang:'en', flag:'🇬🇧', icon:'⚗️', cover:'en', desc:'رواية الخيميائي لباولو كويلو بالإنجليزية — مع ترجمة تفاعلية', pages:208, level:'متوسط', type:'novel',
+  { title:'The Alchemist — EN', lang:'en', flag:'🇬🇧', icon:'⚗️', cover:'en', desc:'رواية الخيميائي لباولو كويلو بالإنجليزية — مع ترجمة تفاعلية للكلمات', pages:208, level:'متوسط', type:'novel',
     content:[
-      { title:'Chapter I: The Shepherd\'s Dream', vocabEn:['portent','pastoral','recurring','glance','merchant'], vocabAr:['نذير','ريفي','متكرر','نظرة','تاجر'],
-        text:['<p>The <span class="word" data-en="boy" data-ar="الفتى">boy</span> whose name was <span class="word" data-en="Santiago" data-ar="سانتياغو">Santiago</span> had arrived the day before at an abandoned <span class="word" data-en="church" data-ar="كنيسة">church</span>. The <span class="word" data-en="roof" data-ar="السقف">roof</span> had fallen in long ago, and an enormous <span class="word" data-en="sycamore" data-ar="شجرة الجميز">sycamore</span> had grown on the spot where the <span class="word" data-en="sacristy" data-ar="مخدع الكنيسة">sacristy</span> had once stood.</p>',
-        '<p class="dialogue">"I must learn to read the omens around me,"</p><p class="narrator">the boy thought to himself, as he watched the sun set over the ancient hills. He had been having the same <span class="word" data-en="recurring" data-ar="متكرر">recurring</span> <span class="word" data-en="dream" data-ar="حلم">dream</span> for two nights now — a <span class="word" data-en="child" data-ar="طفل">child</span> playing in a <span class="word" data-en="field" data-ar="حقل">field</span>, leading him toward the Egyptian <span class="word" data-en="pyramids" data-ar="الأهرامات">pyramids</span>.</p>',
-        '<p>He looked at his <span class="word" data-en="flock" data-ar="قطيع">flock</span> of <span class="word" data-en="sheep" data-ar="الأغنام">sheep</span>. They were <span class="word" data-en="grazing" data-ar="ترعى">grazing</span> peacefully on the green <span class="word" data-en="meadow" data-ar="المرج">meadow</span>. They <span class="word" data-en="trusted" data-ar="وثقت">trusted</span> him completely — for he had always led them to <span class="word" data-en="water" data-ar="الماء">water</span> and <span class="word" data-en="pasture" data-ar="المرعى">pasture</span>. Yet he knew that there was a larger <span class="word" data-en="destiny" data-ar="مصير">destiny</span> waiting for him.</p>']
+      { title:'Chapter I: The Recurring Dream', vocabEn:['portent','shepherd','recurring','sycamore','sacristy','abandoned','ancient','flock','grazing','destiny'], vocabAr:['نذير/علامة','راعي الغنم','متكرر','شجرة الجميز','مخدع الكنيسة','مهجور','قديم','قطيع','ترعى','مصير'],
+        text:[
+          '<p>The <span class="word" data-en="boy" data-ar="الفتى">boy</span> whose name was <span class="word" data-en="Santiago" data-ar="سانتياغو">Santiago</span> had arrived the day before at an <span class="word" data-en="abandoned" data-ar="مهجور">abandoned</span> <span class="word" data-en="church" data-ar="كنيسة">church</span>. The <span class="word" data-en="roof" data-ar="السقف">roof</span> had fallen in long ago, and an enormous <span class="word" data-en="sycamore" data-ar="شجرة الجميز">sycamore</span> had grown on the spot where the <span class="word" data-en="sacristy" data-ar="مخدع الكنيسة">sacristy</span> had once stood.</p>',
+          '<p>He decided to spend the <span class="word" data-en="night" data-ar="الليل">night</span> there. He saw to it that all the <span class="word" data-en="sheep" data-ar="الأغنام">sheep</span> entered through the <span class="word" data-en="ruined doorway" data-ar="البوابة المهدومة">ruined doorway</span>, and then lay down to <span class="word" data-en="sleep" data-ar="ينام">sleep</span>. He left his <span class="word" data-en="knapsack" data-ar="حقيبة الظهر">knapsack</span> as a <span class="word" data-en="pillow" data-ar="وسادة">pillow</span>, telling himself that he would start reading the book he had in his <span class="word" data-en="bag" data-ar="الحقيبة">bag</span> tonight, but instead fell asleep as soon as he lay down.</p>',
+          '<p>When he <span class="word" data-en="woke" data-ar="استيقظ">woke</span>, it was already broad daylight, and he realized that, rather than having learned anything new, he had simply <span class="word" data-en="experienced" data-ar="عاش/جرّب">experienced</span> the same <span class="word" data-en="dream" data-ar="حلم">dream</span> he had had a week ago. He had dreamed about the same <span class="word" data-en="child" data-ar="طفل">child</span> who always appeared to him at this point.</p>',
+          '<p>The <span class="word" data-en="dream" data-ar="الحلم">dream</span> had recurred for the second time. And the <span class="word" data-en="boy" data-ar="الفتى">boy</span> was proud of himself for knowing the language of <span class="word" data-en="omens" data-ar="الفؤال والعلامات">omens</span>. He looked at his <span class="word" data-en="flock" data-ar="قطيع">flock</span> <span class="word" data-en="grazing" data-ar="يرعى">grazing</span> in the early morning <span class="word" data-en="mist" data-ar="الضباب">mist</span>. The sheep were <span class="word" data-en="content" data-ar="راضية/مكتفية">content</span> with only food and <span class="word" data-en="water" data-ar="الماء">water</span>.</p>',
+          '<p class="narrator">سانتياغو كان يعلم أن الأغنام لا تهتم بالحلم ولا بالمصير. لكنه كان مختلفاً — كان يؤمن بأن هناك رسالة مخفية في هذا الحلم المتكرر. طفل يأخذه إلى مصر، إلى الأهرامات، إلى كنز مجهول.</p>',
+          '<p>He thought about the <span class="word" data-en="recurring dream" data-ar="الحلم المتكرر">recurring dream</span>: a child had appeared and, taking him by both hands, had transported him to the Egyptian <span class="word" data-en="pyramids" data-ar="الأهرامات">pyramids</span>. <span class="dialogue">"If you come here, you will find a hidden treasure,"</span> the child had said.</p>',
+          '<p>Just as he was about to show the child the exact <span class="word" data-en="location" data-ar="الموقع">location</span> of the <span class="word" data-en="treasure" data-ar="الكنز">treasure</span>, he always <span class="word" data-en="woke up" data-ar="استيقظ">woke up</span>. Every time this happened, he felt the same <span class="word" data-en="frustration" data-ar="إحباط">frustration</span> — the <span class="word" data-en="dream" data-ar="الحلم">dream</span> would vanish before he could learn the precise <span class="word" data-en="location" data-ar="الموقع">location</span>.</p>']
       },
-      { title:'Chapter II: The Old King', vocabEn:['Melchizedek','Personal Legend','omen','soul','treasure'], vocabAr:['ملكي صادق','الأسطورة الشخصية','فأل','روح','كنز'],
-        text:['<p>In the <span class="word" data-en="village" data-ar="القرية">village</span>, Santiago met an old man who introduced himself as <span class="word" data-en="Melchizedek" data-ar="ملكي صادق">Melchizedek</span>, the <span class="word" data-en="King of Salem" data-ar="ملك سالم">King of Salem</span>. The old man wore a <span class="word" data-en="breastplate" data-ar="درع الصدر">breastplate</span> of pure <span class="word" data-en="gold" data-ar="ذهب">gold</span>, which seemed <span class="word" data-en="extraordinary" data-ar="غير عادي">extraordinary</span> for a simple market square.</p>',
-        '<p class="dialogue">"Everyone, when they are young, knows what their Personal Legend is,"</p><p class="narrator">said the old king. <span class="dialogue">"At that point in their lives, everything is clear and everything is possible. They are not afraid to dream, and to yearn for everything they would like to see happen to them in their lives."</span></p>',
-        '<p>Santiago listened carefully. He <span class="word" data-en="realized" data-ar="أدرك">realized</span> that the old man was speaking about something deeper than mere <span class="word" data-en="adventure" data-ar="مغامرة">adventure</span>. He was speaking about <span class="word" data-en="purpose" data-ar="غاية">purpose</span> — the very <span class="word" data-en="reason" data-ar="السبب">reason</span> each soul came to walk this <span class="word" data-en="earth" data-ar="الأرض">earth</span>.</p>']
+      { title:'Chapter II: The Wise Old King', vocabEn:['Melchizedek','Personal Legend','omen','breastplate','extraordinary','destiny','courage','purpose','realization','yearning'], vocabAr:['ملكي صادق','الأسطورة الشخصية','فأل/علامة','درع الصدر','غير عادي','مصير','شجاعة','هدف/غاية','إدراك','شوق/توق'],
+        text:[
+          '<p>In the <span class="word" data-en="town" data-ar="البلدة">town</span>, Santiago met with an old woman who <span class="word" data-en="interpreted" data-ar="فسّرت">interpreted</span> dreams. She said the <span class="word" data-en="pyramids" data-ar="الأهرامات">pyramids</span> were in Egypt. Then he met an old man in the <span class="word" data-en="market square" data-ar="ساحة السوق">market square</span> — a man who wore a <span class="word" data-en="breastplate" data-ar="درع الصدر">breastplate</span> of pure <span class="word" data-en="gold" data-ar="ذهب">gold</span>.</p>',
+          '<p class="dialogue">"I know your history,"</p><p class="narrator">said the old man. <span class="dialogue">"I know that you are poor, and that you want to travel to Egypt in order to find a treasure. You are not a shepherd by choice."</span></p>',
+          '<p>Santiago was <span class="word" data-en="astonished" data-ar="مندهش">astonished</span>. The old man smiled — he introduced himself as <span class="word" data-en="Melchizedek" data-ar="ملكي صادق">Melchizedek</span>, the King of Salem. <span class="dialogue">"Everyone, when they are young, knows what their Personal Legend is,"</span> he said. <span class="dialogue">"At that point in their lives, everything is clear and everything is possible."</span></p>',
+          '<p><span class="dialogue">"What is a Personal Legend?"</span> asked the <span class="word" data-en="boy" data-ar="الفتى">boy</span>.</p>',
+          '<p class="dialogue">"It\'s what you have always wanted to accomplish. Everyone, when they are young, knows what their Personal Legend is. At that point in their lives, everything is clear and everything is possible. They are not afraid to dream, and to yearn for everything they would like to see happen to them in their lives."</p>',
+          '<p><span class="word" data-en="Santiago" data-ar="سانتياغو">Santiago</span> thought about it. He <span class="word" data-en="realized" data-ar="أدرك">realized</span> that this old man was speaking about something deeper — not mere <span class="word" data-en="adventure" data-ar="مغامرة">adventure</span>, but <span class="word" data-en="purpose" data-ar="هدف">purpose</span>. The very <span class="word" data-en="reason" data-ar="السبب">reason</span> each <span class="word" data-en="soul" data-ar="روح">soul</span> came to walk this <span class="word" data-en="earth" data-ar="الأرض">earth</span>.</p>',
+          '<p>The old king drew two <span class="word" data-en="stones" data-ar="حجارة">stones</span> from his <span class="word" data-en="breastplate" data-ar="درع الصدر">breastplate</span>. <span class="dialogue">"They are called Urim and Thummim. The black signifies yes, and the white signifies no. When you are unable to read the omens, they will help you."</span></p>',
+          '<p class="narrator">كان هذا أول درس حقيقي تعلمه سانتياغو في رحلته — أن الكون كله يتآمر لمساعدة من يسعى نحو أسطورته الشخصية. هذه الفكرة ستظل معه طوال رحلته الطويلة.</p>']
       },
-      { title:'Chapter III: The Journey Begins', vocabEn:['tangier','bazaar','crystal','merchant','horizon'], vocabAr:['طنجة','السوق الشرقي','كريستال','تاجر','الأفق'],
-        text:['<p>He sold his <span class="word" data-en="flock" data-ar="قطيع">flock</span> and bought a <span class="word" data-en="ticket" data-ar="تذكرة">ticket</span> to <span class="word" data-en="Africa" data-ar="أفريقيا">Africa</span>. When he arrived at <span class="word" data-en="Tangier" data-ar="طنجة">Tangier</span>, he was immediately <span class="word" data-en="robbed" data-ar="سُرق">robbed</span> by a <span class="word" data-en="stranger" data-ar="غريب">stranger</span>. He sat alone in the crowded <span class="word" data-en="marketplace" data-ar="السوق">marketplace</span>, <span class="word" data-en="wondering" data-ar="متسائلاً">wondering</span> whether the <span class="word" data-en="omens" data-ar="الفؤال">omens</span> had deceived him.</p>',
-        '<p class="narrator">But then he remembered what the old king had said about beginners luck and the Soul of the World. He <span class="word" data-en="gathered" data-ar="جمع">gathered</span> himself, stood up, and began to <span class="word" data-en="observe" data-ar="يراقب">observe</span> his <span class="word" data-en="surroundings" data-ar="محيطه">surroundings</span> with new <span class="word" data-en="eyes" data-ar="عيون">eyes</span>.</p>',
-        '<p>He found work with a <span class="word" data-en="crystal merchant" data-ar="تاجر الكريستال">crystal merchant</span>, a kind man who had long since <span class="word" data-en="abandoned" data-ar="تخلى عن">abandoned</span> his own <span class="word" data-en="dreams" data-ar="أحلام">dreams</span>. Working there, Santiago would <span class="word" data-en="learn" data-ar="يتعلم">learn</span> his first great <span class="word" data-en="lesson" data-ar="درس">lesson</span> about <span class="word" data-en="courage" data-ar="الشجاعة">courage</span>.</p>']
+      { title:'Chapter III: The Journey to Africa', vocabEn:['Tangier','marketplace','robbed','courage','merchant','crystal','portfolio','determined','lesson','soul of the world'], vocabAr:['طنجة','السوق','سُرق','شجاعة','تاجر','بلّور/كريستال','محفظة','مصمّم','درس','روح العالم'],
+        text:[
+          '<p>He sold his <span class="word" data-en="flock" data-ar="قطيع">flock</span> and bought a <span class="word" data-en="ticket" data-ar="تذكرة">ticket</span> to Africa. When he arrived in <span class="word" data-en="Tangier" data-ar="طنجة">Tangier</span>, he was met by a <span class="word" data-en="crowd" data-ar="حشد">crowd</span> unlike anything he had ever seen — people of every <span class="word" data-en="race" data-ar="عرق/جنس">race</span>, women with their <span class="word" data-en="faces" data-ar="وجوه">faces</span> covered, the <span class="word" data-en="smell" data-ar="رائحة">smell</span> of strange <span class="word" data-en="food" data-ar="طعام">food</span> he couldn\'t identify.</p>',
+          '<p>He was <span class="word" data-en="robbed" data-ar="سُرق">robbed</span> almost immediately. A young man who offered to help him — who spoke <span class="word" data-en="Spanish" data-ar="الإسبانية">Spanish</span> — disappeared with all his <span class="word" data-en="money" data-ar="مال">money</span>. Santiago sat alone in the crowded <span class="word" data-en="marketplace" data-ar="السوق">marketplace</span>, <span class="word" data-en="wondering" data-ar="متسائلاً">wondering</span> whether everything he\'d been told about <span class="word" data-en="omens" data-ar="الفؤال">omens</span> had been a <span class="word" data-en="lie" data-ar="كذبة">lie</span>.</p>',
+          '<p class="dialogue">"I\'m an idiot,"</p><p class="narrator">he thought. <span class="dialogue">"All those years of work, and now I am no better than a beggar in a foreign land."</span></p>',
+          '<p>But then he remembered what the old king had said: <span class="dialogue">"When you want something, the entire universe conspires to help you achieve it."</span> He <span class="word" data-en="gathered" data-ar="جمع">gathered</span> himself, stood up, and began to <span class="word" data-en="observe" data-ar="يراقب">observe</span> the <span class="word" data-en="marketplace" data-ar="السوق">marketplace</span> with fresh eyes.</p>',
+          '<p>He found work with a <span class="word" data-en="crystal merchant" data-ar="تاجر البلّور">crystal merchant</span> — a kind, <span class="word" data-en="melancholic" data-ar="حزين/كئيب">melancholic</span> man who had long abandoned his own <span class="word" data-en="dreams" data-ar="أحلام">dreams</span>. The merchant had always <span class="word" data-en="wanted" data-ar="أراد">wanted</span> to make the <span class="word" data-en="pilgrimage" data-ar="الحج">pilgrimage</span> to Mecca, but had convinced himself there would always be a better time.</p>',
+          '<p>Santiago worked there for <span class="word" data-en="eleven months" data-ar="أحد عشر شهراً">eleven months</span>, and in that time he learned his first great <span class="word" data-en="lesson" data-ar="درس">lesson</span>: that <span class="word" data-en="courage" data-ar="الشجاعة">courage</span> is the only thing that makes a <span class="word" data-en="dream" data-ar="الحلم">dream</span> worth pursuing. Dreams without <span class="word" data-en="action" data-ar="فعل">action</span> are merely <span class="word" data-en="wishes" data-ar="أمانيّ">wishes</span>.</p>',
+          '<p class="narrator">في تلك الأشهر الأحد عشر، لم يتعلم سانتياغو فقط اللغة العربية — بل تعلم شيئاً أهم: أن كل شخص في العالم يخاف من شيء ما. الفرق الوحيد بين من يحقق حلمه ومن لا يفعل هو: الشجاعة على القيام بالخطوة الأولى.</p>']
       }
     ]
   },
-  { title:'Le Petit Prince — FR', lang:'fr', flag:'🇫🇷', icon:'🌹', cover:'fr', desc:'الأمير الصغير لسانت إكزوبيري — رواية كلاسيكية بالفرنسية', pages:96, level:'متوسط', type:'novel',
+  { title:'Le Petit Prince — FR', lang:'fr', flag:'🇫🇷', icon:'🌹', cover:'fr', desc:'الأمير الصغير لسانت إكزوبيري — رواية كلاسيكية بالفرنسية التفاعلية', pages:96, level:'متوسط', type:'novel',
     content:[
-      { title:'Chapitre I — Le narrateur', vocabEn:['dessin','boa','éléphant','chapeau','intérieur'], vocabAr:['رسم','بواء','فيل','قبعة','داخل'],
-        text:['<p>Lorsque j\'avais six ans j\'ai vu, une fois, une magnifique <span class="word" data-en="image" data-ar="صورة">image</span>, dans un livre sur la <span class="word" data-en="Forêt Vierge" data-ar="الغابة البكر">Forêt Vierge</span> qui s\'appelait "Histoires Vécues".</p>',
-        '<p>Ça représentait un <span class="word" data-en="serpent boa" data-ar="ثعبان البواء">serpent boa</span> qui <span class="word" data-en="avalait" data-ar="يبتلع">avalait</span> une <span class="word" data-en="bête sauvage" data-ar="وحش">bête sauvage</span>. J\'ai beaucoup <span class="word" data-en="réfléchi" data-ar="فكرت">réfléchi</span> alors sur les aventures de la <span class="word" data-en="jungle" data-ar="الغابة الاستوائية">jungle</span>.</p>',
-        '<p class="dialogue">"Les grandes personnes ne comprennent jamais rien toutes seules,"</p><p class="narrator">pensait le narrateur, <span class="dialogue">"et c\'est fatigant, pour les enfants, de toujours leur donner des explications."</span></p>']
+      { title:'Chapitre I — Le narrateur et ses dessins', vocabEn:['dessin','boa','éléphant','chapeau','intérieur','fondamental','décourager','chef-d\'œuvre'], vocabAr:['رسم','ثعبان بواء','فيل','قبعة','داخل','أساسي','يُحبط','تحفة فنية'],
+        text:[
+          '<p>Lorsque j\'avais six ans, j\'ai vu, une fois, une magnifique <span class="word" data-en="image" data-ar="صورة">image</span>, dans un <span class="word" data-en="livre" data-ar="كتاب">livre</span> sur la Forêt Vierge qui s\'appelait "Histoires Vécues".</p>',
+          '<p>Ça représentait un <span class="word" data-en="serpent boa" data-ar="ثعبان البواء">serpent boa</span> qui <span class="word" data-en="avalait" data-ar="يبتلع">avalait</span> une <span class="word" data-en="bête sauvage" data-ar="وحش بري">bête sauvage</span>. J\'ai beaucoup <span class="word" data-en="réfléchi" data-ar="فكّرت">réfléchi</span> alors sur les <span class="word" data-en="aventures" data-ar="مغامرات">aventures</span> de la jungle, et j\'ai réussi à <span class="word" data-en="tracer" data-ar="أرسم">tracer</span>, avec un crayon de couleur, mon premier <span class="word" data-en="dessin" data-ar="رسم">dessin</span>.</p>',
+          '<p>Mon dessin numéro 1. Il ressemblait à ça — un grand <span class="word" data-en="chapeau" data-ar="قبعة">chapeau</span>. J\'ai montré mon <span class="word" data-en="chef-d\'œuvre" data-ar="تحفتي الفنية">chef-d\'œuvre</span> aux grandes personnes et je leur ai demandé si mon dessin leur faisait <span class="word" data-en="peur" data-ar="خوف">peur</span>.</p>',
+          '<p class="dialogue">"Pourquoi un chapeau ferait-il peur?"</p>',
+          '<p class="narrator">ردّت الكبار! لكن رسمه لم يكن قبعة أبداً — كان ثعباناً يبتلع فيلاً! هذه هي المشكلة الكبرى بين الأطفال والكبار في الرواية.</p>',
+          '<p>Mon dessin ne représentait pas un chapeau. Il représentait un serpent boa qui <span class="word" data-en="digérait" data-ar="يهضم">digérait</span> un <span class="word" data-en="éléphant" data-ar="فيل">éléphant</span>. J\'ai alors dessiné l\'<span class="word" data-en="intérieur" data-ar="الداخل">intérieur</span> du serpent boa, afin que les grandes personnes puissent <span class="word" data-en="comprendre" data-ar="يفهموا">comprendre</span>. Elles ont toujours besoin d\'<span class="word" data-en="explications" data-ar="تفسيرات">explications</span>.</p>',
+          '<p>Les grandes personnes m\'ont <span class="word" data-en="conseillé" data-ar="نصحوني">conseillé</span> de <span class="word" data-en="laisser de côté" data-ar="أتخلى عن">laisser de côté</span> les dessins de <span class="word" data-en="serpents boas" data-ar="ثعابين البواء">serpents boas</span> ouverts ou fermés, et de m\'<span class="word" data-en="intéresser" data-ar="أهتم">intéresser</span> plutôt à la <span class="word" data-en="géographie" data-ar="الجغرافيا">géographie</span>, à l\'<span class="word" data-en="histoire" data-ar="التاريخ">histoire</span>, au <span class="word" data-en="calcul" data-ar="الحساب">calcul</span> et à la <span class="word" data-en="grammaire" data-ar="القواعد">grammaire</span>.</p>',
+          '<p class="narrator">هكذا <span class="word" data-en="abandonna-t-il" data-ar="تخلّى عن">abandonna-t-il</span> à l\'âge de six ans une magnifique <span class="word" data-en="carrière" data-ar="مسيرة مهنية">carrière</span> de <span class="word" data-en="peintre" data-ar="رسام">peintre</span>. تخلّى الراوي عن حلمه بسبب عدم فهم الكبار — وهذا هو جوهر الرواية كلها.</p>']
       },
-      { title:'Chapitre II — La rencontre', vocabEn:['mouton','désert','dessin','voix','baobab'], vocabAr:['خروف','صحراء','رسم','صوت','شجرة باوباب'],
-        text:['<p>Il y a six ans, ma voiture est tombée en <span class="word" data-en="panne" data-ar="عطل">panne</span> dans le <span class="word" data-en="désert" data-ar="الصحراء">désert</span> du Sahara. Une petite <span class="word" data-en="voix" data-ar="صوت">voix</span> m\'a réveillé au <span class="word" data-en="lever du jour" data-ar="شروق الشمس">lever du jour</span>.</p>',
-        '<p class="dialogue">"S\'il vous plaît... dessine-moi un mouton !"</p>',
-        '<p class="narrator">J\'ai regardé autour de moi avec de grands <span class="word" data-en="yeux" data-ar="عيون">yeux</span> d\'étonnement. Et j\'ai vu un petit bonhomme tout à fait <span class="word" data-en="extraordinaire" data-ar="غير عادي">extraordinaire</span> qui me regardait gravement. Voilà le meilleur <span class="word" data-en="portrait" data-ar="صورة">portrait</span> que, plus tard, j\'ai réussi à faire de lui.</p>']
+      { title:'Chapitre II — La rencontre dans le désert', vocabEn:['mouton','désert','panne','voix','dessine','étonné','planète','rose','baobab'], vocabAr:['خروف','صحراء','عطل','صوت','ارسم','مندهش','كوكب','وردة','شجرة باوباب'],
+        text:[
+          '<p>Il y a six ans, ma voiture est tombée en <span class="word" data-en="panne" data-ar="عطل">panne</span> dans le <span class="word" data-en="désert" data-ar="الصحراء">désert</span> du Sahara. J\'étais bien plus <span class="word" data-en="isolé" data-ar="منعزل">isolé</span> qu\'un <span class="word" data-en="naufragé" data-ar="ناجٍ من حطام سفينة">naufragé</span> sur un <span class="word" data-en="radeau" data-ar="طوف">radeau</span> au milieu de l\'<span class="word" data-en="océan" data-ar="المحيط">océan</span>.</p>',
+          '<p>Alors vous imaginez ma <span class="word" data-en="surprise" data-ar="مفاجأة">surprise</span>, au <span class="word" data-en="lever du jour" data-ar="شروق الشمس">lever du jour</span>, quand une drôle de petite <span class="word" data-en="voix" data-ar="صوت">voix</span> m\'a réveillé. Elle disait:</p>',
+          '<p class="dialogue">"S\'il vous plaît... dessine-moi un mouton!"</p>',
+          '<p>J\'ai sauté sur mes <span class="word" data-en="pieds" data-ar="قدمين">pieds</span> comme si j\'avais été frappé par la <span class="word" data-en="foudre" data-ar="الصاعقة">foudre</span>. J\'ai bien frotté mes <span class="word" data-en="yeux" data-ar="عيون">yeux</span>. J\'ai bien regardé. Et j\'ai vu un petit bonhomme tout à fait <span class="word" data-en="extraordinaire" data-ar="غير عادي">extraordinaire</span> qui me regardait <span class="word" data-en="gravement" data-ar="بجدية">gravement</span>.</p>',
+          '<p>Voilà le meilleur <span class="word" data-en="portrait" data-ar="صورة">portrait</span> que, plus tard, j\'ai réussi à faire de lui. Mais mon dessin, certainement, est beaucoup moins <span class="word" data-en="séduisant" data-ar="جذاب">séduisant</span> que le <span class="word" data-en="modèle" data-ar="النموذج الأصلي">modèle</span>.</p>',
+          '<p>J\'ai dessiné un <span class="word" data-en="mouton" data-ar="خروف">mouton</span>. Il regarda attentivement, puis: <span class="dialogue">"Non! Celui-là est déjà très malade. Fais-en un autre."</span></p>',
+          '<p>J\'ai dessiné encore. Mon <span class="word" data-en="ami" data-ar="صديق">ami</span> sourit gentiment, avec <span class="word" data-en="indulgence" data-ar="تسامح">indulgence</span>: <span class="dialogue">"Tu vois bien... ce n\'est pas un mouton, c\'est un bélier. Il a des cornes..."</span></p>',
+          '<p class="narrator">أخيراً رسم له الراوي صندوقاً وقال: "الخروف الذي تريده داخل هذا الصندوق." وابتهج الأمير الصغير بشكل لم يتوقعه الراوي — لأن الخيال والإيمان يكفيان أحياناً.</p>']
+      },
+      { title:'Chapitre III — La planète B-612 et la rose', vocabEn:['planète','astéroïde','rose','épines','orgueilleuse','parfum','unique','soigner','renard','secret'], vocabAr:['كوكب','كويكب','وردة','أشواك','متكبرة','عطر','فريد','يعتني','ثعلب','سرّ'],
+        text:[
+          '<p>J\'appris ainsi la <span class="word" data-en="deuxième chose" data-ar="الشيء الثاني">deuxième chose</span> importante: sa <span class="word" data-en="planète" data-ar="كوكبه">planète</span> d\'origine était à peine plus grande qu\'une <span class="word" data-en="maison" data-ar="منزل">maison</span>! Cela ne pouvait pas m\'<span class="word" data-en="étonner" data-ar="يُدهشني">étonner</span> beaucoup. Je savais bien qu\'en dehors des grandes <span class="word" data-en="planètes" data-ar="كواكب">planètes</span> comme la Terre, Jupiter, Mars, Vénus, auxquelles on a donné des <span class="word" data-en="noms" data-ar="أسماء">noms</span>, il y en a des <span class="word" data-en="centaines d\'autres" data-ar="مئات أخرى">centaines d\'autres</span>.</p>',
+          '<p>Sur la planète du petit <span class="word" data-en="prince" data-ar="أمير">prince</span> poussait une <span class="word" data-en="rose" data-ar="وردة">rose</span> unique au monde. Une rose avec de terribles <span class="word" data-en="épines" data-ar="أشواك">épines</span>, mais une rose <span class="word" data-en="parfumée" data-ar="عطرة">parfumée</span> et <span class="word" data-en="belle" data-ar="جميلة">belle</span>.</p>',
+          '<p class="dialogue">"Je suis la plus belle fleur de ton étoile,"</p><p class="narrator">قالت الوردة بكبرياء. لكن الأمير لم يفهم آنذاك أنها كانت تحبه بطريقتها الخاصة.</p>',
+          '<p>Il prit au <span class="word" data-en="sérieux" data-ar="مأخذ الجدية">sérieux</span> des paroles sans <span class="word" data-en="importance" data-ar="أهمية">importance</span>, et devint très <span class="word" data-en="malheureux" data-ar="تعيس">malheureux</span>. <span class="dialogue">"J\'aurais dû la juger sur ses actes et non sur ses mots,"</span> me confia-t-il un jour. <span class="dialogue">"Elle embaumait ma planète et éclairait ma vie. Je n\'aurais pas dû m\'enfuir!"</span></p>',
+          '<p class="narrator">هذا هو الدرس الأعمق في الرواية كلها: نحن مسؤولون عمّن نروّض. من "روّض" شيئاً — أي أقام معه علاقة خاصة — صار مسؤولاً عنه إلى الأبد. هذا ما سيتعلمه الأمير لاحقاً من الثعلب.</p>']
       }
     ]
   },
-  { title:'نسر بلا أجنحة — الألمانية', lang:'de', flag:'🇩🇪', icon:'🦅', cover:'de', desc:'قصة مشوقة عن الحرية والتحرر باللغة الألمانية', pages:64, level:'مبتدئ', type:'story',
+  { title:'نسر بلا أجنحة — DE', lang:'de', flag:'🇩🇪', icon:'🦅', cover:'de', desc:'قصة مشوقة عن الحرية والشجاعة مكتوبة بالألمانية السهلة', pages:64, level:'مبتدئ', type:'story',
     content:[
-      { title:'Kapitel 1: Der Wald', vocabEn:['Adler','Flügel','Wald','Freiheit','träumen'], vocabAr:['نسر','أجنحة','غابة','حرية','يحلم'],
-        text:['<p>Es war einmal ein <span class="word" data-en="Adler" data-ar="نسر">Adler</span>, der nicht <span class="word" data-en="fliegen" data-ar="يطير">fliegen</span> konnte. Er lebte am <span class="word" data-en="Boden" data-ar="الأرض">Boden</span> des <span class="word" data-en="großen Waldes" data-ar="الغابة الكبيرة">großen Waldes</span>, unter den anderen <span class="word" data-en="Tieren" data-ar="الحيوانات">Tieren</span>.</p>',
-        '<p class="dialogue">"Warum kannst du nicht fliegen?"</p><p class="narrator">fragte die kleine <span class="word" data-en="Maus" data-ar="الفأر">Maus</span>. <span class="dialogue">"Du hast doch Flügel!"</span></p>',
-        '<p>Der Adler schaute auf seine großen <span class="word" data-en="Flügel" data-ar="أجنحة">Flügel</span> und <span class="word" data-en="seufzte" data-ar="تنهد">seufzte</span>. <span class="dialogue">"Ich habe Angst,"</span> sagte er leise. <span class="dialogue">"Die Luft ist weit, und der Fall ist tief."</span> Er <span class="word" data-en="träumte" data-ar="حلم">träumte</span> jede Nacht davon, den <span class="word" data-en="Himmel" data-ar="السماء">Himmel</span> zu berühren.</p>']
+      { title:'Kapitel 1: Der Wald erwacht', vocabEn:['Adler','Flügel','Wald','Freiheit','träumen','Angst','fliegen','Himmel','Mut','Freund'], vocabAr:['نسر','أجنحة','غابة','حرية','يحلم','خوف','يطير','السماء','شجاعة','صديق'],
+        text:[
+          '<p>Es war einmal ein <span class="word" data-en="Adler" data-ar="نسر">Adler</span>, der nicht <span class="word" data-en="fliegen" data-ar="يطير">fliegen</span> konnte. Er lebte am <span class="word" data-en="Boden" data-ar="الأرض">Boden</span> des <span class="word" data-en="großen Waldes" data-ar="الغابة الكبيرة">großen Waldes</span>, weit unter den <span class="word" data-en="Wolken" data-ar="الغيوم">Wolken</span>, die er nur von unten <span class="word" data-en="beobachten" data-ar="يراقب">beobachten</span> konnte.</p>',
+          '<p>Sein <span class="word" data-en="Name" data-ar="اسمه">Name</span> war <span class="word" data-en="Arius" data-ar="أريوس">Arius</span>. Er hatte wunderschöne <span class="word" data-en="Flügel" data-ar="أجنحة">Flügel</span> — <span class="word" data-en="braun" data-ar="بنية">braun</span> und <span class="word" data-en="golden" data-ar="ذهبية">golden</span> wie die Sonne. Aber seit einem <span class="word" data-en="Sturm" data-ar="عاصفة">Sturm</span> in seiner <span class="word" data-en="Kindheit" data-ar="طفولته">Kindheit</span> hatte er <span class="word" data-en="Angst" data-ar="خوف">Angst</span> vor der <span class="word" data-en="Höhe" data-ar="الارتفاع">Höhe</span>.</p>',
+          '<p class="dialogue">"Warum kannst du nicht fliegen?"</p><p class="narrator">fragte die kleine <span class="word" data-en="Maus" data-ar="الفأرة">Maus</span> namens Lina. Sie saß auf einem <span class="word" data-en="Stein" data-ar="حجر">Stein</span> neben ihm. <span class="dialogue">"Du hast doch Flügel! Schau, sie sind wunderschön!"</span></p>',
+          '<p>Der <span class="word" data-en="Adler" data-ar="النسر">Adler</span> schaute auf seine großen Flügel und <span class="word" data-en="seufzte" data-ar="تنهد">seufzte</span>. <span class="dialogue">"Ich habe Angst,"</span> sagte er leise. <span class="dialogue">"Die Luft ist weit, und der Fall ist tief. Was, wenn ich <span class="word" data-en="abstürze" data-ar="أسقط">abstürze</span>?"</span></p>',
+          '<p><span class="dialogue">"Was, wenn du fliegst?"</span> fragte Lina mit einem <span class="word" data-en="Lächeln" data-ar="ابتسامة">Lächeln</span>. Diese einfachen <span class="word" data-en="Worte" data-ar="كلمات">Worte</span> trafen Arius wie ein <span class="word" data-en="Blitz" data-ar="صاعقة">Blitz</span>. <span class="word" data-en="Was, wenn du fliegst?" data-ar="ماذا لو طرت؟">Was, wenn du fliegst?</span></p>',
+          '<p>Er <span class="word" data-en="träumte" data-ar="حلم">träumte</span> jede Nacht davon, den <span class="word" data-en="Himmel" data-ar="السماء">Himmel</span> zu <span class="word" data-en="berühren" data-ar="يلمس">berühren</span> — über den <span class="word" data-en="Wolken" data-ar="الغيوم">Wolken</span> zu <span class="word" data-en="schweben" data-ar="يحلق">schweben</span>, den <span class="word" data-en="Wind" data-ar="الريح">Wind</span> unter seinen <span class="word" data-en="Flügeln" data-ar="أجنحته">Flügeln</span> zu <span class="word" data-en="spüren" data-ar="يشعر">spüren</span>. Doch der <span class="word" data-en="Mut" data-ar="الشجاعة">Mut</span> fehlte ihm noch.</p>',
+          '<p class="narrator">في تلك الليلة، لم ينم أريوس. كلمات لينا كانت تتردد في ذهنه مراراً وتكراراً: "ماذا لو طرت؟" — ليس "ماذا لو سقطت؟" كما اعتاد أن يسأل نفسه، بل "ماذا لو طرت؟" هذا السؤال غيّر كل شيء.</p>']
+      },
+      { title:'Kapitel 2: Der erste Schritt', vocabEn:['Fels','springen','Wind','Höhe','Mut','Freiheit','schweben','jubeln','Himmel','Tränen'], vocabAr:['صخرة','يقفز','ريح','ارتفاع','شجاعة','حرية','يحلق','يهتف فرحاً','السماء','دموع'],
+        text:[
+          '<p>Am nächsten <span class="word" data-en="Morgen" data-ar="صباح">Morgen</span> stand Arius auf einem großen <span class="word" data-en="Fels" data-ar="صخرة">Fels</span> am <span class="word" data-en="Rand" data-ar="حافة">Rand</span> des Waldes. Unter ihm — ein tiefer <span class="word" data-en="Abgrund" data-ar="هاوية">Abgrund</span>. Über ihm — der <span class="word" data-en="blaue Himmel" data-ar="السماء الزرقاء">blaue Himmel</span>, weit und <span class="word" data-en="unendlich" data-ar="لا نهاية له">unendlich</span>.</p>',
+          '<p>Lina saß neben ihm. <span class="dialogue">"Du musst das nicht tun,"</span> sagte sie <span class="word" data-en="sanft" data-ar="بلطف">sanft</span>. <span class="dialogue">"Aber wenn du es tust — ich bin hier."</span></p>',
+          '<p>Arius <span class="word" data-en="schloss" data-ar="أغمض">schloss</span> die <span class="word" data-en="Augen" data-ar="عينيه">Augen</span>. Er <span class="word" data-en="atmete tief ein" data-ar="أخذ نفساً عميقاً">atmete tief ein</span>. Er <span class="word" data-en="dachte" data-ar="فكّر">dachte</span> an den <span class="word" data-en="Himmel" data-ar="السماء">Himmel</span>, an den Wind, an seine <span class="word" data-en="Träume" data-ar="أحلامه">Träume</span>. Dann <span class="word" data-en="sprang" data-ar="قفز">sprang</span> er.</p>',
+          '<p>Für einen <span class="word" data-en="Moment" data-ar="لحظة">Moment</span> fiel er — und sein <span class="word" data-en="Herz" data-ar="قلبه">Herz</span> <span class="word" data-en="hörte auf zu schlagen" data-ar="توقف عن الخفقان">hörte auf zu schlagen</span>. Dann — fast ohne es zu <span class="word" data-en="merken" data-ar="يلاحظ">merken</span> — <span class="word" data-en="öffneten sich" data-ar="انفتحت">öffneten sich</span> seine Flügel.</p>',
+          '<p>Der <span class="word" data-en="Wind" data-ar="الريح">Wind</span> trug ihn. Er <span class="word" data-en="schwebte" data-ar="حلّق">schwebte</span>. Er <span class="word" data-en="flog" data-ar="طار">flog</span>! Über den <span class="word" data-en="Bäumen" data-ar="الأشجار">Bäumen</span>, über den <span class="word" data-en="Wolken" data-ar="الغيوم">Wolken</span>, höher und höher — und er <span class="word" data-en="jubelte" data-ar="هتف فرحاً">jubelte</span> mit einer <span class="word" data-en="Stimme" data-ar="صوت">Stimme</span>, die er selbst nicht kannte.</p>',
+          '<p class="narrator">طار أريوس! وفهم في تلك اللحظة أن الخوف لم يكن من الارتفاع — بل كان من الفشل. لكنه أدرك الآن أن الفشل الوحيد الحقيقي هو عدم المحاولة. وحين هبط مساءً، كانت لينا تنتظره مبتسمةً، وكان الغابة كله يحتفل.</p>']
       }
     ]
   },
@@ -951,13 +1113,227 @@ const courses = [
   { title:'English for Business', icon:'💼', iconClass:'blue', lang:'🇬🇧', desc:'الإنجليزية المتخصصة للأعمال والبيئات المهنية', level:'intermediate', dur:'6 أسابيع', lessons:24, progress:0, price:'279 ريال', tags:['عروض','مراسلات','مفاوضات'] },
 ];
 
-const lessonQuestions = [
-  { q:'ما معنى كلمة "Apple" بالعربية؟', hint:'🍎 فكر في الفواكه', opts:['تفاحة','برتقالة','موزة','عنبة'], correct:0, explanation:'Apple = تفاحة. جمعها Apples.' },
-  { q:'أكمل الجملة: "I ___ a student"', hint:'ضمير المفرد المتكلم يستخدم مع...', opts:['am','is','are','be'], correct:0, explanation:'مع ضمير I نستخدم am. مثال: I am happy.' },
-  { q:'ما هي صيغة الجمع لـ "child"؟', hint:'هذا الجمع غير قياسي!', opts:['children','childs','childen','childre'], correct:0, explanation:'Child — Children جمع شاذ مثل: man — men, woman — women.' },
-  { q:'ما معنى "Bonjour" بالعربية؟', hint:'هذه كلمة فرنسية للتحية', opts:['مرحباً','وداعاً','شكراً','عفواً'], correct:0, explanation:'Bonjour = مرحباً/صباح الخير بالفرنسية.' },
-  { q:'"Danke" هي كلمة ألمانية تعني:', hint:'تقولها عند تلقي شيء', opts:['شكراً','مرحباً','لو سمحت','عذراً'], correct:0, explanation:'Danke = شكراً. Danke schön = شكراً جزيلاً.' },
+// Per-course question banks — each course gets its own varied questions
+const courseQuestions = {
+  0: [ // English A1
+    { type:'mcq', q:'ما معنى "Apple"؟', hint:'🍎', opts:['تفاحة','برتقالة','موزة','عنبة'], correct:0, explanation:'Apple = تفاحة، جمعها Apples.' },
+    { type:'tf', q:'"Good morning" تعني مساء الخير', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'Good morning = صباح الخير. مساء الخير = Good evening.' },
+    { type:'fill', q:'أكمل: "I ___ a student"', hint:'ماذا نستخدم مع I؟', opts:['am','is','are','be'], correct:0, explanation:'مع I نستخدم am دائماً.' },
+    { type:'image', q:'أي إيموجي يمثل كلمة "Rain"؟', emoji:'☀️🌧️⭐🌙', opts:['☀️ شمس','🌧️ مطر','⭐ نجمة','🌙 قمر'], correct:1, explanation:'Rain = مطر.' },
+    { type:'match', q:'طابق الكلمة مع معناها:', pairs:[{left:'Cat',right:'قطة'},{left:'Dog',right:'كلب'},{left:'Sun',right:'شمس'},{left:'Water',right:'ماء'}], correct:0, explanation:'Cat=قطة، Dog=كلب، Sun=شمس، Water=ماء.' },
+    { type:'mcq', q:'كيف تقول "شكراً" بالإنجليزية؟', opts:['Thank you','Sorry','Hello','Please'], correct:0, explanation:'Thank you = شكراً. You\'re welcome = عفواً.' },
+    { type:'tf', q:'"Dog" و"Cat" كلاهما نوع من الطيور', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'Dog = كلب وCat = قطة. الطيور تسمى birds.' },
+    { type:'fill', q:'She ___ a teacher (هي معلمة)', hint:'مؤنث غائب', opts:['is','am','are','be'], correct:0, explanation:'مع He/She/It نستخدم is.' },
+  ],
+  1: [ // English B2
+    { type:'mcq', q:'ما الفرق بين "affect" و"effect"؟', hint:'أحدهما فعل والآخر اسم', opts:['affect فعل / effect اسم','affect اسم / effect فعل','لا فرق بينهما','كلاهما أفعال'], correct:0, explanation:'"Affect" فعل: it affects me. "Effect" اسم: the effect is clear.' },
+    { type:'fill', q:'"I wish I ___ taller"', hint:'ماذا نستخدم بعد wish؟', opts:['were','was','am','be'], correct:0, explanation:'بعد "I wish" نستخدم subjunctive: were (حتى للمفرد).' },
+    { type:'tf', q:'جملة "I am more tall than him" صحيحة نحوياً', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'الصحيح: "I am taller than him". الصفات القصيرة تأخذ -er.' },
+    { type:'image', q:'ما معنى "Break a leg"؟', emoji:'🎭🦵💔🏆', opts:['بالتوفيق','كسر ساق','إنجاز','مسرح'], correct:0, explanation:'"Break a leg!" تعبير اصطلاحي مسرحي يعني "حظاً موفقاً".' },
+    { type:'match', q:'طابق الفعل بصيغة ماضيه:', pairs:[{left:'Write',right:'Wrote'},{left:'Run',right:'Ran'},{left:'Give',right:'Gave'},{left:'Take',right:'Took'}], correct:0, explanation:'Write→Wrote، Run→Ran، Give→Gave، Take→Took.' },
+    { type:'mcq', q:'ما معنى "Procrastination"؟', opts:['التسويف','الإنجاز','التركيز','السرعة'], correct:0, explanation:'Procrastination = التأجيل والمماطلة في العمل.' },
+    { type:'fill', q:'"She has ___ working for 3 hours"', hint:'Present Perfect Continuous', opts:['been','be','being','was'], correct:0, explanation:'Present Perfect Continuous = have/has been + verb-ing.' },
+    { type:'tf', q:'"Whom" تستخدم كفاعل في الجملة', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'"Whom" تستخدم كمفعول. الفاعل = "Who".' },
+  ],
+  2: [ // French Basics
+    { type:'mcq', q:'ما معنى "Bonjour"؟', hint:'تحية فرنسية صباحية', opts:['صباح الخير','وداعاً','شكراً','عفواً'], correct:0, explanation:'Bonjour = صباح الخير. يُقال صباحاً ونهاراً.' },
+    { type:'tf', q:'"Merci" تعني "عفواً" بالفرنسية', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'"Merci" = شكراً. "De rien" أو "Je vous en prie" = عفواً.' },
+    { type:'fill', q:'Je ___ étudiant (أنا طالب)', hint:'فعل être للمفرد المتكلم', opts:['suis','es','est','sommes'], correct:0, explanation:'Je suis = أنا أكون. فعل être: je suis, tu es, il est...' },
+    { type:'image', q:'ما معنى "Croissant"؟', emoji:'🥐🍕🥗🍰', opts:['كرواسان','بيتزا','سلطة','كعكة'], correct:0, explanation:'Croissant 🥐 = نوع من الخبز الفرنسي الشهير.' },
+    { type:'match', q:'طابق الأرقام الفرنسية:', pairs:[{left:'Un',right:'١'},{left:'Deux',right:'٢'},{left:'Trois',right:'٣'},{left:'Quatre',right:'٤'}], correct:0, explanation:'Un=١، Deux=٢، Trois=٣، Quatre=٤.' },
+    { type:'mcq', q:'كيف تقول "أنا أحب" بالفرنسية؟', opts:["J'aime","Je parle","Je suis","J'ai"], correct:0, explanation:'"J\'aime" = أحب. "J\'aime le français" = أحب اللغة الفرنسية.' },
+    { type:'tf', q:'"Au revoir" تعني مرحباً بالفرنسية', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'"Au revoir" = وداعاً. مرحباً = Bonjour/Salut.' },
+    { type:'fill', q:'"___ vous plaît" (من فضلك)', hint:'كلمة قبل "vous plaît"', opts:["S'il","Par","Pour","Avec"], correct:0, explanation:'"S\'il vous plaît" = من فضلك (رسمي). "S\'il te plaît" = غير رسمي.' },
+  ],
+  3: [ // Deutsch A2
+    { type:'mcq', q:'كيف تقول "صباح الخير" بالألمانية؟', opts:['Guten Morgen','Guten Tag','Gute Nacht','Auf Wiedersehen'], correct:0, explanation:'Guten Morgen = صباح الخير. Guten Tag = مرحباً (نهاراً).' },
+    { type:'tf', q:'الألمانية لها 3 حالات إعرابية فقط', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'الألمانية لها 4 حالات: Nominativ, Akkusativ, Dativ, Genitiv.' },
+    { type:'fill', q:'Ich ___ Deutsch (أنا أتعلم الألمانية)', hint:'فعل lerne = أتعلم', opts:['lerne','lernt','lernst','lernen'], correct:0, explanation:'مع ich نستخدم lerne. مع du = lernst، مع er/sie = lernt.' },
+    { type:'image', q:'ما معنى "Hund"؟', emoji:'🐶🐱🐻🦁', opts:['كلب','قطة','دب','أسد'], correct:0, explanation:'Hund = كلب. Katze = قطة. Bär = دب.' },
+    { type:'match', q:'طابق الأيام الألمانية:', pairs:[{left:'Montag',right:'الإثنين'},{left:'Dienstag',right:'الثلاثاء'},{left:'Mittwoch',right:'الأربعاء'},{left:'Freitag',right:'الجمعة'}], correct:0, explanation:'Mon=إثنين، Di=ثلاثاء، Mi=أربعاء، Fr=جمعة.' },
+    { type:'mcq', q:'كلمة "Fernweh" تعني؟', opts:['الشوق للسفر','الخوف من المرتفعات','الحنين للماضي','الخجل'], correct:0, explanation:'Fernweh = الشوق إلى الأماكن البعيدة والسفر.' },
+    { type:'tf', q:'"Danke schön" يعني شكراً جزيلاً', opts:['✅ صحيح','❌ خطأ'], correct:0, explanation:'نعم! Danke = شكراً. Danke schön = شكراً جزيلاً.' },
+    { type:'fill', q:'Das ist ___ Buch (هذا كتاب)', hint:'أداة التعريف للمحايد', opts:['ein','eine','einer','einem'], correct:0, explanation:'"ein" مع المذكر والمحايد، "eine" مع المؤنث.' },
+  ],
+  4: [ // Spanish Conversation
+    { type:'mcq', q:'كيف تقول "كيف حالك؟" بالإسبانية؟', opts:['¿Cómo estás?','¿Dónde estás?','¿Qué haces?','¿Quién eres?'], correct:0, explanation:'¿Cómo estás? = كيف حالك؟ (غير رسمي). ¿Cómo está usted? = رسمي.' },
+    { type:'tf', q:'"Ser" و"Estar" فعلان بنفس المعنى تماماً', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'Ser = للصفات الدائمة. Estar = للحالات المؤقتة.' },
+    { type:'fill', q:'Yo ___ de Arabia Saudita (أنا من السعودية)', hint:'فعل ser للمتكلم', opts:['soy','estoy','tengo','vivo'], correct:0, explanation:'"Soy" من فعل ser. للأصل والجنسية نستخدم ser لا estar.' },
+    { type:'image', q:'ما معنى "Mariposa"؟', emoji:'🦋🐝🐞🐜', opts:['فراشة','نحلة','دعسوقة','نملة'], correct:0, explanation:'Mariposa = فراشة 🦋. Abeja = نحلة.' },
+    { type:'match', q:'طابق الجسم بكلمته الإسبانية:', pairs:[{left:'Cabeza',right:'رأس'},{left:'Mano',right:'يد'},{left:'Ojo',right:'عين'},{left:'Boca',right:'فم'}], correct:0, explanation:'Cabeza=رأس، Mano=يد، Ojo=عين، Boca=فم.' },
+    { type:'mcq', q:'ما معنى "Te quiero"؟', opts:['أحبك','أكرهك','أريدك','أفتقدك'], correct:0, explanation:'"Te quiero" = أحبك (أقل رسمية من "Te amo"). كلاهما يعبر عن الحب.' },
+    { type:'tf', q:'في الإسبانية، الأسماء إما مذكر أو مؤنث', opts:['✅ صحيح','❌ خطأ'], correct:0, explanation:'نعم! libro=مذكر، mesa=مؤنث. المؤنث غالباً ينتهي بـ -a.' },
+    { type:'fill', q:'¿___ te llamas? (ما اسمك؟)', hint:'كلمة الاستفهام', opts:['Cómo','Qué','Dónde','Cuándo'], correct:0, explanation:'¿Cómo te llamas? = ما اسمك؟ Me llamo... = اسمي...' },
+  ],
+  5: [ // Japanese N5
+    { type:'mcq', q:'كيف تقول "مرحباً" باليابانية؟', opts:['こんにちは','さようなら','ありがとう','すみません'], correct:0, explanation:'こんにちは (Konnichiwa) = مرحباً، تُستخدم نهاراً.' },
+    { type:'tf', q:'اليابانية تُكتب بطريقة واحدة فقط', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'اليابانية لها 3 أنظمة كتابة: Hiragana، Katakana، Kanji.' },
+    { type:'fill', q:'わたし ___ がくせいです (أنا طالب)', hint:'الكلمة الرابطة باليابانية', opts:['は','を','が','に'], correct:0, explanation:'"は" (wa) = حرف الموضوع في الجملة اليابانية.' },
+    { type:'image', q:'ما معنى "ねこ" (Neko)؟', emoji:'🐱🐶🐹🐰', opts:['قطة','كلب','همستر','أرنب'], correct:0, explanation:'ねこ (Neko) = قطة 🐱. いぬ (Inu) = كلب.' },
+    { type:'match', q:'طابق الأرقام اليابانية:', pairs:[{left:'いち (ichi)',right:'١'},{left:'に (ni)',right:'٢'},{left:'さん (san)',right:'٣'},{left:'よん (yon)',right:'٤'}], correct:0, explanation:'ichi=١، ni=٢، san=٣، yon=٤.' },
+    { type:'mcq', q:'ما معنى "Kawaii" (かわいい)؟', opts:['لطيف/جميل','حزين','غاضب','خائف'], correct:0, explanation:'かわいい (kawaii) = لطيف وجميل، من أشهر الكلمات اليابانية عالمياً.' },
+    { type:'tf', q:'"Sayonara" تعني مرحباً باليابانية', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'"さようなら" (Sayonara) = وداعاً. مرحباً = こんにちは (Konnichiwa).' },
+    { type:'fill', q:'ありがとう ___ (شكراً جزيلاً)', hint:'كلمة تأتي بعد ありがとう لتعني "جزيلاً"', opts:['ございます','です','ます','ください'], correct:0, explanation:'"ありがとうございます" = شكراً جزيلاً (رسمي جداً).' },
+  ],
+  6: [ // Chinese HSK
+    { type:'mcq', q:'كيف تقول "مرحباً" بالصينية؟', opts:['你好 (Nǐ hǎo)','再见 (Zàijiàn)','谢谢 (Xièxiè)','对不起 (Duìbuqǐ)'], correct:0, explanation:'你好 (Nǐ hǎo) = مرحباً. حرفياً: "أنت بخير".' },
+    { type:'tf', q:'اللغة الصينية لا تحتوي على أبجدية', opts:['✅ صحيح','❌ خطأ'], correct:0, explanation:'الصينية تستخدم الحروف الصورية (Characters)، لا أبجدية. البينيين هو نظام النطق.' },
+    { type:'fill', q:'我 ___ 学生 (أنا طالب)', hint:'فعل الكينونة بالصينية', opts:['是 (shì)','有 (yǒu)','在 (zài)','叫 (jiào)'], correct:0, explanation:'"是" (shì) = أكون/يكون. 我是学生 = أنا طالب.' },
+    { type:'image', q:'ما معنى "猫" (māo)؟', emoji:'🐱🐶🐟🐦', opts:['قطة','كلب','سمكة','طائر'], correct:0, explanation:'猫 (māo) = قطة 🐱. 狗 (gǒu) = كلب.' },
+    { type:'match', q:'طابق الأرقام الصينية:', pairs:[{left:'一 (yī)',right:'١'},{left:'二 (èr)',right:'٢'},{left:'三 (sān)',right:'٣'},{left:'四 (sì)',right:'٤'}], correct:0, explanation:'一=١، 二=٢، 三=٣، 四=٤.' },
+    { type:'mcq', q:'ما معنى "Saudade" في اللغة البرتغالية؟', opts:['الحنين الجميل','الغضب','الفرح','الملل'], correct:0, explanation:'"Saudade" = شعور حنين جميل حزين لا مقابل له في العربية.' },
+    { type:'tf', q:'"再见" تُنطق "Zàijiàn" وتعني وداعاً', opts:['✅ صحيح','❌ خطأ'], correct:0, explanation:'نعم! 再见 (Zàijiàn) = وداعاً. حرفياً: "نلتقي مجدداً".' },
+    { type:'fill', q:'你叫什么 ___ ？(ما اسمك؟)', hint:'كلمة تعني "اسم"', opts:['名字 (míngzi)','人 (rén)','书 (shū)','家 (jiā)'], correct:0, explanation:'你叫什么名字？= ما اسمك؟ 我叫... = اسمي...' },
+  ],
+  7: [ // English for Business
+    { type:'mcq', q:'ما معنى "Deadline" في بيئة العمل؟', opts:['الموعد النهائي','الاجتماع الأسبوعي','الراتب الشهري','العطلة الرسمية'], correct:0, explanation:'"Deadline" = الموعد النهائي لتسليم العمل.' },
+    { type:'tf', q:'"CC" في البريد الإلكتروني تعني "Copy Confirmed"', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'"CC" = Carbon Copy (نسخة). "BCC" = Blind Carbon Copy.' },
+    { type:'fill', q:'"Please find ___ the report" (المرفق)', hint:'كلمة تعني "مرفق"', opts:['attached','included','added','below'], correct:0, explanation:'"Please find attached" = يرجى الاطلاع على المرفق. تعبير رسمي شائع.' },
+    { type:'image', q:'ما هذا المصطلح؟ "ROI"', emoji:'📈💰📊🏆', opts:['عائد الاستثمار','تقرير مالي','خطة تسويق','ميزانية'], correct:0, explanation:'ROI = Return On Investment = عائد الاستثمار.' },
+    { type:'match', q:'طابق المصطلح بمعناه:', pairs:[{left:'B2B',right:'شركة لشركة'},{left:'KPI',right:'مؤشر الأداء'},{left:'CEO',right:'المدير التنفيذي'},{left:'HR',right:'الموارد البشرية'}], correct:0, explanation:'مصطلحات أعمال أساسية.' },
+    { type:'mcq', q:'ما العبارة الصحيحة لبدء بريد إلكتروني رسمي؟', opts:['Dear Mr./Ms. Smith,','Hey there!','Yo,','What\'s up,'], correct:0, explanation:'"Dear Mr./Ms. [Name]," = الصيغة الرسمية لبدء البريد الإلكتروني.' },
+    { type:'tf', q:'"Action items" في الاجتماع تعني النقاط المطروحة للنقاش', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'"Action items" = المهام المحددة التي يجب تنفيذها بعد الاجتماع.' },
+    { type:'fill', q:'"Looking forward ___ hearing from you"', hint:'حرف الجر الصحيح', opts:['to','for','at','with'], correct:0, explanation:'"Look forward to" = أتطلع إلى. تأتي بعدها ing دائماً.' },
+  ],
+};
+
+// Default fallback questions for courses without specific banks
+const defaultLessonBank = [
+  { type:'mcq', q:'ما معنى "Book" بالعربية؟', hint:'📚', opts:['كتاب','قلم','مدرسة','طاولة'], correct:0, explanation:'"Book" = كتاب.' },
+  { type:'tf', q:'"Hello" تعني "وداعاً"', opts:['✅ صحيح','❌ خطأ'], correct:1, explanation:'"Hello" = مرحباً. "Goodbye" = وداعاً.' },
+  { type:'fill', q:'"Good ___, how are you?"', hint:'تحية الصباح', opts:['morning','night','day','bye'], correct:0, explanation:'Good morning = صباح الخير.' },
+  { type:'image', q:'ما الكلمة التي تمثل هذا الإيموجي؟', emoji:'🌟', opts:['Star','Moon','Sun','Cloud'], correct:0, explanation:'Star = نجمة 🌟.' },
+  { type:'match', q:'طابق الكلمة بمعناها:', pairs:[{left:'Yes',right:'نعم'},{left:'No',right:'لا'},{left:'Please',right:'من فضلك'},{left:'Sorry',right:'آسف'}], correct:0, explanation:'كلمات أساسية جداً.' },
+  { type:'mcq', q:'كيف تقول "شكراً" بالإنجليزية؟', opts:['Thank you','Sorry','Hello','Goodbye'], correct:0, explanation:'"Thank you" = شكراً.' },
 ];
+
+let currentLessonBank = [];
+let lessonMatchSelectedLeft = null;
+let lessonMatchMatched = 0;
+
+function openLesson(courseIdx) {
+  lessonIdx = 0; lessonScore = 0;
+  currentLessonBank = courseQuestions[courseIdx] || defaultLessonBank;
+  document.getElementById('lessonTitle').textContent = courses[courseIdx].title;
+  document.getElementById('lessonSubtitle').textContent = courses[courseIdx].lang + ' — ' + currentLessonBank.length + ' أسئلة متنوعة';
+  document.getElementById('lessonScore').textContent = '0 XP';
+  renderLesson();
+  document.getElementById('lessonModal').classList.add('open');
+}
+
+function renderLesson() {
+  const q = currentLessonBank[lessonIdx % currentLessonBank.length];
+  const total = currentLessonBank.length;
+  const pct = Math.round((lessonIdx / total) * 100);
+  document.getElementById('lessonProgressBar').style.width = pct + '%';
+  document.getElementById('lessonQNum').textContent = `سؤال ${lessonIdx + 1} من ${total}`;
+  document.getElementById('lessonQuestion').textContent = q.q;
+  document.getElementById('lessonHint').textContent = q.hint ? '💡 ' + q.hint : '';
+  document.getElementById('lessonFeedback').textContent = '';
+  document.getElementById('lessonFeedback').style.color = '';
+  document.getElementById('lessonNextBtn').style.display = 'none';
+  // Type label
+  const tlabels = {mcq:'🔘 اختيار متعدد', tf:'✅ صح أم خطأ', fill:'✍️ إكمال الجملة', image:'🖼️ تحديد بالصورة', match:'🔗 مطابقة'};
+  document.getElementById('lessonTypeLabel').textContent = tlabels[q.type] || '🔘 سؤال';
+  // Emoji area
+  const emojiDiv = document.getElementById('lessonEmojiArea');
+  if (q.emoji) { emojiDiv.style.display = 'block'; emojiDiv.textContent = q.emoji; }
+  else { emojiDiv.style.display = 'none'; }
+  // Match vs standard
+  const matchArea = document.getElementById('lessonMatchArea');
+  const optsArea = document.getElementById('lessonOptions');
+  if (q.type === 'match') {
+    optsArea.style.display = 'none';
+    matchArea.style.display = 'block';
+    renderLessonMatch(q);
+  } else {
+    optsArea.style.display = 'grid';
+    matchArea.style.display = 'none';
+    optsArea.innerHTML = q.opts.map((o, i) =>
+      `<button class="lesson-option" data-idx="${i}" data-correct="${q.correct}">${o}</button>`
+    ).join('');
+    optsArea.querySelectorAll('.lesson-option').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const sel = parseInt(this.dataset.idx);
+        const correct = parseInt(this.dataset.correct);
+        checkLesson(sel, correct, this, q.explanation);
+      });
+    });
+  }
+}
+
+function renderLessonMatch(q) {
+  lessonMatchSelectedLeft = null;
+  lessonMatchMatched = 0;
+  const rightShuffled = [...q.pairs.map(p => p.right)].sort(() => Math.random() - 0.5);
+  document.getElementById('lessonMatchArea').innerHTML = `
+    <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.8rem;text-align:center">انقر كلمة يساراً ثم مرادفها يميناً</div>
+    <div class="match-container">
+      <div class="match-col" id="lmLeft">
+        ${q.pairs.map((p,i) => `<div class="match-item" data-lidx="${i}" id="lml-${i}">${p.left}</div>`).join('')}
+      </div>
+      <div class="match-col" id="lmRight">
+        ${rightShuffled.map((r,i) => `<div class="match-item" data-rval="${r}" id="lmr-${i}">${r}</div>`).join('')}
+      </div>
+    </div>
+    <div class="match-score" id="lmScore"></div>`;
+  document.querySelectorAll('#lmLeft .match-item').forEach(btn => {
+    btn.addEventListener('click', function () {
+      if (this.classList.contains('matched')) return;
+      document.querySelectorAll('#lmLeft .match-item').forEach(b => b.classList.remove('selected-left'));
+      this.classList.add('selected-left');
+      lessonMatchSelectedLeft = parseInt(this.dataset.lidx);
+    });
+  });
+  document.querySelectorAll('#lmRight .match-item').forEach(btn => {
+    btn.addEventListener('click', function () {
+      if (this.classList.contains('matched') || lessonMatchSelectedLeft === null) return;
+      const rVal = this.dataset.rval;
+      const expected = q.pairs[lessonMatchSelectedLeft].right;
+      const lBtn = document.getElementById('lml-' + lessonMatchSelectedLeft);
+      if (rVal === expected) {
+        lBtn.classList.remove('selected-left'); lBtn.classList.add('matched');
+        this.classList.add('matched');
+        lessonMatchMatched++;
+        document.getElementById('lmScore').textContent = `✅ ${lessonMatchMatched} / ${q.pairs.length}`;
+        lessonMatchSelectedLeft = null;
+        if (lessonMatchMatched === q.pairs.length) {
+          lessonScore += 15;
+          document.getElementById('lessonScore').textContent = lessonScore + ' XP';
+          const fb = document.getElementById('lessonFeedback');
+          fb.textContent = '🎉 ممتاز! طابقت جميع الأزواج! +15 XP — ' + q.explanation;
+          fb.style.color = 'var(--green)';
+          document.getElementById('lessonNextBtn').style.display = 'inline-block';
+        }
+      } else {
+        lBtn.classList.remove('selected-left'); lBtn.classList.add('wrong-match');
+        this.classList.add('wrong-match');
+        setTimeout(() => { lBtn.classList.remove('wrong-match'); this.classList.remove('wrong-match'); }, 500);
+        lessonMatchSelectedLeft = null;
+      }
+    });
+  });
+}
+
+function checkLesson(sel, correct, btn, expl) {
+  document.querySelectorAll('.lesson-option').forEach(b => b.disabled = true);
+  const fb = document.getElementById('lessonFeedback');
+  if (sel === correct) {
+    btn.classList.add('correct');
+    lessonScore += 10;
+    document.getElementById('lessonScore').textContent = lessonScore + ' XP';
+    fb.textContent = '✅ ممتاز! +10 XP — ' + expl;
+    fb.style.color = 'var(--green)';
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.lesson-option')[correct].classList.add('correct');
+    fb.textContent = '❌ ' + expl;
+    fb.style.color = 'var(--red)';
+  }
+  document.getElementById('lessonNextBtn').style.display = 'inline-block';
+}
+function nextLesson() { lessonIdx++; renderLesson(); }
+function closeLessonModal() { document.getElementById('lessonModal').classList.remove('open'); }
 
 // EXPANDED QUIZ DATA with 5 types
 const quizData = {
@@ -972,6 +1348,7 @@ const quizData = {
     { type:'tf', q:'"Red" تعني اللون الأحمر', opts:['✅ صحيح','❌ خطأ'], correct:0, expl:'نعم، Red = أحمر. Blue = أزرق، Green = أخضر.' },
     { type:'fill', q:'أكمل: "She ___ a teacher" (هي معلمة)', opts:['is','am','are','be'], correct:0, expl:'مع She/He/It نستخدم is. مع I = am. مع You/We/They = are.' },
     { type:'mcq', q:'"Dog" تعني بالعربية:', opts:['كلب','قطة','حصان','طير'], correct:0, expl:'Dog = كلب. Cat = قطة. Horse = حصان. Bird = طائر.' },
+    { type:'match', q:'طابق الحيوان باسمه الإنجليزي:', pairs:[{left:'🐱 قطة',right:'Cat'},{left:'🐶 كلب',right:'Dog'},{left:'🐟 سمكة',right:'Fish'},{left:'🐦 طائر',right:'Bird'}], correct:0, expl:'Cat=قطة، Dog=كلب، Fish=سمكة، Bird=طائر.' },
   ],
   medium: [
     { type:'mcq', q:'ما هو الجمع الصحيح لـ "Mouse"؟', opts:['Mice','Mouses','Mices','Mooses'], correct:0, expl:'Mouse — Mice جمع شاذ. مثل: Foot — Feet, Tooth — Teeth.' },
@@ -984,18 +1361,19 @@ const quizData = {
     { type:'mcq', q:'"Gracias" تعني بالعربية:', opts:['شكراً','عفواً','مرحباً','نعم'], correct:0, expl:'Gracias = شكراً بالإسبانية. De nada = عفواً.' },
     { type:'tf', q:'في الإنجليزية "I am more tall than him" جملة صحيحة', opts:['✅ صحيح','❌ خطأ'], correct:1, expl:'الصحيح: "I am taller than him". المقارنة القصيرة بإضافة -er.' },
     { type:'mcq', q:'ما معنى التعبير "Hit the books"؟', opts:['يذاكر','يضرب الكتب','يمسك الكتب','يشتري كتباً'], correct:0, expl:'"Hit the books" تعبير اصطلاحي بمعنى الدراسة والمذاكرة.' },
+    { type:'match', q:'طابق اللغة مع كلمة "شكراً" فيها:', pairs:[{left:'Merci',right:'الفرنسية'},{left:'Danke',right:'الألمانية'},{left:'Gracias',right:'الإسبانية'},{left:'Arigatou',right:'اليابانية'}], correct:0, expl:'Merci=فرنسية، Danke=ألمانية، Gracias=إسبانية، Arigatou=يابانية.' },
   ],
   hard: [
-    { type:'mcq', q:'ما الفرق الدقيق بين "affect" و"effect"؟', opts:['affect فعل، effect اسم','affect اسم، effect فعل','متشابهتان','كلاهما أفعال'], correct:0, expl:'"Affect" فعل (to affect=يؤثر). "Effect" اسم (an effect=تأثير). الاستثناء: "to effect change".' },
-    { type:'fill', q:'"I wish I ___ taller" (أتمنى لو كنت أطول)', opts:['were','was','am','be'], correct:0, expl:'بعد "I wish" نستخدم Subjunctive: "were" حتى مع المفرد. هذه قاعدة متقدمة.' },
-    { type:'mcq', q:'ما معنى التعبير الاصطلاحي "it\'s raining cats and dogs"؟', opts:['تمطر بغزارة','الطقس جيد','غائم فقط','حرارة شديدة'], correct:0, expl:'تعبير بريطاني قديم يعني الأمطار الغزيرة جداً.' },
+    { type:'mcq', q:'ما الفرق الدقيق بين "affect" و"effect"؟', opts:['affect فعل، effect اسم','affect اسم، effect فعل','متشابهتان','كلاهما أفعال'], correct:0, expl:'"Affect" فعل (to affect=يؤثر). "Effect" اسم (an effect=تأثير).' },
+    { type:'fill', q:'"I wish I ___ taller" (أتمنى لو كنت أطول)', opts:['were','was','am','be'], correct:0, expl:'بعد "I wish" نستخدم Subjunctive: "were" حتى مع المفرد.' },
+    { type:'mcq', q:'ما معنى "it\'s raining cats and dogs"؟', opts:['تمطر بغزارة','الطقس جيد','غائم فقط','حرارة شديدة'], correct:0, expl:'تعبير بريطاني قديم يعني الأمطار الغزيرة جداً.' },
     { type:'tf', q:'"C\'est la vie" جملة إسبانية تعني "هذه هي الحياة"', opts:['✅ صحيح','❌ خطأ'], correct:1, expl:'"C\'est la vie" فرنسية وليست إسبانية. تعني "هذه هي الحياة".' },
-    { type:'mcq', q:'في الألمانية، كم عدد الحالات الإعرابية (Cases)؟', opts:['4','3','5','2'], correct:0, expl:'الألمانية لها 4 حالات: Nominativ, Akkusativ, Dativ, Genitiv.' },
-    { type:'image', q:'ما معنى "Schadenfreude" الألمانية؟', emoji:'😈', opts:['الشماتة','الحزن','الفرح','الغضب'], correct:0, expl:'Schadenfreude = الفرح بمصيبة الآخرين (الشماتة). دخلت القواميس الإنجليزية.' },
+    { type:'match', q:'طابق الكلمة الإنجليزية مع معناها العربي:', pairs:[{left:'Apple',right:'تفاحة'},{left:'Water',right:'ماء'},{left:'Sun',right:'شمس'},{left:'Book',right:'كتاب'}], correct:0, expl:'Apple=تفاحة، Water=ماء، Sun=شمس، Book=كتاب.' },
+    { type:'image', q:'ما معنى "Schadenfreude" الألمانية؟', emoji:'😈', opts:['الشماتة','الحزن','الفرح','الغضب'], correct:0, expl:'Schadenfreude = الفرح بمصيبة الآخرين (الشماتة).' },
     { type:'mcq', q:'ما الفرق بين "Who" و"Whom"؟', opts:['Who فاعل، Whom مفعول','Who مفعول، Whom فاعل','لا فرق','Who للجمع'], correct:0, expl:'"Who gave you this?" (فاعل). "To whom did you speak?" (مفعول).' },
     { type:'fill', q:'"___ pro quo" عبارة لاتينية تعني شيء مقابل شيء', opts:['Quid','Qui','Quo','Qua'], correct:0, expl:'"Quid pro quo" = شيء مقابل شيء. مستخدمة في القانون والأعمال.' },
-    { type:'tf', q:'في اليابانية "Keigo" هو نظام الاحترام اللغوي', opts:['✅ صحيح','❌ خطأ'], correct:0, expl:'صحيح! Keigo (敬語) = لغة الاحترام في اليابانية. لها 3 مستويات.' },
-    { type:'mcq', q:'الكلمة "Serendipity" تعني:', opts:['الاكتشاف السعيد بالمصادفة','الحزن العميق','التعلم السريع','النسيان التام'], correct:0, expl:'"Serendipity" = اكتشاف أشياء جيدة بالصدفة. من أجمل الكلمات الإنجليزية.' },
+    { type:'match', q:'طابق التعبير الاصطلاحي مع معناه:', pairs:[{left:'Break a leg',right:'بالتوفيق'},{left:'Piece of cake',right:'سهل جداً'},{left:'Hit the books',right:'يذاكر'},{left:'Under the weather',right:'مريض'}], correct:0, expl:'تعبيرات اصطلاحية شائعة في الإنجليزية.' },
+    { type:'mcq', q:'الكلمة "Serendipity" تعني:', opts:['الاكتشاف السعيد بالمصادفة','الحزن العميق','التعلم السريع','النسيان التام'], correct:0, expl:'"Serendipity" = اكتشاف أشياء جيدة بالصدفة.' },
   ]
 };
 
@@ -1131,11 +1509,17 @@ function renderBookPage() {
   document.getElementById('bookContent').innerHTML = `<h2>${page.title}</h2>${page.text.join('')}`;
   document.getElementById('bookProgress').style.width = pct+'%';
   document.getElementById('pageIndicator').textContent = `${currentBookPage+1} / ${currentBookPages.length}`;
+  // count words for stats
+  const rawText = page.text.join(' ').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+  const wc = rawText.split(' ').filter(w=>w.length>1).length;
+  const mins = Math.max(1, Math.round(wc / 150));
+  if (document.getElementById('wordCount')) document.getElementById('wordCount').textContent = wc;
+  if (document.getElementById('readingTime')) document.getElementById('readingTime').textContent = `⏱ ~${mins} دقيقة للقراءة`;
   // vocab
   const vl = document.getElementById('vocabList');
-  if (page.vocabEn) {
-    vl.innerHTML = page.vocabEn.map((w,i)=>`<span class="vocab-item" title="${page.vocabAr[i]}">${w}</span>`).join('');
-  } else { vl.innerHTML = ''; }
+  if (page.vocabEn && page.vocabEn.length) {
+    vl.innerHTML = page.vocabEn.map((w,i)=>`<span class="vocab-item" title="${page.vocabAr[i]}" onclick="alert('${w} = ${page.vocabAr[i]}')">${w}</span>`).join('');
+  } else { vl.innerHTML = '<span style="color:var(--muted);font-size:0.8rem">لا توجد مفردات مميزة في هذا الفصل</span>'; }
   setupTooltip();
 }
 function changePage(dir) {
@@ -1254,21 +1638,36 @@ function startQuiz(level) {
 
 function renderQuizQuestion() {
   const q = currentQuizData[currentQuizIndex];
-  const pct = (currentQuizIndex/currentQuizData.length)*100;
-  document.getElementById('quizProgressFill').style.width = pct+'%';
+  // Progress bar
+  document.getElementById('quizProgressFill').style.width = (currentQuizIndex/currentQuizData.length*100)+'%';
   document.getElementById('quizQuestionNum').textContent = `سؤال ${currentQuizIndex+1} من ${currentQuizData.length}`;
-  document.getElementById('quizQuestionText').textContent = q.q;
+  document.getElementById('currentScoreDisp').textContent = `${quizScore} / ${currentQuizIndex}`;
   document.getElementById('quizNextBtn').style.display = 'none';
   document.getElementById('quizExplanation').style.display = 'none';
-  document.getElementById('currentScoreDisp').textContent = `${quizScore} / ${currentQuizIndex}`;
-  // type label
-  const typeLabels = {mcq:'🔘 اختيار متعدد', image:'🖼️ تحديد', fill:'✍️ إكمال', tf:'✅ صح/خطأ', match:'🔗 مطابقة'};
+  document.getElementById('quizExplanation').textContent = '';
+  // Type label
+  const typeLabels = {mcq:'🔘 اختيار متعدد', image:'🖼️ تحديد بالصورة', fill:'✍️ إكمال الجملة', tf:'✅ صح أم خطأ', match:'🔗 مطابقة الكلمات'};
   document.getElementById('quizTypeLabel').textContent = typeLabels[q.type] || '🔘 سؤال';
-  // image
+  // Question text
+  document.getElementById('quizQuestionText').textContent = q.q;
+  // Emoji/image
   const imgDiv = document.getElementById('quizQuestionImg');
   if (q.emoji) { imgDiv.style.display = 'block'; imgDiv.textContent = q.emoji; }
   else { imgDiv.style.display = 'none'; }
-  // timer
+  // Hide/show match area
+  const matchArea = document.getElementById('quizMatchArea');
+  const optsArea = document.getElementById('quizOptions');
+
+  if (q.type === 'match') {
+    optsArea.style.display = 'none';
+    matchArea.style.display = 'block';
+    renderMatchQuestion(q);
+  } else {
+    optsArea.style.display = 'grid';
+    matchArea.style.display = 'none';
+    renderStandardOptions(q);
+  }
+  // Timer
   clearInterval(timerInterval);
   timeLeft = timeLimits[quizLevel];
   updateTimer();
@@ -1277,12 +1676,85 @@ function renderQuizQuestion() {
     updateTimer();
     if (timeLeft<=0) { clearInterval(timerInterval); autoAnswer(); }
   }, 1000);
+}
+
+function renderStandardOptions(q) {
   const labels = ['أ','ب','ج','د'];
-  document.getElementById('quizOptions').innerHTML = q.opts.map((o,i)=>`
-    <button class="quiz-option" onclick="checkQuiz(${i},${q.correct},this,'${(q.expl||'').replace(/'/g,"\\'")}')">
-      <span class="opt-label">${labels[i]}</span>${o}
-    </button>
-  `).join('');
+  document.getElementById('quizOptions').innerHTML = q.opts.map((o,i) =>
+    `<button class="quiz-option" data-idx="${i}" data-correct="${q.correct}">
+       <span class="opt-label">${labels[i]}</span>${o}
+     </button>`
+  ).join('');
+  document.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const sel = parseInt(this.dataset.idx);
+      const correct = parseInt(this.dataset.correct);
+      checkQuiz(sel, correct, this, currentQuizData[currentQuizIndex].expl || '');
+    });
+  });
+}
+
+// ===== MATCH QUESTION =====
+let matchSelectedLeft = null;
+let matchMatched = 0;
+let matchTotal = 0;
+let matchPairs = [];
+
+function renderMatchQuestion(q) {
+  matchSelectedLeft = null;
+  matchMatched = 0;
+  matchPairs = q.pairs;
+  matchTotal = q.pairs.length;
+  // Shuffle right side
+  const rightShuffled = [...q.pairs.map(p=>p.right)].sort(()=>Math.random()-0.5);
+  document.getElementById('quizMatchArea').innerHTML = `
+    <div style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;text-align:center">انقر على كلمة من العمود الأيسر ثم اختر مرادفها من العمود الأيمن</div>
+    <div class="match-container">
+      <div class="match-col" id="matchLeft">
+        ${q.pairs.map((p,i)=>`<div class="match-item" data-lidx="${i}" id="ml-${i}">${p.left}</div>`).join('')}
+      </div>
+      <div class="match-col" id="matchRight">
+        ${rightShuffled.map((r,i)=>`<div class="match-item" data-rval="${r}" id="mr-${i}">${r}</div>`).join('')}
+      </div>
+    </div>
+    <div class="match-score" id="matchScore"></div>`;
+  document.querySelectorAll('#matchLeft .match-item').forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (this.classList.contains('matched')) return;
+      document.querySelectorAll('#matchLeft .match-item').forEach(b=>b.classList.remove('selected-left'));
+      this.classList.add('selected-left');
+      matchSelectedLeft = parseInt(this.dataset.lidx);
+    });
+  });
+  document.querySelectorAll('#matchRight .match-item').forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (this.classList.contains('matched')) return;
+      if (matchSelectedLeft === null) return;
+      const rVal = this.dataset.rval;
+      const expectedRight = matchPairs[matchSelectedLeft].right;
+      const lBtn = document.getElementById('ml-' + matchSelectedLeft);
+      if (rVal === expectedRight) {
+        lBtn.classList.remove('selected-left'); lBtn.classList.add('matched');
+        this.classList.add('matched');
+        matchMatched++;
+        document.getElementById('matchScore').textContent = `✅ ${matchMatched} / ${matchTotal} صحيح`;
+        matchSelectedLeft = null;
+        if (matchMatched === matchTotal) {
+          clearInterval(timerInterval);
+          quizScore++; totalCorrect++;
+          document.getElementById('currentScoreDisp').textContent = `${quizScore} / ${currentQuizIndex+1}`;
+          document.getElementById('quizExplanation').textContent = '💡 ' + (currentQuizData[currentQuizIndex].expl || 'أحسنت! طابقت جميع الأزواج بنجاح.');
+          document.getElementById('quizExplanation').style.display = 'block';
+          document.getElementById('quizNextBtn').style.display = 'inline-block';
+        }
+      } else {
+        lBtn.classList.remove('selected-left'); lBtn.classList.add('wrong-match');
+        this.classList.add('wrong-match');
+        setTimeout(()=>{ lBtn.classList.remove('wrong-match'); this.classList.remove('wrong-match'); }, 600);
+        matchSelectedLeft = null;
+      }
+    });
+  });
 }
 
 function updateTimer() {
@@ -1293,8 +1765,14 @@ function updateTimer() {
 
 function autoAnswer() {
   const q = currentQuizData[currentQuizIndex];
+  if (q.type === 'match') {
+    document.getElementById('quizNextBtn').style.display = 'inline-block';
+    document.getElementById('quizExplanation').textContent = '⏰ انتهى الوقت! ' + (q.expl||'');
+    document.getElementById('quizExplanation').style.display = 'block';
+    return;
+  }
   const opts = document.querySelectorAll('.quiz-option');
-  opts.forEach(b=>{b.disabled=true;b.classList.add('disabled');});
+  opts.forEach(b=>{ b.disabled=true; b.classList.add('disabled'); });
   if (opts[q.correct]) opts[q.correct].classList.add('correct');
   document.getElementById('quizExplanation').textContent = '⏰ انتهى الوقت! ' + (q.expl||'');
   document.getElementById('quizExplanation').style.display = 'block';
@@ -1303,11 +1781,20 @@ function autoAnswer() {
 
 function checkQuiz(sel, correct, btn, expl) {
   clearInterval(timerInterval);
-  document.querySelectorAll('.quiz-option').forEach(b=>{b.disabled=true;b.classList.add('disabled');});
-  if (sel===correct) { btn.classList.add('correct'); quizScore++; totalCorrect++; }
-  else { btn.classList.add('wrong'); document.querySelectorAll('.quiz-option')[correct].classList.add('correct'); }
+  document.querySelectorAll('.quiz-option').forEach(b=>{ b.disabled=true; b.classList.add('disabled'); });
+  if (sel === correct) {
+    btn.classList.add('correct');
+    quizScore++; totalCorrect++;
+  } else {
+    btn.classList.add('wrong');
+    const allOpts = document.querySelectorAll('.quiz-option');
+    if (allOpts[correct]) allOpts[correct].classList.add('correct');
+  }
   document.getElementById('currentScoreDisp').textContent = `${quizScore} / ${currentQuizIndex+1}`;
-  if (expl) { document.getElementById('quizExplanation').textContent = '💡 ' + expl; document.getElementById('quizExplanation').style.display = 'block'; }
+  if (expl) {
+    document.getElementById('quizExplanation').textContent = '💡 ' + expl;
+    document.getElementById('quizExplanation').style.display = 'block';
+  }
   document.getElementById('quizNextBtn').style.display = 'inline-block';
 }
 
@@ -1331,25 +1818,275 @@ function showQuizResult() {
   document.getElementById('totalXP').textContent = totalXP;
   document.getElementById('totalCorrect').textContent = totalCorrect;
   document.getElementById('bestScore').textContent = bestScore + '%';
-  let stars = pct>=90?'⭐⭐⭐':pct>=60?'⭐⭐':pct>=30?'⭐':'';
-  document.getElementById('resultStars').textContent = stars;
-  let msg, sub;
-  if (pct===100) { msg='🏆 مثالي تماماً!'; sub='إنجاز لا يُصدق! جميع الإجابات صحيحة.'; }
-  else if (pct>=80) { msg='⭐ ممتاز!'; sub='أداء رائع! قريب جداً من الكمال.'; }
-  else if (pct>=60) { msg='👍 جيد جداً!'; sub='نتيجة جيدة! راجع الإجابات الخاطئة.'; }
-  else if (pct>=40) { msg='📚 تحتاج مراجعة'; sub='راجع الدروس واختبر نفسك مجدداً.'; }
-  else { msg='💪 لا تستسلم!'; sub='كل بداية صعبة. استمر في التعلم.'; }
-  document.getElementById('resultMsg').textContent = msg;
-  document.getElementById('resultSub').textContent = sub;
+  document.getElementById('resultStars').textContent = pct>=90?'⭐⭐⭐':pct>=60?'⭐⭐':pct>=30?'⭐':'';
+  const msgs = [[100,'🏆 مثالي تماماً!','إنجاز لا يُصدق! جميع الإجابات صحيحة.'],[80,'⭐ ممتاز!','أداء رائع! قريب جداً من الكمال.'],[60,'👍 جيد جداً!','نتيجة جيدة! راجع الإجابات الخاطئة.'],[40,'📚 تحتاج مراجعة','راجع الدروس واختبر نفسك مجدداً.'],[0,'💪 لا تستسلم!','كل بداية صعبة. استمر في التعلم.']];
+  const m = msgs.find(x=>pct>=x[0]);
+  document.getElementById('resultMsg').textContent = m[1];
+  document.getElementById('resultSub').textContent = m[2];
   document.getElementById('resultXP').textContent = `+${xpEarned} XP مكتسبة! 🎉`;
 }
 
 function resetQuiz() {
   clearInterval(timerInterval);
   document.getElementById('quiz-result').style.display = 'none';
+  document.getElementById('quiz-area').style.display = 'none';
   document.getElementById('quizSelectorArea').style.display = 'block';
   document.getElementById('quizProgressFill').style.width = '0%';
 }
+
+// ===== PRONUNCIATION SYSTEM =====
+let pronunLang = 'en';
+let pronunRate = 0.6;
+
+const pronunData = {
+  en: {
+    flag:'🇬🇧', title:'🇬🇧 الإنجليزية', lang:'en-US',
+    sentence: 'Learning a new language opens many doors in life',
+    alphabet: [
+      {c:'A',s:'eɪ'},{c:'B',s:'biː'},{c:'C',s:'siː'},{c:'D',s:'diː'},{c:'E',s:'iː'},
+      {c:'F',s:'ɛf'},{c:'G',s:'dʒiː'},{c:'H',s:'eɪtʃ'},{c:'I',s:'aɪ'},{c:'J',s:'dʒeɪ'},
+      {c:'K',s:'keɪ'},{c:'L',s:'ɛl'},{c:'M',s:'ɛm'},{c:'N',s:'ɛn'},{c:'O',s:'oʊ'},
+      {c:'P',s:'piː'},{c:'Q',s:'kjuː'},{c:'R',s:'ɑːr'},{c:'S',s:'ɛs'},{c:'T',s:'tiː'},
+      {c:'U',s:'juː'},{c:'V',s:'viː'},{c:'W',s:'dʌbəl.juː'},{c:'X',s:'ɛks'},{c:'Y',s:'waɪ'},{c:'Z',s:'ziː'}
+    ],
+    words:[
+      {w:'Hello',ph:'/həˈloʊ/',ar:'مرحباً'},{w:'Thank you',ph:'/θæŋk juː/',ar:'شكراً'},
+      {w:'Goodbye',ph:'/ɡʊdˈbaɪ/',ar:'وداعاً'},{w:'Please',ph:'/pliːz/',ar:'من فضلك'},
+      {w:'Beautiful',ph:'/ˈbjuːtɪfəl/',ar:'جميل'},{w:'Understand',ph:'/ˌʌndərˈstænd/',ar:'يفهم'},
+      {w:'Knowledge',ph:'/ˈnɒlɪdʒ/',ar:'معرفة'},{w:'Language',ph:'/ˈlæŋɡwɪdʒ/',ar:'لغة'},
+      {w:'Pronunciation',ph:'/prəˌnʌnsiˈeɪʃən/',ar:'نطق'},{w:'Vocabulary',ph:'/vəˈkæbjʊlɛri/',ar:'مفردات'},
+      {w:'Comfortable',ph:'/ˈkʌmftəbəl/',ar:'مريح'},{w:'Experience',ph:'/ɪkˈspɪəriəns/',ar:'تجربة'},
+    ]
+  },
+  fr: {
+    flag:'🇫🇷', title:'🇫🇷 الفرنسية', lang:'fr-FR',
+    sentence: 'Je voudrais apprendre le français tous les jours',
+    alphabet:[
+      {c:'A',s:'a'},{c:'B',s:'be'},{c:'C',s:'se'},{c:'D',s:'de'},{c:'E',s:'ə'},
+      {c:'É',s:'e'},{c:'F',s:'ɛf'},{c:'G',s:'ʒe'},{c:'H',s:'aʃ'},{c:'I',s:'i'},
+      {c:'J',s:'ʒi'},{c:'K',s:'ka'},{c:'L',s:'ɛl'},{c:'M',s:'ɛm'},{c:'N',s:'ɛn'},
+      {c:'O',s:'o'},{c:'P',s:'pe'},{c:'Q',s:'ky'},{c:'R',s:'ɛʁ'},{c:'S',s:'ɛs'},
+      {c:'T',s:'te'},{c:'U',s:'y'},{c:'V',s:'ve'},{c:'W',s:'dubləve'},{c:'X',s:'iks'},{c:'Y',s:'iɡʁɛk'},{c:'Z',s:'zɛd'}
+    ],
+    words:[
+      {w:'Bonjour',ph:'/bɔ̃ˈʒuʁ/',ar:'صباح الخير'},{w:'Merci',ph:'/mɛʁˈsi/',ar:'شكراً'},
+      {w:'Au revoir',ph:'/o ʁəˈvwaʁ/',ar:'وداعاً'},{w:'S\'il vous plaît',ph:'/sil vu ˈplɛ/',ar:'من فضلك'},
+      {w:'Magnifique',ph:'/maɲiˈfik/',ar:'رائع'},{w:'Croissant',ph:'/kʁwaˈsɑ̃/',ar:'كرواسان'},
+      {w:'Liberté',ph:'/libeʁˈte/',ar:'حرية'},{w:'Amour',ph:'/aˈmuʁ/',ar:'حب'},
+      {w:'Papillon',ph:'/papiˈjɔ̃/',ar:'فراشة'},{w:'Château',ph:'/ʃaˈto/',ar:'قصر'},
+      {w:'Rendezvous',ph:'/ʁɑ̃deˈvu/',ar:'موعد'},{w:'Café',ph:'/kaˈfe/',ar:'قهوة'},
+    ]
+  },
+  de: {
+    flag:'🇩🇪', title:'🇩🇪 الألمانية', lang:'de-DE',
+    sentence: 'Ich lerne jeden Tag neue deutsche Wörter',
+    alphabet:[
+      {c:'A',s:'aː'},{c:'Ä',s:'ɛː'},{c:'B',s:'beː'},{c:'C',s:'tseː'},{c:'D',s:'deː'},
+      {c:'E',s:'eː'},{c:'F',s:'ɛf'},{c:'G',s:'ɡeː'},{c:'H',s:'haː'},{c:'I',s:'iː'},
+      {c:'J',s:'jɔt'},{c:'K',s:'kaː'},{c:'L',s:'ɛl'},{c:'M',s:'ɛm'},{c:'N',s:'ɛn'},
+      {c:'O',s:'oː'},{c:'Ö',s:'øː'},{c:'P',s:'peː'},{c:'Q',s:'kuː'},{c:'R',s:'ɛʁ'},
+      {c:'S',s:'ɛs'},{c:'T',s:'teː'},{c:'U',s:'uː'},{c:'Ü',s:'yː'},{c:'V',s:'faʊ'},
+      {c:'W',s:'veː'},{c:'X',s:'ɪks'},{c:'Y',s:'ˈʏpsilɔn'},{c:'Z',s:'tsɛt'},{c:'ß',s:'scharfes S'}
+    ],
+    words:[
+      {w:'Guten Morgen',ph:'/ˈɡuːtən ˈmɔʁɡən/',ar:'صباح الخير'},{w:'Danke schön',ph:'/ˈdaŋkə ʃøːn/',ar:'شكراً جزيلاً'},
+      {w:'Auf Wiedersehen',ph:'/aʊf ˈviːdərzeːən/',ar:'وداعاً'},{w:'Bitte',ph:'/ˈbɪtə/',ar:'من فضلك'},
+      {w:'Entschuldigung',ph:'/ɛntˈʃʊldɪɡʊŋ/',ar:'عذراً'},{w:'Wunderschön',ph:'/ˈvʊndɐˌʃøːn/',ar:'رائع الجمال'},
+      {w:'Kindergarten',ph:'/ˈkɪndɐˌɡaʁtən/',ar:'روضة أطفال'},{w:'Fernweh',ph:'/ˈfɛʁnveː/',ar:'الشوق للسفر'},
+      {w:'Schadenfreude',ph:'/ˈʃaːdənˌfʁɔʏdə/',ar:'الشماتة'},{w:'Weltschmerz',ph:'/ˈvɛltʃmɛʁts/',ar:'ألم العالم'},
+      {w:'Gemütlichkeit',ph:'/ɡəˈmyːtlɪçkaɪt/',ar:'الدفء والراحة'},{w:'Freiheit',ph:'/ˈfʁaɪhaɪt/',ar:'حرية'},
+    ]
+  },
+  es: {
+    flag:'🇪🇸', title:'🇪🇸 الإسبانية', lang:'es-ES',
+    sentence: 'Me gusta aprender español porque es muy bonito',
+    alphabet:[
+      {c:'A',s:'a'},{c:'B',s:'be'},{c:'C',s:'θe'},{c:'D',s:'de'},{c:'E',s:'e'},
+      {c:'F',s:'efe'},{c:'G',s:'xe'},{c:'H',s:'atʃe'},{c:'I',s:'i'},{c:'J',s:'xota'},
+      {c:'K',s:'ka'},{c:'L',s:'ele'},{c:'LL',s:'eʎe'},{c:'M',s:'eme'},{c:'N',s:'ene'},
+      {c:'Ñ',s:'eɲe'},{c:'O',s:'o'},{c:'P',s:'pe'},{c:'Q',s:'ku'},{c:'R',s:'ere'},
+      {c:'S',s:'ese'},{c:'T',s:'te'},{c:'U',s:'u'},{c:'V',s:'ube'},{c:'W',s:'ube doble'},
+      {c:'X',s:'ekis'},{c:'Y',s:'je'},{c:'Z',s:'θeta'}
+    ],
+    words:[
+      {w:'Hola',ph:'/ˈola/',ar:'مرحباً'},{w:'Gracias',ph:'/ˈɡɾaθjas/',ar:'شكراً'},
+      {w:'Adiós',ph:'/aˈðjos/',ar:'وداعاً'},{w:'Por favor',ph:'/poɾ faˈβoɾ/',ar:'من فضلك'},
+      {w:'Hermoso',ph:'/eɾˈmoso/',ar:'جميل'},{w:'Corazón',ph:'/koɾaˈθon/',ar:'قلب'},
+      {w:'Mariposa',ph:'/maɾiˈposa/',ar:'فراشة'},{w:'Libertad',ph:'/liβeɾˈtað/',ar:'حرية'},
+      {w:'Siesta',ph:'/ˈsjesta/',ar:'قيلولة'},{w:'Fiesta',ph:'/ˈfjesta/',ar:'حفلة'},
+      {w:'Estrella',ph:'/esˈtɾeʎa/',ar:'نجمة'},{w:'Aventura',ph:'/aβenˈtuɾa/',ar:'مغامرة'},
+    ]
+  },
+  jp: {
+    flag:'🇯🇵', title:'🇯🇵 اليابانية', lang:'ja-JP',
+    sentence: 'まいにち にほんご を べんきょう します',
+    alphabet:[
+      {c:'あ',s:'a'},{c:'い',s:'i'},{c:'う',s:'u'},{c:'え',s:'e'},{c:'お',s:'o'},
+      {c:'か',s:'ka'},{c:'き',s:'ki'},{c:'く',s:'ku'},{c:'け',s:'ke'},{c:'こ',s:'ko'},
+      {c:'さ',s:'sa'},{c:'し',s:'shi'},{c:'す',s:'su'},{c:'せ',s:'se'},{c:'そ',s:'so'},
+      {c:'た',s:'ta'},{c:'ち',s:'chi'},{c:'つ',s:'tsu'},{c:'て',s:'te'},{c:'と',s:'to'},
+      {c:'な',s:'na'},{c:'に',s:'ni'},{c:'ぬ',s:'nu'},{c:'ね',s:'ne'},{c:'の',s:'no'},
+      {c:'は',s:'ha'},{c:'ひ',s:'hi'},{c:'ふ',s:'fu'},{c:'へ',s:'he'},{c:'ほ',s:'ho'}
+    ],
+    words:[
+      {w:'こんにちは',ph:'Konnichiwa',ar:'مرحباً'},{w:'ありがとう',ph:'Arigatou',ar:'شكراً'},
+      {w:'さようなら',ph:'Sayounara',ar:'وداعاً'},{w:'おねがい',ph:'Onegai',ar:'من فضلك'},
+      {w:'すみません',ph:'Sumimasen',ar:'عذراً'},{w:'かわいい',ph:'Kawaii',ar:'لطيف/جميل'},
+      {w:'さくら',ph:'Sakura',ar:'زهر الكرز'},{w:'まつり',ph:'Matsuri',ar:'مهرجان'},
+      {w:'うみ',ph:'Umi',ar:'بحر'},{w:'やま',ph:'Yama',ar:'جبل'},
+      {w:'ほし',ph:'Hoshi',ar:'نجمة'},{w:'かぜ',ph:'Kaze',ar:'ريح'},
+    ]
+  },
+  zh: {
+    flag:'🇨🇳', title:'🇨🇳 الصينية', lang:'zh-CN',
+    sentence: '我喜欢每天学习中文',
+    alphabet:[
+      {c:'b',s:'bō'},{c:'p',s:'pō'},{c:'m',s:'mō'},{c:'f',s:'fō'},{c:'d',s:'dē'},
+      {c:'t',s:'tē'},{c:'n',s:'nē'},{c:'l',s:'lē'},{c:'g',s:'gē'},{c:'k',s:'kē'},
+      {c:'h',s:'hē'},{c:'j',s:'jiē'},{c:'q',s:'qiē'},{c:'x',s:'xiē'},{c:'zh',s:'zhē'},
+      {c:'ch',s:'chē'},{c:'sh',s:'shē'},{c:'r',s:'rē'},{c:'z',s:'zē'},{c:'c',s:'cē'},
+      {c:'s',s:'sē'},{c:'a',s:'ā'},{c:'o',s:'ō'},{c:'e',s:'ē'},{c:'i',s:'ī'},
+      {c:'u',s:'ū'},{c:'ü',s:'ǖ'},{c:'ai',s:'āi'},{c:'ei',s:'ēi'},{c:'ao',s:'āo'}
+    ],
+    words:[
+      {w:'你好',ph:'Nǐ hǎo',ar:'مرحباً'},{w:'谢谢',ph:'Xièxiè',ar:'شكراً'},
+      {w:'再见',ph:'Zàijiàn',ar:'وداعاً'},{w:'请',ph:'Qǐng',ar:'من فضلك'},
+      {w:'对不起',ph:'Duìbuqǐ',ar:'آسف'},{w:'漂亮',ph:'Piàoliang',ar:'جميل'},
+      {w:'龙',ph:'Lóng',ar:'تنين'},{w:'茶',ph:'Chá',ar:'شاي'},
+      {w:'山',ph:'Shān',ar:'جبل'},{w:'水',ph:'Shuǐ',ar:'ماء'},
+      {w:'爱',ph:'Ài',ar:'حب'},{w:'朋友',ph:'Péngyǒu',ar:'صديق'},
+    ]
+  },
+  it: {
+    flag:'🇮🇹', title:'🇮🇹 الإيطالية', lang:'it-IT',
+    sentence: 'Mi piace imparare l\'italiano ogni giorno',
+    alphabet:[
+      {c:'A',s:'a'},{c:'B',s:'bi'},{c:'C',s:'tʃi'},{c:'D',s:'di'},{c:'E',s:'e'},
+      {c:'F',s:'ɛffe'},{c:'G',s:'dʒi'},{c:'H',s:'akka'},{c:'I',s:'i'},{c:'L',s:'ɛlle'},
+      {c:'M',s:'ɛmme'},{c:'N',s:'ɛnne'},{c:'O',s:'o'},{c:'P',s:'pi'},{c:'Q',s:'ku'},
+      {c:'R',s:'ɛrre'},{c:'S',s:'ɛsse'},{c:'T',s:'ti'},{c:'U',s:'u'},{c:'V',s:'vi'},
+      {c:'Z',s:'dzɛta'}
+    ],
+    words:[
+      {w:'Ciao',ph:'/tʃaʊ/',ar:'مرحباً/وداعاً'},{w:'Grazie',ph:'/ˈɡrattsje/',ar:'شكراً'},
+      {w:'Prego',ph:'/ˈprɛɡo/',ar:'عفواً'},{w:'Per favore',ph:'/per faˈvoːre/',ar:'من فضلك'},
+      {w:'Bellissimo',ph:'/belˈlissimo/',ar:'جميل جداً'},{w:'Amore',ph:'/aˈmoːre/',ar:'حب'},
+      {w:'Pizza',ph:'/ˈpittsa/',ar:'بيتزا'},{w:'Pasta',ph:'/ˈpasta/',ar:'معكرونة'},
+      {w:'Arrivederci',ph:'/arriˈvederʧi/',ar:'إلى اللقاء'},{w:'Famiglia',ph:'/faˈmiʎʎa/',ar:'عائلة'},
+      {w:'Musica',ph:'/ˈmuːzika/',ar:'موسيقى'},{w:'Arte',ph:'/ˈarte/',ar:'فن'},
+    ]
+  },
+  pt: {
+    flag:'🇧🇷', title:'🇧🇷 البرتغالية', lang:'pt-BR',
+    sentence: 'Eu gosto muito de aprender português',
+    alphabet:[
+      {c:'A',s:'a'},{c:'B',s:'be'},{c:'C',s:'se'},{c:'D',s:'de'},{c:'E',s:'e'},
+      {c:'F',s:'ɛfi'},{c:'G',s:'ʒe'},{c:'H',s:'aɡa'},{c:'I',s:'i'},{c:'J',s:'ʒɔta'},
+      {c:'K',s:'ka'},{c:'L',s:'ɛlɪ'},{c:'M',s:'ɛmɪ'},{c:'N',s:'ɛnɪ'},{c:'O',s:'o'},
+      {c:'P',s:'pe'},{c:'Q',s:'ke'},{c:'R',s:'ɛʁɪ'},{c:'S',s:'ɛsɪ'},{c:'T',s:'te'},
+      {c:'U',s:'u'},{c:'V',s:'ve'},{c:'W',s:'dabliu'},{c:'X',s:'ʃis'},{c:'Y',s:'ipsilɔn'},{c:'Z',s:'ze'}
+    ],
+    words:[
+      {w:'Olá',ph:'/oˈla/',ar:'مرحباً'},{w:'Obrigado',ph:'/obɾiˈɡadu/',ar:'شكراً'},
+      {w:'Tchau',ph:'/ˈtʃaw/',ar:'وداعاً'},{w:'Por favor',ph:'/poɾ faˈvoɾ/',ar:'من فضلك'},
+      {w:'Desculpe',ph:'/desˈkuɫpi/',ar:'آسف'},{w:'Saudade',ph:'/sawˈdadɨ/',ar:'الحنين الجميل'},
+      {w:'Maravilhoso',ph:'/maɾaviˈʎozu/',ar:'رائع'},{w:'Amor',ph:'/aˈmoɾ/',ar:'حب'},
+      {w:'Borboleta',ph:'/boɾboˈletɐ/',ar:'فراشة'},{w:'Praia',ph:'/ˈpɾajɐ/',ar:'شاطئ'},
+      {w:'Estrela',ph:'/isˈtɾɛlɐ/',ar:'نجمة'},{w:'Aventura',ph:'/avẽˈtuɾɐ/',ar:'مغامرة'},
+    ]
+  }
+};
+
+function setPronunLang(lang, btn) {
+  pronunLang = lang;
+  document.querySelectorAll('.pronun-lang-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPronunPage();
+}
+
+function renderPronunPage() {
+  const d = pronunData[pronunLang];
+  if (!d) return;
+  // Title
+  document.getElementById('pronunLangTitle').textContent = d.title + ' — انقر على أي كلمة لسماع نطقها';
+  document.getElementById('pronunAlphaTitle').textContent = '🔤 ' + (pronunLang==='jp'?'هيراغانا':pronunLang==='zh'?'البينيين (Pinyin)':'الأحرف الأبجدية') + ' — انقر لسماع كل حرف';
+  document.getElementById('pronunVocabTitle').textContent = '📖 مفردات ' + d.title.split(' ').slice(1).join(' ') + ' — انقر لسماع النطق';
+  // Sentence
+  const words = d.sentence.split(' ');
+  document.getElementById('pronunSentence').innerHTML = words.map(w =>
+    `<button class="word-btn" onclick="speakWord('${w.replace(/'/g,'\\\'')}')">${w}</button> `
+  ).join('');
+  // Alphabet
+  document.getElementById('pronunAlphaGrid').innerHTML = d.alphabet.map((a,i)=>
+    `<div class="alpha-cell" id="ac-${i}" onclick="speakAlpha('${a.c.replace(/'/g,'\\\'').replace(/"/g,'&quot;')}',${i})">
+       <span class="a-char">${a.c}</span>
+       <span class="a-sound">${a.s}</span>
+     </div>`
+  ).join('');
+  // Word cards
+  document.getElementById('pronunWordsGrid').innerHTML = d.words.map((w,i)=>
+    `<div class="pronun-word-card" id="pwc-${i}">
+       <div class="pw-lang-flag">${d.flag}</div>
+       <div class="pw-word">${w.w}</div>
+       <div class="pw-phonetic">${w.ph}</div>
+       <div class="pw-meaning">المعنى: ${w.ar}</div>
+       <button class="pw-speak-btn" onclick="speakWordCard('${w.w.replace(/'/g,'\\\'').replace(/"/g,'&quot;')}',${i})" title="استمع للنطق">🔊</button>
+     </div>`
+  ).join('');
+}
+
+function setSpeed(rate, btn) {
+  pronunRate = rate;
+  document.querySelectorAll('.pronun-speed-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function speakWord(text) {
+  const d = pronunData[pronunLang];
+  if (!d) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = d.lang; u.rate = pronunRate;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+function speakAlpha(char, idx) {
+  const d = pronunData[pronunLang];
+  if (!d) return;
+  const u = new SpeechSynthesisUtterance(char);
+  u.lang = d.lang; u.rate = Math.min(pronunRate, 0.8);
+  const cell = document.getElementById('ac-'+idx);
+  if (cell) { cell.classList.add('playing'); u.onend = ()=>cell.classList.remove('playing'); }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+function speakWordCard(text, idx) {
+  const d = pronunData[pronunLang];
+  if (!d) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = d.lang; u.rate = pronunRate;
+  const card = document.getElementById('pwc-'+idx);
+  if (card) { card.classList.add('playing'); u.onend = ()=>card.classList.remove('playing'); }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+function speakFullSentence() {
+  const d = pronunData[pronunLang];
+  if (!d) return;
+  const u = new SpeechSynthesisUtterance(d.sentence);
+  u.lang = d.lang; u.rate = pronunRate;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+// init pronunciation page when visited
+const _origShowPage = showPage;
+window.showPage = function(page) {
+  _origShowPage(page);
+  if (page === 'pronunciation') renderPronunPage();
+};
 
 // ===== COMMENTS =====
 function setRating(r) {
